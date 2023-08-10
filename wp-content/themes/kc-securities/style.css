@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/*
+Theme Name: K C Securities
+Text Domain: kc-securities
+Template: twentytwentyone
+*/
+
+@import url("../twentytwentyone/style.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*********************** Common Element CSS  ***********************/
+:root {
+    /* color */
+    --primary-font-family:'Inter', sans-serif;
+    --primary-nav--font-family: 'Inter', sans-serif;
+    --heading--font-family: 'Inter', sans-serif;
+    --primary-nav--font-family-mobile: 'Inter', sans-serif;
+    --button--font-family: 'Inter', sans-serif;
+    --list--font-family: 'Inter', sans-serif;
+
+    --global-white:#FFFFFF;
+    --global-black:#000000;
+    
+    --primary-p-10: #2D0706;
+    --primary-p-20: #5A0E0C;
+    --primary-p-30: #871512;
+    --primary-p-40: #B41C18;
+    --base-color-p-main: #E1231E;
+    --primary-p-60: #E74F4B;
+    --primary-p-70: #ED7B78;
+    --primary-p-80: #F3A7A5;
+    --primary-p-90: #F9D3D2;
+    --primary-p-95: #FCE9E9;
+    --primary-p-97: #FDF2F2;
+
+    --secondary-s-10:#001E33;
+    --secondary-s-20: #003C66;
+    --secondary-s-main: #005999;
+    --secondary-s-40: #0077CC;
+    --secondary-s-50: #0095FF;
+    --secondary-s-60: #33AAFF;
+    --secondary-s-70: #66BFFF;
+    --secondary-s-80: #99D5FF;
+    --secondary-s-90: #CCEAFF;
+    --secondary-s-95: #E5F4FF;
+    --secondary-s-97: #F0F9FF;
+
+    --grey-shade-10: #1A1A1A;
+    --grey-shade-20: #333333;
+    --grey-shade-30: #4D4D4D;
+    --grey-shade-40: #666666;
+    --grey-shade-50: #808080;
+    --grey-shade-60: #999999;
+    --grey-shade-70: #B3B3B3;
+    --grey-shade-80: #CCCCCC;
+    --grey-shade-90: #E6E6E6;
+    --grey-shade-95: #F2F2F2;
+    --grey-shade-97: #F7F7F7;
+
+
+
+}
+html                    { overflow-x: hidden !important;scroll-behavior: smooth; }
+body 					{ overflow-x: hidden !important; background-color: var(--white) !important;font-family:var(--primary-font-family);max-width: 2650px;margin: auto;}
+.clear 					{ clear:both;}
+img 					{ border: 0px;}
+a 						{ text-decoration: none; outline: none; transition: all ease-in-out 0.35s; }
+input:focus             {outline: 0 !important;}
+textarea                { resize: none;}
+p:empty                 { display: none;}
+a:focus, a:active, a:visited, a:hover, .btn:focus, .btn:active, .btn:visited, .btn:hover{ text-decoration: none; outline: none; box-shadow: none; }
+input:-webkit-autofill, input:-webkit-autofill:focus, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:focus, select:-webkit-autofill:hover, textarea:-webkit-autofill, textarea:-webkit-autofill:focus, textarea:-webkit-autofill:hover { transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s; -webkit-transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s; -moz-transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s; -o-transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s; -ms-transition: background-color 1000s ease-in-out 0s, color 1000s ease-in-out 0s } header.wp-block-template-part .wp-block-navigation, header.wp-block-template-part .wp-block-navigation .wp-block-page-list, header.wp-block-template-part .wp-block-navigation__container, header.wp-block-template-part .wp-block-navigation__responsive-container-content { gap: unset !important; } /* Button */
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0 }
+:focus-visible{outline: none;}
+ul{padding: 0;margin: 0;}
+img{max-width: 100%;height: auto;}
+a{text-decoration-style:solid!important;}
+a:hover{text-decoration-style:solid!important ;}
+
+
+
+
+
+/*********************** wordpress - Comman section CSS -start ***********************/
+.site-branding{ display: none;}
+main{overflow: hidden;}
+.site-content { width: 100%; overflow: hidden; }
+.site-main { overflow: hidden; width: 100vw; }
+.wp-site-blocks{ padding: 0 !important;}
+.wp-block-group.alignfull>.wp-block-kadence-rowlayout>.kt-row-layout-inner>.kt-row-column-wrap { padding: 0; }
+div.wp-block-group.alignfull>.wp-block-kadence-rowlayout, div.wp-block-group.alignfull { margin-top: 0; }
+.site-main{ padding: 0;}
+.has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button), .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button){background-color: transparent;}
+.site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) img{ outline: none;}
+.site a:focus:not(.wp-block-button__link):not(.wp-block-file__button){outline: none; text-decoration: none;}
+.wpcf7-not-valid-tip{position: absolute; left: 0; bottom: 6px; font-size: 12px;}
+textarea + .wpcf7-not-valid-tip { bottom: 22px; }
+#sb_instagram .sbi_photo img{ aspect-ratio: 1 / 1; width: 100%; object-fit: cover; object-position: center;}
+.wp-block-columns .wp-block-column > *{ margin: 0 !important;}
+form br{display: none;}
+.site .button:focus, button:focus, input[type=submit]:focus, input[type=reset]:focus, .wp-block-search .wp-block-search__button:focus, .wp-block-button .wp-block-button__link:focus, .wp-block-file a.wp-block-file__button:focus{ outline: none;}
+.widget-area{display: none;}
+/*********************** wordpress - Comman section CSS -end ***********************/
+
+/*********************** primary button ***********************/
+.primary-button{
+    position: relative;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--global-white);
+    background: var(--base-color-p-main);
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 0;
+
+}
+
+
+.contact-primary-button{margin-left: 4px!important;}
+.contact-primary-button a{
+    position: relative;
+        padding: 14px 24px!important;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        color: var(--global-white)!important;
+        background: var(--base-color-p-main);
+        border: none;
+        letter-spacing: 0;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+}
+.contact-primary-button a:hover{
+    text-decoration: none;
+}
+/*********************** header part ***********************/
+.heder-text-slide {
+    padding: 9px 0;
+    background: var(--secondary-s-20);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.heder-text-slide ul{display: flex;overflow: hidden;animation: animatedImage 5s linear infinite;}
+.heder-text-slide li{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--global-white);
+    line-height: 24px;
+        
+        white-space: nowrap;
+}
+@keyframes animatedImage {
+    0% {
+        left: 2000px;
+    }
+
+    100% {
+        left: -2000px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.site-header .site-logo {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.header-main{width: 100%;max-width: 100%;margin: 0;padding: 12px 0;}
+.header-main .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.site-header .site-logo img{
+    
+}
+.header-navigation{
+    padding: 6px 0;
+}
+
+.header-navigation .primary-navigation>div>.menu-wrapper{
+    gap: 12px;
+    align-items: center;
+}
+.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a {
+    position: relative;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--grey-shade-50);
+    padding: 8px;
+    transition: 0.5s all;
+}
+
+.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a{
+    text-decoration: none;
+}
+
+/*********************** Media-query ***********************/
+@media (min-width: 1400px){.container{max-width: 1224px;}}
