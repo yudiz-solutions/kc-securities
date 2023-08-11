@@ -13,13 +13,11 @@ $wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true 
 $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 ?>
 
-
+<!-- 
 <div class="heder-text-slide">
-	 <ul>
-		<li>No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment.No worries for refund as the money remains in investor's account.</li>
-		<li>Attention Investors, Prevent unauthorized transactions in your Trading/ Demat account --> Update your mobile numbers/email IDs with your stock brokers/ Depository Participant. Receive information/alerts for all transactions directly from Exchange / CDSL on your mobile/email at the end of the day and receive OTP directly from depository on your email id and/or mobile number to create pledge........... Issued in the interest of investors.</li>
-	 </ul>
-</div>
+
+</ul>
+</div> -->
 
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?> header-main">
 	<div class="container">
@@ -28,7 +26,11 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 			
 			<div class="header-navigation">
 				<?php get_template_part( 'template-parts/header/site-nav' ); ?>
+				 <div class="navigation-login">
+					<?php dynamic_sidebar('navigation_login'); ?>
+				 </div>
 			</div>
+
 			
 		</div>
 	</div>
