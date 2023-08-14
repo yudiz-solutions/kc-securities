@@ -30,6 +30,13 @@ function enqueue_scripts()
 	wp_enqueue_script('jquery-slick-js', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
 	//custom js
 	wp_enqueue_script('custom_js', (get_stylesheet_directory_uri() . '/assets/js/custom.js'), array(), null, true);
+
+
+	if(is_front_page( ) ){
+		wp_enqueue_style( 'home_css', get_stylesheet_directory_uri() . '/templates-css/home-page.css', array(), null, false );
+    }
+
+
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts', 9999);
 

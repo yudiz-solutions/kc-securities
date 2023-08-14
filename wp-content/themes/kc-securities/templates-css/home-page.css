@@ -1,0 +1,53 @@
+/*********************** Banner slider css start ***********************/
+
+.banner-section .banner-inner { position: relative; min-height: 700px; background-repeat: no-repeat; background-position: center; background-size: cover; display: flex; align-items: center; z-index: 1; }
+.banner-section .banner-inner::before{ content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: -1; opacity: 0.8; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 76.62%); }
+.banner-section .banner-inner .banner-caption{max-width: 600px;}
+.banner-section .banner-inner .banner-caption .title-style-1{ color: var(--global-white); margin-bottom: 24px; }
+.banner-section .banner-inner .banner-caption p{ font-size: 18px; color: var(--global-white); line-height: 26px; margin-bottom: 34px; }
+.banner-section .slick-dots { width: auto; left: calc(50% - (1224px / 2) + 12px); z-index: 4; bottom: 44px; display: flex; gap: 8px; }
+
+/*********************** Banner slider css end ***********************/
+
+
+/*********************** Products & Services Home Css Start ***********************/
+.product-services-section{position: relative;z-index: 1;background: url(../assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat;}
+.product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
+.product-wrapper>div{ width: calc(100% / 3 - 24px); }
+.product-wrapper .product-box{ position: relative; padding: 34px 24px; border: 1px solid var(--grey-shade-95); background-color: var(--global-white); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.03); border-radius: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.product-wrapper .product-box .product-box-img{ background: var(--secondary-s-97); width: 92px; height: 92px; padding: 24px; border-radius: 8px; margin-bottom: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.product-wrapper .product-box .product-box-img>span{position: relative;overflow: hidden;display: block;width: 44px;height: 44px;transition: 0.5s all; -webkit-transition: 0.5s all;}
+.product-wrapper .product-box .product-box-img>span img{position: absolute;object-fit: cover;transition: 0.5s all; -webkit-transition: 0.5s all;}
+.product-wrapper .product-box .product-box-img>span img:nth-child(2) { transform: translateY(42px); }
+.product-wrapper .product-box .title-style-6{ margin-bottom: 8px; }
+.product-wrapper .product-box p{margin-bottom: 16px;}
+.product-wrapper .product-box:hover{border-color: var(--base-color-s-main);background-color: var(--secondary-s-97);}
+.product-wrapper .product-box:hover .product-box-img{ background: var(--global-white); }
+.product-wrapper .product-box:hover .product-box-img>span img:first-child{ transform: translateY(-55px); }
+.product-wrapper .product-box:hover .product-box-img>span img:nth-child(2) { transform: translateY(0px); }
+
+
+/*********************** Products & Services Home Css End ***********************/
+
+
+/*********************** About KC Securities Css Start ***********************/
+
+.about-wrapper{
+    position: relative;
+    padding: 46px;
+    background: var(--secondary-s-20);
+    border-radius: 44px;
+}
+.about-content-wrapper .title-style-2{
+    color: var(--global-white);
+    margin-bottom: 24px;
+}
+.about-content-wrapper .about-content{margin-bottom: 24px;}
+.about-content-wrapper .about-content p{
+    color: var(--grey-shade-90);
+    margin-bottom: 16px;
+}
+.about-content-wrapper .about-content p:last-child{margin-bottom: 0;}
+
+.about-images img{border-radius: 10px;}
+/*********************** About KC Securities Css End ***********************/

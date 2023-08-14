@@ -22,26 +22,69 @@
         <div class="footer-section m-0">
             <div class="container">
                 <div class="footer-wrapper-first">
-                    <div class="row">
-                        <div class="col-lg-3" style="pa">
-                            <div class="footer-logo">
-								<?php dynamic_sidebar('footer_logo'); ?>
-							</div>
-                            <div class="get-kc-app-icon-part">
-                                <?php dynamic_sidebar('footer_kc-trade_icon'); ?>
+                    <div class="row g-sm-4 g-2">
+                        <div class="col-xl-4 col-lg-3 col-md-6 col-sm-6">
+                            <div class="footer-logo-main-part">
+                                <div class="footer-logo">
+                                    <?php dynamic_sidebar('footer_logo'); ?>
+                                </div>
+                                <div class="get-kc-app-icon-part">
+                                    <?php dynamic_sidebar('footer_kc-trade_icon'); ?>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="footer-quick-link quick-wrapper">
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6">
+                            <div class="footer-quick-link quick-wrapper d-sm-block d-none">
                                 <?php dynamic_sidebar('footer_quick_link'); ?>
                             </div>
+
+                            <div class="footer-accrodion footer-quick-link footer-contact-us d-sm-none d-block">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Quick Links
+                                        </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <?php dynamic_sidebar('footer_quick_link'); ?>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Products & Services
+                                        </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <?php dynamic_sidebar('footer_product_link'); ?>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                           Contact Us
+                                        </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <?php dynamic_sidebar('footer_contact_us'); ?>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-sm-block d-none">
                             <div class="footer-quick-link product-link-wrapper">
                                 <?php dynamic_sidebar('footer_product_link'); ?>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-sm-block d-none">
                             <div class="footer-contact-us">
                                 <?php dynamic_sidebar('footer_contact_us'); ?>
                             </div>
