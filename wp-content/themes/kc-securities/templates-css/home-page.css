@@ -1,53 +1,86 @@
 /*********************** Banner slider css start ***********************/
-
 .banner-section .banner-inner { position: relative; min-height: 700px; background-repeat: no-repeat; background-position: center; background-size: cover; display: flex; align-items: center; z-index: 1; }
 .banner-section .banner-inner::before{ content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; z-index: -1; opacity: 0.8; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 76.62%); }
 .banner-section .banner-inner .banner-caption{max-width: 600px;}
 .banner-section .banner-inner .banner-caption .title-style-1{ color: var(--global-white); margin-bottom: 24px; }
 .banner-section .banner-inner .banner-caption p{ font-size: 18px; color: var(--global-white); line-height: 26px; margin-bottom: 34px; }
 .banner-section .slick-dots { width: auto; left: calc(50% - (1224px / 2) + 12px); z-index: 4; bottom: 44px; display: flex; gap: 8px; }
-
 /*********************** Banner slider css end ***********************/
-
 
 /*********************** Products & Services Home Css Start ***********************/
 .product-services-section{position: relative;z-index: 1;background: url(../assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat;}
 .product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
-.product-wrapper>div{ width: calc(100% / 3 - 24px); }
-.product-wrapper .product-box{ position: relative; padding: 34px 24px; border: 1px solid var(--grey-shade-95); background-color: var(--global-white); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.03); border-radius: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
-.product-wrapper .product-box .product-box-img{ background: var(--secondary-s-97); width: 92px; height: 92px; padding: 24px; border-radius: 8px; margin-bottom: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
-.product-wrapper .product-box .product-box-img>span{position: relative;overflow: hidden;display: block;width: 44px;height: 44px;transition: 0.5s all; -webkit-transition: 0.5s all;}
-.product-wrapper .product-box .product-box-img>span img{position: absolute;object-fit: cover;transition: 0.5s all; -webkit-transition: 0.5s all;}
-.product-wrapper .product-box .product-box-img>span img:nth-child(2) { transform: translateY(42px); }
-.product-wrapper .product-box .title-style-6{ margin-bottom: 8px; }
-.product-wrapper .product-box p{margin-bottom: 16px;}
-.product-wrapper .product-box:hover{border-color: var(--base-color-s-main);background-color: var(--secondary-s-97);}
-.product-wrapper .product-box:hover .product-box-img{ background: var(--global-white); }
-.product-wrapper .product-box:hover .product-box-img>span img:first-child{ transform: translateY(-55px); }
-.product-wrapper .product-box:hover .product-box-img>span img:nth-child(2) { transform: translateY(0px); }
-
-
+.product-wrapper>div{ width: calc(100% / 3 - 16px); }
 /*********************** Products & Services Home Css End ***********************/
 
-
 /*********************** About KC Securities Css Start ***********************/
-
-.about-wrapper{
-    position: relative;
-    padding: 46px;
-    background: var(--secondary-s-20);
-    border-radius: 44px;
-}
-.about-content-wrapper .title-style-2{
-    color: var(--global-white);
-    margin-bottom: 24px;
-}
+.about-wrapper{ position: relative; padding: 46px; border-radius: 44px; background-image: url(../assets/images/about-shape.png); background-repeat: no-repeat; background-position: 100px bottom; background-size: 28%; }
+.about-content-wrapper { padding: 0px 80px 0px 58px; }
+.about-content-wrapper .title-style-2{ color: var(--global-white); margin-bottom: 24px; }
 .about-content-wrapper .about-content{margin-bottom: 24px;}
-.about-content-wrapper .about-content p{
-    color: var(--grey-shade-90);
-    margin-bottom: 16px;
-}
+.about-content-wrapper .about-content p{ color: var(--grey-shade-90); margin-bottom: 16px; }
 .about-content-wrapper .about-content p:last-child{margin-bottom: 0;}
-
-.about-images img{border-radius: 10px;}
+.about-content-wrapper .know-btn{color: var(--global-white);}
+.about-content-wrapper .know-btn:after{filter: brightness(0) invert(1);}
+.about-wrapper .about-images { position: relative; padding-top: 91.5%; }
+.about-wrapper .about-images img { border-radius: 10px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 /*********************** About KC Securities Css End ***********************/
+
+/*********************** Investor Alerts and Compliance Css Start ***********************/
+.investor-alerts-section{background: var(--grey-shade-97);position: relative;z-index: 1;}
+.investor-alerts-section:before{ content: ""; position: absolute; width: 100%; height: 100%; background: url(../assets/images/investor-shape.png); bottom: 0; left: 0; background-repeat: no-repeat; opacity: 0.15; z-index: -1; background-position: left bottom; background-size: 100% 100%; }
+/*********************** Investor Alerts and Compliance Css End ***********************/
+
+/*********************** Filing Complaints on Scores Css Start ***********************/
+.filing-complaints-section .title-main { display: flex; align-items: center; justify-content: space-between; }
+.filing-complaints-section .title-main .title-style-2{color: var(--global-white);}
+.filing-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
+.filing-wrapper>div{width: calc(100% / 4 - 18px);}
+
+.filing-box{position: relative;display: flex;gap: 16px;align-items: center; background: rgba(255, 255, 255, 0.05);border-radius: 8px; padding:15px;min-height: 108px;border: 1px solid transparent;transition: 0.5s all; -webkit-transition: 0.5s all;}
+.filing-box .filing-img{ background: var(--global-white); width: 76px; height: 76px; padding: 16px; border-radius: 8px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
+.filing-box .filing-img>span { position: relative; overflow: hidden; display: block; width: 44px; height: 44px; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.filing-box .filing-img>span img { position: absolute; object-fit: cover; transition: 0.5s all; -webkit-transition: 0.5s all;width: 76px; }
+.filing-box .filing-img>span img:nth-child(2) { transform: translateY(42px); }
+.filing-box p{color: var(--global-white);margin: 0;}
+.filing-box:hover{ border-color:var(--global-white) ; }
+.filing-box:hover .filing-img>span img:first-child { transform: translateY(-55px); }
+.filing-box:hover .filing-img>span img:nth-child(2) { transform: translateY(0px); }
+/*********************** Filing Complaints on Scores Css End ***********************/
+
+/*********************** Trade Online With KC Securities Css Start ***********************/
+.trade-wrapper-box{position: relative;border: 1px solid var(--grey-shade-95);border-radius: 24px;transition: 0.5s all;-webkit-transition: 0.5s all;}
+.trade-wrapper-box:hover{border-color: var(--base-color-s-main);}
+.trade-box-img{padding: 28px 0px;text-align: center;display: flex;align-items: center;justify-content: center; background: url(../assets/images/trade-shape.svg); background-repeat: no-repeat; background-position: left bottom; background-size: 28%; }
+.trade-content{position: relative;padding: 24px;text-align: center;background: var(--secondary-s-97);border-radius: 0 0 24px 24px;}
+.trade-content .title-style-6{margin-bottom: 24px;}
+/*********************** Trade Online With KC Securities Css End ***********************/
+
+/*********************** Common-part Css Start ***********************/
+.common-card{ padding: 80px 0; }
+.common-card-wrapper{display: flex;gap: 24px;}
+.common-card-wrapper>div{ width: calc(100% / 6 - 20px); }
+.common-filter { position: relative; display: flex; gap: 16px; align-items: center; border-radius: 8px; background: rgba(255, 255, 255, 0.05); padding: 15px; min-height: 108px; border: 1px solid transparent; transition: 0.5s all; -webkit-transition: 0.5s all; flex-direction: column; }
+.common-filter .common-filter-img{ background: rgba(255, 255, 255, 0.10); width: 66px; height: 66px; padding: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
+.common-filter .common-filter-img>span { position: relative; overflow: hidden; display: block; width: 34px; height: 34px; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.common-filter .common-filter-img>span img { position: absolute; object-fit: cover; transition: 0.5s all; -webkit-transition: 0.5s all;width: 34px;height: 34px;object-position: center; }
+.common-filter .common-filter-img>span img:first-child{filter: brightness(0) invert(1);}
+.common-filter .common-filter-img>span img:nth-child(2) { transform: translateY(42px); }
+.common-filter p{color: var(--global-white);margin: 0;font-weight: 600;}
+.common-filter:hover{ border-color:var(--global-white) ; }
+.common-filter:hover .common-filter-img {background: var(--global-white);}
+.common-filter:hover .common-filter-img>span img:first-child { transform: translateY(-55px); }
+.common-filter:hover .common-filter-img>span img:nth-child(2) { transform: translateY(0px); }
+/*********************** Common-part Css Start ***********************/
+
+
+/*********************** Backoffice Css Start ***********************/
+.back-office-section { background: url(../assets/images/back-office-shape.svg); background-repeat: no-repeat; background-position: left bottom 25px; background-size: 15%; }
+.back-office-wrapper .title-style-2{margin-bottom: 24px;}
+.back-office-content{margin-bottom: 24px;}
+.back-office-content p{margin-bottom: 16px;}
+.back-office-content p:last-child{margin-bottom: 0;}
+
+.back-office-image{position: relative;padding-top: 75%;border-radius: 24px;margin-left: 24px;}
+.back-office-image img{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 24px; }
+/*********************** Backoffice Css Start ***********************/

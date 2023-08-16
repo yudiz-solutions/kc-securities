@@ -42,8 +42,8 @@ get_header();
         </div>
         <div class="product-wrapper">
             <div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/equities-derivatives.svg" alt="Equities Derivatives">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/equities-derivatives.svg" alt="Equities Derivatives">
@@ -55,8 +55,8 @@ get_header();
                 </div>
             </div>
             <div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/commodities.svg" alt="commodities">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/commodities.svg" alt="commodities">
@@ -68,8 +68,8 @@ get_header();
                 </div>
             </div>
             <div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/depository-services.svg" alt="Depository Services">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/depository-services.svg" alt="Depository Services">
@@ -81,8 +81,8 @@ get_header();
                 </div>
             </div>
             <div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/IPO.svg" alt="IPO">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/IPO.svg" alt="IPO">
@@ -93,8 +93,8 @@ get_header();
                     <a href="#" class="know-btn">Know More</a>
                 </div>
             </div><div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/currency-futures.svg" alt="Currency Futures">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/currency-futures.svg" alt="Currency Futures">
@@ -106,8 +106,8 @@ get_header();
                 </div>
             </div>
             <div>
-                <div class="product-box">
-                    <div class="product-box-img">
+                <div class="common-box">
+                    <div class="common-box-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual-funds.svg" alt="Mutual Funds">
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual-funds.svg" alt="Mutual Funds">
@@ -125,13 +125,10 @@ get_header();
 
 <!--------------------------------- Products & Services End --------------------------------->
 
-
-
-
 <!--------------------------------- About KC Securities Start --------------------------------->
-<section class="about-section custom-padding-bottom ">
+<section class="about-section custom-padding-bottom m-0">
     <div class="container">
-        <div class="about-wrapper">
+        <div class="about-wrapper bg-1">
             <div class="row g-0">
                 <div class="col-lg-7 align-self-center">
                     <div class="about-content-wrapper">
@@ -140,6 +137,7 @@ get_header();
                             <p>Established in 1954, Kantilal Chhaganlal (KC), is a name synonymous with wealth management and is one of the old integrated capital market intermediaries in the financial sector. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals.</p>
                             <p>Backed by the significant cumulative experience of the top management team, we offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
                         </div>
+                        <a href="#" class="know-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -151,12 +149,219 @@ get_header();
         </div>
     </div>
 </section>
-
-
 <!--------------------------------- About KC Securities End --------------------------------->
 
+<!--------------------------------- Investor Alerts and Compliance Start --------------------------------->
+<section class="investor-alerts-section custom-padding m-0">
+    <div class="container">
+        <div class="title-main text-center">
+            <h2 class="title-style-2"> Investor Alerts and Compliance </h2>
+        </div>
+      
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="common-box">
+                    <div class="common-box-img">
+                        <span>
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter.svg" alt="Investor Charter">
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter.svg" alt="Mutual Funds">
+                        </span>
+                    </div>
+                    <h6 class="title-style-6">Investor Charter</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+                    <a href="#" class="know-btn">Know More</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="common-box">
+                    <div class="common-box-img">
+                        <span>
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance.svg" alt="Compliance">
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance.svg" alt="Compliance">
+                        </span>
+                    </div>
+                    <h6 class="title-style-6">Compliance</h6>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+                    <a href="#" class="know-btn">Know More</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</section>
+<!--------------------------------- Investor Alerts and Compliance End --------------------------------->
+
+<!--------------------------------- Filing Complaints on Scores Start --------------------------------->
+<section class="filing-complaints-section custom-padding bg-1 m-0">
+    <div class="container">
+         <div class="title-main">
+            <h2 class="title-style-2">Filing Complaints on Scores</h2>
+            <a href="#" class="primary-button">Register on Scores Portal</a>
+        </div>
+        <div class="filing-wrapper">
+            <div class="filing-box">
+                <div class="filing-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/clock.svg" alt="Clock">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/clock.svg" alt="Clock">
+                    </span>
+                </div>
+                <p>Easy and <br> Quick</p>
+            </div>
+            <div class="filing-box">
+                <div class="filing-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mandatory-details.svg" alt="Mandatory Details">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mandatory-details.svg" alt="Mandatory Details">
+                    </span>
+                </div>
+                <p>Mandatory Details for Filing Complaints on Scores</p>
+            </div>
+             <div class="filing-box">
+                <div class="filing-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/effective-communication.svg" alt="Message">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/effective-communication.svg" alt="Message">
+                    </span>
+                </div>
+                <p>Effective Communication</p>
+            </div>
+            <div class="filing-box">
+                <div class="filing-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/speedy-redressal.svg" alt="Speedy Redressal">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/speedy-redressal.svg" alt="Speedy Redressal">
+                    </span>
+                </div>
+                <p>Speedy Redressal of the Grievances</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------- Filing Complaints on Scores End --------------------------------->
+
+<!--------------------------------- Trade Online With KC Securities Start --------------------------------->
+<section class="trade-section custom-padding m-0">
+    <div class="container">
+        <div class="title-main text-center">
+            <h2 class="title-style-2">Trade Online With KC Securities</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="trade-wrapper-box">
+                    <div class="trade-box-img">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mobile-trade.svg" alt="Trade">
+                    </div>
+                    <div class="trade-content">
+                        <h6 class="title-style-6">KC iTrade</h6>
+                        <a href="#" class="primary-button">Download App</a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-6">
+                <div class="trade-wrapper-box">
+                    <div class="trade-box-img">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mac-trade.svg" alt="Trade">
+                    </div>
+                    <div class="trade-content">
+                        <h6 class="title-style-6">KC Internet Trading</h6>
+                        <a href="#" class="primary-button">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------- Trade Online With KC Securities End --------------------------------->
+
+<!--------------------------------- Common-part Start --------------------------------->
+<section class="common-card bg-1 m-0">
+    <div class="container">
+        <div class="common-card-wrapper">
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
+                    </span>
+                </div>
+                <p>Mutual Fund</p>
+            </div>
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
+                    </span>
+                </div>
+                <p>Research</p>
+            </div>
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
+                    </span>
+                </div>
+                <p>Backoffice</p>
+            </div>
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
+                    </span>
+                </div>
+                <p>Partner With Us</p>
+            </div>
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
+                    </span>
+                </div>
+                <p>Faq’s</p>
+            </div>
+            <div class="common-filter">
+                <div class="common-filter-img">
+                    <span>
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
+                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
+                    </span>
+                </div>
+                <p>Downloads</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------------------------- Common-part End --------------------------------->
 
 
+<!--------------------------------- Backoffice Start --------------------------------->
+<section class="back-office-section custom-padding m-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="back-office-wrapper">
+                    <h2 class="title-style-2">Backoffice</h2>
+                    <div class="back-office-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <a href="#" class="know-btn">Read More</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="back-office-image">
+                     <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/back-office-person.jpg" alt="Back Office Person">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--------------------------------- Backoffice End --------------------------------->
 
 
 

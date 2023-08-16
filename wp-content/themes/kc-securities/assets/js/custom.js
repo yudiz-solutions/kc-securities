@@ -1,5 +1,14 @@
 jQuery(document).ready(function ($) {
 
+    //sticky
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 40) {
+            jQuery('.site-header').addClass('sticky')
+        } else {
+            jQuery('.site-header').removeClass('sticky')
+        }
+    });
+
     //Group Companies
     jQuery('.company-group-main').slick({
         slidesToShow: 2,
@@ -55,6 +64,5 @@ jQuery(document).ready(function ($) {
             }
         ]
     });
-
 
 });
