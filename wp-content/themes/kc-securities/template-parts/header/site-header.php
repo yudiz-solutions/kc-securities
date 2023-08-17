@@ -15,7 +15,8 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 
 
 
-	<div class="heder-text-slide">
+
+<div class="heder-text-slide">
 	<marquee width="100%">
 		<span>No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment.No worries for refund as the money remains in investor's account.</span>
 		<span>Attention Investors, Prevent unauthorized transactions in your Trading/ Demat account --> Update your mobile numbers/email IDs with your stock brokers/ Depository Participant. Receive information/alerts for all transactions directly from Exchange / CDSL on your mobile/email at the end of the day and receive OTP directly from depository on your email id and/or mobile number to create pledge........... Issued in the interest of investors.</span>
@@ -35,8 +36,7 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 					<?php dynamic_sidebar('navigation_login'); ?>
 				 </div>
 			</div>
-
-			
 		</div>
 	</div>
 </header>
+

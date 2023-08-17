@@ -24,7 +24,7 @@ get_header();
         <div class="banner-inner" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/home-banner-2.jpg)">
               <div class="container">
                 <div class="banner-caption">
-                    <h1 class="title-style-1">Open Your Trading Account Today</h1>
+                    <h1 class="title-style-1">Let Us Help You to Plan Your Future</h1>
                     <p>We offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
                     <a href="#" class="primary-button">Open an Account</a>
                 </div>
@@ -159,7 +159,7 @@ get_header();
         </div>
       
         <div class="row g-4">
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="common-box">
                     <div class="common-box-img">
                         <span>
@@ -172,7 +172,7 @@ get_header();
                     <a href="#" class="know-btn">Know More</a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="common-box">
                     <div class="common-box-img">
                         <span>
@@ -236,6 +236,9 @@ get_header();
                 <p>Speedy Redressal of the Grievances</p>
             </div>
         </div>
+        <div class="filing-button d-lg-none mt-4 text-center pt-2">
+            <a href="#" class="primary-button">Register on Scores Portal</a>
+        </div>
     </div>
 </section>
 <!--------------------------------- Filing Complaints on Scores End --------------------------------->
@@ -246,8 +249,8 @@ get_header();
         <div class="title-main text-center">
             <h2 class="title-style-2">Trade Online With KC Securities</h2>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
+        <div class="row g-4">
+            <div class="col-lg-6 col-md-6">
                 <div class="trade-wrapper-box">
                     <div class="trade-box-img">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mobile-trade.svg" alt="Trade">
@@ -258,7 +261,7 @@ get_header();
                     </div>
                 </div>
             </div>
-             <div class="col-lg-6">
+             <div class="col-lg-6 col-md-6">
                 <div class="trade-wrapper-box">
                     <div class="trade-box-img">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mac-trade.svg" alt="Trade">
@@ -278,90 +281,76 @@ get_header();
 <section class="common-card bg-1 m-0">
     <div class="container">
         <div class="common-card-wrapper">
-            <div class="common-filter">
-                <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
-                    </span>
-                </div>
-                <p>Mutual Fund</p>
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
+                        <span>
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
+                        </span>
+                    </div>
+                    <p>Mutual Fund</p>
+                </a>
             </div>
-            <div class="common-filter">
-                <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
-                    </span>
-                </div>
-                <p>Research</p>
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
+                        <span>
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
+                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
+                        </span>
+                    </div>
+                    <p>Research</p>
+                </a>
             </div>
-            <div class="common-filter">
-                <div class="common-filter-img">
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
                     </span>
-                </div>
-                <p>Backoffice</p>
+                    </div>
+                    <p>Backoffice</p>
+                </a>
             </div>
-            <div class="common-filter">
-                <div class="common-filter-img">
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
                     </span>
-                </div>
-                <p>Partner With Us</p>
+                    </div>
+                    <p>Partner With Us</p>
+                </a>
             </div>
-            <div class="common-filter">
-                <div class="common-filter-img">
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
                     </span>
-                </div>
-                <p>Faq’s</p>
+                    </div>
+                    <p>Faq’s</p>
+                </a>
             </div>
-            <div class="common-filter">
-                <div class="common-filter-img">
+            <div>
+                <a href="#" class="common-filter">
+                    <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
                     </span>
-                </div>
-                <p>Downloads</p>
+                    </div>
+                    <p>Downloads</p>
+                </a>
             </div>
         </div>
     </div>
 </section>
 <!--------------------------------- Common-part End --------------------------------->
-
-
-<!--------------------------------- Backoffice Start --------------------------------->
-<section class="back-office-section custom-padding m-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 align-self-center">
-                <div class="back-office-wrapper">
-                    <h2 class="title-style-2">Backoffice</h2>
-                    <div class="back-office-content">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </div>
-                    <a href="#" class="know-btn">Read More</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="back-office-image">
-                     <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/back-office-person.jpg" alt="Back Office Person">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--------------------------------- Backoffice End --------------------------------->
 
 
 

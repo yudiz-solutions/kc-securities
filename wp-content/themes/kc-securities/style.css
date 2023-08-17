@@ -127,22 +127,24 @@ form br{display: none;}
 .primary-button:hover{color: var(--global-white);}
 .primary-button:hover:before{height: 100%;}
 
+.primary-button-outline{ position: relative; display: inline-block; padding: 13px 24px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--global-white); background: transparent; border: 1px solid var(--global-white); border-radius: 8px; letter-spacing: 0; z-index: 1; overflow: hidden; min-width: 200px; text-align: center; }
+.primary-button-outline:hover{border-color: var(--base-color-s-main);background: var(--base-color-s-main);color: var(--global-white);}
 /*********************** Know More button ***********************/
 .know-btn{ position: relative;display: block;width: fit-content; font-size: 16px; font-weight: 700; line-height: 24px;color: var(--base-color-s-main);padding-right: 25px;transition: 0.5s all;-webkit-transition: 0.5s all; }
 .know-btn::after{ content: ""; position: absolute; width: 14px; height: 12px; top: 53%; transform: translateY(-50%); background: url(./assets/images/arrow-right.svg); right: 8px; opacity: 0; transition: 0.5s all; -webkit-transition: 0.5s all; }
 .know-btn:hover{color: var(--base-color-s-main);}
 .know-btn:hover:after{ right: 0; opacity: 1; }
-
 /*********************** header main part ***********************/
+
 /* Header marque part start*/
-.heder-text-slide { padding: 9px 0; background: var(--secondary-s-20); min-height: 40px; display: flex; align-items: center; overflow: hidden; }
+.heder-text-slide { padding: 9px 0; background: var(--secondary-s-20); max-height: 40px; display: flex; align-items: center; overflow: hidden;transition-duration: 0.3s; }
 .heder-text-slide marquee{color: var(--global-white);font-size: 14px;font-weight: 400;}
 .heder-text-slide marquee span{position: relative;padding-left: 20px;}
 .heder-text-slide marquee span:before { content: "\f005"; font-family: 'FontAwesome'; position: absolute; top: -1px; left: 0; font-size: 14px; }
 /* Header marque part End*/
 
 /* Header Navigation Part start*/
-.header-main{width: 100%;max-width: 100%;margin: 0;padding: 12px 0;background: var(--global-white);z-index: 111;}
+.header-main{width: 100%;max-width: 100%;margin: 0;padding: 12px 0;background: var(--global-white);z-index: 111;transition: 0.5s all;}
 .header-main .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
 .site-header .site-logo { margin: 0; padding: 0; border: 0; }
 
@@ -170,13 +172,7 @@ form br{display: none;}
 
 .main-navigation-contact{display: none!important;}
 
-.sticky{
-    position: fixed;
-    top: 0;
-    box-shadow: 1px 1px 25px rgb(0 0 0 / 10%);
- 
-
-}
+.sticky{ position: fixed; top: 0; box-shadow: 1px 1px 25px rgb(0 0 0 / 10%); }
 /* Header Navigation Part End*/
 
 /*********************** Footer section ***********************/
@@ -259,7 +255,7 @@ form br{display: none;}
 .slick-dots li.slick-active button{ border-color: var(--secondary-s-70); opacity: 1; }
 
 /*********************** Common Box css ***********************/
-.common-box{ position: relative; padding: 34px 24px; border: 1px solid var(--grey-shade-95); background-color: var(--global-white); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.03); border-radius: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.common-box{ position: relative; padding: 34px 24px; border: 1px solid var(--grey-shade-95); background-color: var(--global-white); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.03); border-radius: 16px; transition: 0.5s all; -webkit-transition: 0.5s all;height: 100%; }
 .common-box .common-box-img{ background: var(--secondary-s-97); width: 92px; height: 92px; padding: 24px; border-radius: 8px; margin-bottom: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; }
 .common-box .common-box-img>span{position: relative;overflow: hidden;display: block;width: 44px;height: 44px;transition: 0.5s all; -webkit-transition: 0.5s all;}
 .common-box .common-box-img>span img{position: absolute;object-fit: cover;transition: 0.5s all; -webkit-transition: 0.5s all;}
@@ -286,8 +282,11 @@ form br{display: none;}
     .header-navigation .navigation-login ul { display: flex; gap: 10px; }
     .contact-primary-button a{ width: 130px;padding: 14px 20px!important; }
     .login-outline-btn a{width: 130px;padding: 12px 20px !important;}
+
     /*********************** Footer section ***********************/
     .footer-wrapper-first .footer-logo-main-part{padding-right: 50px;}
+
+   
 }
 
 @media (min-width: 1200px) {
@@ -303,26 +302,29 @@ form br{display: none;}
 
 
 
-@media (min-width: 991px) and (max-width: 1199px){
+@media (min-width: 992px) and (max-width: 1199px){
     .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 88px) !important; }
+    
+    /*********************** Common Box css ***********************/
+    .common-box { padding: 34px 20px; }
 }
-
+@media (min-width: 576px) and (max-width: 1199px){
+    .primary-navigation>.primary-menu-container { width: 320px; left: auto; right: 0;box-shadow: -23px 42px 58px rgb(0 0 0 / 15%); }
+        
+}
 @media (max-width: 1199px) {
     /*********************** Navigation Menu Toogle ***********************/
     .site-header.has-logo.has-title-and-tagline.has-menu { justify-content: space-between; }
     .menu-button-container { display: block; position: relative; padding: 0;margin: 0!important; }
     .primary-navigation-open .primary-navigation { width: 100%; position: relative; z-index: 2; }
-    .primary-navigation>.primary-menu-container { background-color: var(--white); transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 128px); top: auto; background: var(--global-white);  }
+    .primary-navigation>.primary-menu-container { background-color: var(--white);z-index: 111; transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 128px); top: auto; background: var(--global-white);  }
     .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { position: fixed; transform: translateY(0) translateX(100%); }
     .primary-navigation-open .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { transform: translateX(0) translateY(0); }
     .primary-navigation .primary-menu-container>ul>.menu-item { display: block; position: relative; width: 100%; }
-
+    .lock-scrolling .site { position: relative; max-width: 100%; width: 100%; }
     .primary-navigation-open .menu-button-container { background-color: transparent; }
     .menu-button-container #primary-mobile-menu{padding: 0!important;margin-right: 0!important;}
     .header-navigation .primary-navigation>div>.menu-wrapper { display: block; width: 100%; overflow-y: auto; max-height: 100%; }
-
-
-
 
     #primary-mobile-menu .dropdown-icon.open { background: url(./assets/images/menu-open.svg) no-repeat center / cover; }
     #primary-mobile-menu .dropdown-icon.close { background: url(./assets/images/close-icon.svg) no-repeat center / cover; background-size: auto; }
@@ -330,7 +332,6 @@ form br{display: none;}
     /**** Header Navigation ***/
     .header-main .header-navigation { padding: 6px 0; display: flex; align-items: center; gap: 16px; flex-direction: row-reverse; }
     .header-navigation .primary-navigation>div>.menu-wrapper { gap: 12px; align-content: flex-start; }
-
 
     /*********************** Footer section ***********************/
     .footer-wrapper-first .footer-logo-main-part{padding-right: 0px;}
@@ -343,9 +344,24 @@ form br{display: none;}
 
 }
     
+@media (min-width: 768px) and (max-width: 991px) {
+    /*********************** Heading Typography start ***********************/
+    .title-style-1{font-size: 42px; line-height: 50px;}
+    .title-style-2{font-size: 34px; line-height: 42px;}
+    .title-style-3{font-size: 30px; line-height: 38px;}
+    .title-style-4{font-size: 28px; line-height: 36px;}
+    .title-style-5{font-size: 24px; line-height: 32px;}
+    .title-style-6{font-size: 20px; line-height: 28px;}
+
+    .title-main{margin-bottom: 28px;}
+    /*********************** Heading Typography start ***********************/
+}
 
 
 @media (max-width: 991px) {
+    .custom-padding { padding: 50px 0 50px 0; }
+    .custom-padding-bottom { padding-bottom: 50px; }
+
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { height: calc(100dvh - 118px); }
     .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 78px); }
@@ -367,20 +383,47 @@ form br{display: none;}
     .footer-external-website-link ul { gap: 15px; }
 
 }
-@media (min-width: 576px) and (max-width: 1199px){
-    .primary-navigation>.primary-menu-container { width: 320px; left: auto; right: 0;box-shadow: -23px 42px 58px rgb(0 0 0 / 15%); }
-    .lock-scrolling .site { position: relative; max-width: 100%; width: 100%; }
-        
+
+@media (min-width: 576px) and (max-width: 767px) {
+    /*********************** Heading Typography start ***********************/
+    .title-style-1{font-size: 42px; line-height: 50px;}
+    .title-style-2{font-size: 34px; line-height: 42px;}
+    .title-style-3{font-size: 30px; line-height: 38px;}
+    .title-style-4{font-size: 28px; line-height: 36px;}
+    .title-style-5{font-size: 24px; line-height: 32px;}
+    .title-style-6{font-size: 20px; line-height: 28px;}
+
+    .title-main{margin-bottom: 28px;}
+    /*********************** Heading Typography start ***********************/
+}
+@media (max-width: 767px){
+    .company-group-wrapper .company-group-main .company-part{margin: 10px;}
 }
 
-
 @media (max-width: 575px){
+    .custom-padding { padding: 35px 0 35px 0; }
+    .custom-padding-bottom { padding-bottom: 35px; }
+    /*********************** Heading Typography start ***********************/
+    .title-style-1{font-size: 34px; line-height: 42px;}
+    .title-style-2{font-size: 28px; line-height: 36px;}
+    .title-style-3{font-size: 24px; line-height: 32px;}
+    .title-style-4{font-size: 22px; line-height: 30px;}
+    .title-style-5{font-size: 20px; line-height: 28px;}
+    .title-style-6{font-size: 18px; line-height: 26px;}
+    
+     .title-main{margin-bottom: 20px;}
+    /*********************** Heading Typography start ***********************/
+
+    /*********************** primary button ***********************/
+    .primary-button { padding: 10px 20px; font-size: 14px; line-height: 22px;min-width: 180px; }
+
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { display: flex; display: -webkit-flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
     .header-navigation .primary-navigation>div>.menu-wrapper { display: block; width: 100%; text-align: center; overflow-y: auto; max-height: 100%; }
-    .primary-navigation>.primary-menu-container { height: calc(100dvh - 104px);padding: 20px 20px 65px 20px; }
+    .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px);padding: 20px 20px 65px 20px; }
     .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px); }
     
+    .primary-navigation-open .heder-text-slide{padding: 0;max-height: 0;}
     /**** Header Navigation ***/
     .site-header .site-logo img { max-width: 120px; object-fit: cover; }
     .login-outline-btn a{width: 100px;padding: 8px 10px !important;font-size: 13px;line-height: 21px;}
@@ -394,7 +437,7 @@ form br{display: none;}
     .footer-wrapper-first .footer-logo { margin-bottom: 15px; }
 
     .footer-wrapper-first .footer-quick-link .widget-title,.footer-wrapper-first .footer-contact-wrapper .wp-block-heading{display: none;}
-
+    .footer-wrapper-first { margin-bottom: 15px; }
     .footer-accrodion  .accordion-item { color: var(--bs-accordion-color); background-color: transparent!important; border: none !important; margin-bottom: 0; border-bottom: 1px solid #ddd!important; border-radius: 0; padding: 10px 0; }
     .footer-accrodion .accordion-item:last-child{ margin-bottom: 0!important;border-bottom: none!important; }
     .footer-accrodion .accordion-button { padding: 0 !important; font-size: 18px; font-weight: 600; line-height: 26px; color: var(--base-color-s-main)!important; box-shadow: none!important; background-color: transparent!important; border-radius: 0!important; }

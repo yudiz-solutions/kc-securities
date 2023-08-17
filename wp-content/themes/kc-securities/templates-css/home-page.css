@@ -4,11 +4,11 @@
 .banner-section .banner-inner .banner-caption{max-width: 600px;}
 .banner-section .banner-inner .banner-caption .title-style-1{ color: var(--global-white); margin-bottom: 24px; }
 .banner-section .banner-inner .banner-caption p{ font-size: 18px; color: var(--global-white); line-height: 26px; margin-bottom: 34px; }
-.banner-section .slick-dots { width: auto; left: calc(50% - (1224px / 2) + 12px); z-index: 4; bottom: 44px; display: flex; gap: 8px; }
+.banner-section .slick-dots { width: auto; left: calc(50% - (1224px / 2) + 12px); z-index: 1; bottom: 44px; display: flex; gap: 8px; }
 /*********************** Banner slider css end ***********************/
 
 /*********************** Products & Services Home Css Start ***********************/
-.product-services-section{position: relative;z-index: 1;background: url(../assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat;}
+.product-services-section{position: relative;z-index: 1;background: url(../assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat;background-size: 33%;}
 .product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
 .product-wrapper>div{ width: calc(100% / 3 - 16px); }
 /*********************** Products & Services Home Css End ***********************/
@@ -23,7 +23,7 @@
 .about-content-wrapper .know-btn{color: var(--global-white);}
 .about-content-wrapper .know-btn:after{filter: brightness(0) invert(1);}
 .about-wrapper .about-images { position: relative; padding-top: 91.5%; }
-.about-wrapper .about-images img { border-radius: 10px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.about-wrapper .about-images img { border-radius: 24px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
 /*********************** About KC Securities Css End ***********************/
 
 /*********************** Investor Alerts and Compliance Css Start ***********************/
@@ -51,14 +51,14 @@
 /*********************** Trade Online With KC Securities Css Start ***********************/
 .trade-wrapper-box{position: relative;border: 1px solid var(--grey-shade-95);border-radius: 24px;transition: 0.5s all;-webkit-transition: 0.5s all;}
 .trade-wrapper-box:hover{border-color: var(--base-color-s-main);}
-.trade-box-img{padding: 28px 0px;text-align: center;display: flex;align-items: center;justify-content: center; background: url(../assets/images/trade-shape.svg); background-repeat: no-repeat; background-position: left bottom; background-size: 28%; }
+.trade-box-img{padding: 28px 20px;text-align: center;display: flex;align-items: center;justify-content: center; background: url(../assets/images/trade-shape.svg); background-repeat: no-repeat; background-position: left bottom; background-size: 28%; }
 .trade-content{position: relative;padding: 24px;text-align: center;background: var(--secondary-s-97);border-radius: 0 0 24px 24px;}
 .trade-content .title-style-6{margin-bottom: 24px;}
 /*********************** Trade Online With KC Securities Css End ***********************/
 
 /*********************** Common-part Css Start ***********************/
 .common-card{ padding: 80px 0; }
-.common-card-wrapper{display: flex;gap: 24px;}
+.common-card-wrapper{display: flex;gap: 24px;flex-wrap: wrap;}
 .common-card-wrapper>div{ width: calc(100% / 6 - 20px); }
 .common-filter { position: relative; display: flex; gap: 16px; align-items: center; border-radius: 8px; background: rgba(255, 255, 255, 0.05); padding: 15px; min-height: 108px; border: 1px solid transparent; transition: 0.5s all; -webkit-transition: 0.5s all; flex-direction: column; }
 .common-filter .common-filter-img{ background: rgba(255, 255, 255, 0.10); width: 66px; height: 66px; padding: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
@@ -71,16 +71,118 @@
 .common-filter:hover .common-filter-img {background: var(--global-white);}
 .common-filter:hover .common-filter-img>span img:first-child { transform: translateY(-55px); }
 .common-filter:hover .common-filter-img>span img:nth-child(2) { transform: translateY(0px); }
-/*********************** Common-part Css Start ***********************/
+/*********************** Common-part Css End ***********************/
 
 
-/*********************** Backoffice Css Start ***********************/
-.back-office-section { background: url(../assets/images/back-office-shape.svg); background-repeat: no-repeat; background-position: left bottom 25px; background-size: 15%; }
-.back-office-wrapper .title-style-2{margin-bottom: 24px;}
-.back-office-content{margin-bottom: 24px;}
-.back-office-content p{margin-bottom: 16px;}
-.back-office-content p:last-child{margin-bottom: 0;}
+/*********************** Media-query ***********************/
+@media (min-width: 1200px) and (max-width: 1399px) {
+    /*********************** Banner slider css ***********************/
+    .banner-section .slick-dots { left: calc(50% - (1140px / 2) + 12px); }
 
-.back-office-image{position: relative;padding-top: 75%;border-radius: 24px;margin-left: 24px;}
-.back-office-image img{position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 24px; }
-/*********************** Backoffice Css Start ***********************/
+     /*********************** Common Box css ***********************/
+    .filing-wrapper .filing-box { gap: 12px; padding: 12px; }
+    .filing-box p {font-size: 15px;line-height: 23px; }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner { min-height: 550px; }
+    .banner-section .slick-dots { left: calc(50% - (960px / 2) + 12px); }
+
+    /*********************** Common Box css ***********************/
+    .common-box p { font-size: 15px;line-height: 23px; }
+
+    /*********************** About KC Securities ***********************/
+    .about-content-wrapper { padding: 0px 30px 0px 0px; }
+    .about-wrapper .about-images {padding-top: 100%;height: 100%; }
+
+    /*********************** Filing Complaints on Scores ***********************/
+    .filing-box { align-items: center; border-radius: 8px; padding: 15px; min-height: 108px; flex-direction: column; justify-content: center; }
+    .filing-box p { text-align: center; }
+    .filing-box .filing-img { margin: 0 auto; }
+
+    /*********************** Common-part  ***********************/
+    .common-card-wrapper>div { width: calc(100% / 6 - 17px); }
+    .common-card-wrapper { display: flex; gap: 20px; }
+    .common-filter{padding: 13px;}
+    .common-filter p{ font-size: 14px; line-height: 22px; }
+
+    /*********************** Trade Online With KC Securities Css Start ***********************/
+    .trade-box-img { min-height: 380px; }
+       
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+     /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner { min-height: 500px; }
+    .banner-section .banner-inner .banner-caption { max-width: 75%; }
+    .banner-section .slick-dots { left: calc(50% - (720px / 2) + 12px); }
+
+    /*********************** Trade Online With KC Securities Css Start ***********************/
+    .trade-box-img { min-height: 380px; }
+}
+
+@media (max-width: 991px) {
+    /*********************** Products & Services Home ***********************/
+    .product-wrapper>div { width: 100%; }
+    .product-wrapper .slick-slide{margin: 0 8px;height: 100%;}
+
+     /*********************** About KC Securities ***********************/
+    .about-wrapper { padding: 30px; }
+    .about-content-wrapper { padding: 0px 0px 30px 0px; }
+    .about-wrapper .about-images {padding-top: 400px;height: auto; }
+
+    /*********************** Filing Complaints on Scores ***********************/
+    .filing-complaints-section .title-main .primary-button{display: none;}
+    .filing-wrapper>div { width: calc(100% / 2 - 12px); }
+
+    /*********************** Common-part  ***********************/
+    .common-card { padding: 40px 0; }
+    .common-card-wrapper>div { width: calc(100% / 3 - 16px); }
+}
+
+
+@media (min-width: 576px) and (max-width: 768px) {
+     /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner { min-height: 500px; }
+     .banner-section .slick-dots { left: calc(50% - (540px / 2) + 12px); }
+}
+@media (max-width: 767px) {
+    /*********************** Filing Complaints on Scores ***********************/
+    .filing-wrapper>div { width: 100%; }
+}
+
+
+
+@media (max-width: 575px) {
+     /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner { min-height: 400px; }
+    .banner-section .slick-dots {left: calc(50% - (100% / 2) + 12px); }
+    .banner-section .banner-inner .banner-caption .title-style-1 { margin-bottom: 10px; }
+    .banner-section .banner-inner .banner-caption p { font-size: 16px; line-height: 24px; margin-bottom: 15px; }
+
+     /*********************** About KC Securities ***********************/
+    .about-content-wrapper .title-style-2 { margin-bottom: 12px; }
+    .about-wrapper { padding: 22px;border-radius: 20px; }
+    .about-wrapper .about-images img { border-radius: 14px; }
+    .about-wrapper .about-images { padding-top: 300px; }
+    /*********************** Common-part  ***********************/
+    .common-card-wrapper>div { width: calc(100% / 2 - 12px); }
+}
+
+
+@media (max-width: 480px){
+    /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner .banner-caption .title-style-1 {
+        font-size: 32px;
+        line-height: 40px;        
+    }
+}
+
+@media (max-width: 360px){
+    .common-card-wrapper { gap: 15px; }
+    .common-card-wrapper>div { width: calc(100% / 2 - 8px); }
+    .common-filter p{ font-size: 14px; }
+}
