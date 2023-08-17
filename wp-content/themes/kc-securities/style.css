@@ -317,7 +317,7 @@ form br{display: none;}
     .site-header.has-logo.has-title-and-tagline.has-menu { justify-content: space-between; }
     .menu-button-container { display: block; position: relative; padding: 0;margin: 0!important; }
     .primary-navigation-open .primary-navigation { width: 100%; position: relative; z-index: 2; }
-    .primary-navigation>.primary-menu-container { background-color: var(--white);z-index: 111; transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 128px); top: auto; background: var(--global-white);  }
+    .primary-navigation>.primary-menu-container { background-color: var(--white);z-index: 111; transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 127px); top: auto; background: var(--global-white);  }
     .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { position: fixed; transform: translateY(0) translateX(100%); }
     .primary-navigation-open .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { transform: translateX(0) translateY(0); }
     .primary-navigation .primary-menu-container>ul>.menu-item { display: block; position: relative; width: 100%; }
