@@ -35,7 +35,7 @@ get_header();
 <!--------------------------------- Banner Main End --------------------------------->
 
 <!--------------------------------- Products & Services Start --------------------------------->
-<section class="product-services-section custom-padding m-0">
+<section class="product-services-section custom-padding common-star-shape m-0">
     <div class="container">
         <div class="title-main text-center">
             <h2 class="title-style-2">Products & Services</h2>

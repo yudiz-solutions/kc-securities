@@ -1,0 +1,34 @@
+
+/*********************** About Sub page css Start ***********************/
+.about-sub-left .title-style-2{margin-bottom: 24px;}
+.about-sub-left p{margin-bottom: 16px;}
+.about-sub-left p:last-child{margin-bottom: 0;}
+.about-subpage .about-sub-images{position: relative;padding-top: 86.7%;margin-left: 24px;}
+.about-subpage .about-sub-images img{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 24px; }
+/*********************** About Sub page css End ***********************/
+
+/*********************** Our Vision & Our Mission css Start ***********************/
+.vision-mission-section{position: relative;background-color:var(--grey-shade-97);}
+.vision-wrapper .tabs{ justify-content: center; margin-bottom: 44px; }
+.mission-box{ position: relative; padding: 34px 24px; border: 1px solid var(--grey-shade-95); border-radius: 16px; background: var(--global-white); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.03); height: 100%; transition: 0.5s all; -webkit-transition: 0.5s all; }
+.mission-box:hover{ border-color:var(--base-color-s-main); box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05); }
+.mission-box .mission-box-img{ width: 92px; height: 92px; background: var(--secondary-s-97); margin-bottom: 16px; border-radius: 8px; padding: 24px; }
+.mission-box .mission-box-img span{ display: block; width: 44px; height: 44px; }
+.mission-box .mission-box-img span img{width: 100%;height: 100%;object-fit: cover;object-position: center;}
+.mission-box .title-style-6{ margin-bottom: 8px; }
+.mission-box p{margin-bottom: 16px;}
+.mission-box p:last-child{margin-bottom: 0;}
+/*********************** Our Vision & Our Mission css Start ***********************/
+
+
+@media (max-width: 991px){
+    .about-sub-left .title-style-2 { margin-bottom: 20px; }
+    .about-subpage .about-sub-images { padding-top: 450px; margin-left: 0px; }
+}
+@media (max-width: 767px){
+.vision-wrapper .nav-pills{display: none;}
+}
+
+@media (max-width: 575px){
+    .about-subpage .about-sub-images { padding-top: 350px; }
+}

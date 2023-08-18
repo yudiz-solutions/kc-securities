@@ -8,7 +8,7 @@
 /*********************** Banner slider css end ***********************/
 
 /*********************** Products & Services Home Css Start ***********************/
-.product-services-section{position: relative;z-index: 1;background: url(../assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat;background-size: 33%;}
+.product-services-section{position: relative;z-index: 1;}
 .product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
 .product-wrapper>div{ width: calc(100% / 3 - 16px); }
 /*********************** Products & Services Home Css End ***********************/

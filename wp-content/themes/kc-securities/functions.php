@@ -38,6 +38,12 @@ function enqueue_scripts()
 	if(is_front_page( ) ){
 		wp_enqueue_style( 'home_css', get_stylesheet_directory_uri() . '/templates-css/home-page.css', array(), null, false );
     }
+	 else if(is_page_template('template/about-template.php')){
+		wp_enqueue_style( 'about_us_css', get_stylesheet_directory_uri() . '/templates-css/about-us.css', array(), null, false );
+	}
+	 else if(is_page_template('template/contact-us-template.php')){
+		wp_enqueue_style( 'contact_us_css', get_stylesheet_directory_uri() . '/templates-css/contact-us.css', array(), null, false );
+	}
 
 
 }
@@ -54,8 +60,8 @@ function customWidgetAreas()
 			'name'          => esc_html__('Navigation Login', 'KC Securites'),
 			'id'            => 'navigation_login',
 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
+			'before_widget' => '<nav id="%1$s" class="widget %2$s login-navigation-bar">',
+			'after_widget'  => '</nav>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
