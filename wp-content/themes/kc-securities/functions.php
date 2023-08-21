@@ -44,6 +44,18 @@ function enqueue_scripts()
 	 else if(is_page_template('template/contact-us-template.php')){
 		wp_enqueue_style( 'contact_us_css', get_stylesheet_directory_uri() . '/templates-css/contact-us.css', array(), null, false );
 	}
+	else if(is_page_template('template/policy-common-template.php')){
+		wp_enqueue_style( 'policy_css', get_stylesheet_directory_uri() . '/templates-css/policy-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/disclaimer-page-template.php')){
+		wp_enqueue_style( 'policy_css', get_stylesheet_directory_uri() . '/templates-css/policy-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/terms-conditions.php')){
+		wp_enqueue_style( 'policy_css', get_stylesheet_directory_uri() . '/templates-css/policy-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/faq-template.php')){
+		wp_enqueue_style( 'faq_css', get_stylesheet_directory_uri() . '/templates-css/faq-page.css', array(), null, false );
+	}
 
 
 }

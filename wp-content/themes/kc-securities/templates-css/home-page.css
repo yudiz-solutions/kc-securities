@@ -150,18 +150,25 @@
      .banner-section .slick-dots { left: calc(50% - (540px / 2) + 12px); }
 }
 @media (max-width: 767px) {
+    /*********************** Banner slider css ***********************/
+    .banner-section .banner-inner .banner-caption { max-width: 370px; }
+    .banner-section .banner-inner { min-height: 400px; }
+    .banner-section .banner-inner .banner-caption .title-style-1 { margin-bottom: 10px; }
+    .banner-section .banner-inner .banner-caption p { font-size: 16px; line-height: 24px; margin-bottom: 15px; }
     /*********************** Filing Complaints on Scores ***********************/
     .filing-wrapper>div { width: 100%; }
+
+    /*********************** Trade Online With KC Securities***********************/
+    .trade-content { padding: 15px; }
+    .trade-content .title-style-6 { margin-bottom: 15px; }
 }
 
 
 
 @media (max-width: 575px) {
      /*********************** Banner slider css ***********************/
-    .banner-section .banner-inner { min-height: 400px; }
+  
     .banner-section .slick-dots {left: calc(50% - (100% / 2) + 12px); }
-    .banner-section .banner-inner .banner-caption .title-style-1 { margin-bottom: 10px; }
-    .banner-section .banner-inner .banner-caption p { font-size: 16px; line-height: 24px; margin-bottom: 15px; }
 
      /*********************** About KC Securities ***********************/
     .about-content-wrapper .title-style-2 { margin-bottom: 12px; }
@@ -175,10 +182,10 @@
 
 @media (max-width: 480px){
     /*********************** Banner slider css ***********************/
-    .banner-section .banner-inner .banner-caption .title-style-1 {
+    /* .banner-section .banner-inner .banner-caption .title-style-1 {
         font-size: 32px;
         line-height: 40px;        
-    }
+    } */
 }
 
 @media (max-width: 360px){

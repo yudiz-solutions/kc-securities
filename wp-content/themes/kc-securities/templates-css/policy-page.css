@@ -1,0 +1,16 @@
+.privacy-banner::before{opacity: 20%;}
+.privacy-inner h1,.privacy-inner h2,.privacy-inner h3,.privacy-inner h4,.privacy-inner h5,.privacy-inner h6{ font-size: 16px; font-weight: 700; line-height: 24px; margin: 0 0 8px 0; color: var(--base-color-s-main); }
+.privacy-inner p{ margin-bottom: 16px; }
+.privacy-inner p:last-child{margin-bottom: 0;}
+.privacy-inner ul,.privacy-inner ol { padding-left: 18px; margin-bottom: 16px; }
+.privacy-inner ul:last-child, .privacy-inner ol:last-child{ margin-bottom: 0; }
+.privacy-inner ul li,.privacy-inner ol li{ font-size: 16px; line-height: 24px; color: var(--grey-shade-40); margin-bottom: 12px; }
+.privacy-inner ul li a,.privacy-inner ol li a,.privacy-inner p a{color: var(--grey-shade-40);}
+.privacy-inner ul li a:hover,.privacy-inner ol li a:hover,.privacy-inner p a:hover{text-decoration: underline;color: var(--base-color-s-main);}
+
+.privacy-inner ul li:last-child,.privacy-inner ol li:last-child{margin-bottom: 0;}
+
+@media (max-width: 767px){
+    .privacy-inner ul li,
+        .privacy-inner ol li {font-size: 14px;line-height: 22px;}
+}   

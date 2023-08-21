@@ -22,11 +22,13 @@
 
 
 @media (max-width: 991px){
-    .about-sub-left .title-style-2 { margin-bottom: 20px; }
+    .about-sub-left .title-style-2 { margin-bottom: 15px; }
     .about-subpage .about-sub-images { padding-top: 450px; margin-left: 0px; }
 }
 @media (max-width: 767px){
 .vision-wrapper .nav-pills{display: none;}
+.about-sub-left p { margin-bottom: 12px; }
+.mission-box { padding: 24px 20px; }
 }
 
 @media (max-width: 575px){

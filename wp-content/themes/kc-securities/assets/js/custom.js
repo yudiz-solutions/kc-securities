@@ -69,7 +69,7 @@ jQuery(document).ready(function ($) {
     jQuery('.product-wrapper').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         arrows: false,
         responsive: [

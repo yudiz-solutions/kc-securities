@@ -25,18 +25,6 @@
 /*********************** contact us Form ***********************/
 .contact-form-section{padding-bottom: 90px;background-image: url(../assets/images/contact-shape.svg);background-repeat: no-repeat;background-position: left bottom;}
 
-.contact-form-wrapper .form-control,.contact-form-wrapper .form-select{ position: relative; padding: 14px 16px; background: var(--global-white); border-radius: 4px; border: none; border-bottom: 1px solid var(--grey-shade-80); font-size: 16px; font-weight: 500; color: var(--grey-shade-60); margin: 0; line-height: 24px; }
-.contact-form-wrapper .form-control::placeholder{ color: var(--grey-shade-60); }
-.contact-form-wrapper .form-control:focus,.contact-form-wrapper .form-select:focus{ box-shadow: none; outline: none; }
-.contact-form-wrapper .field-container textarea{max-height: 100px;overflow-y: auto;}
-.contact-form-wrapper .wpcf7-not-valid-tip{ position: relative; }
-
-.contact-form-wrapper .field-container.focused .form-control,.contact-form-wrapper .field-container.focused .form-select{ border: 1px solid var(--base-color-s-main); color: var(--base-color-s-main); padding: 13px 16px; }
-.contact-form-wrapper .field-container.focused .form-control::placeholder{ color: var(--base-color-s-main); }
-.submit-btn{ position: relative!important; padding: 14px 20px!important; border: none!important; min-width: 200px!important; font-size: 16px!important; font-weight: 700!important; line-height: 24px!important; color: var(--global-white)!important; background: var(--base-color-p-main)!important; border-radius: 4px!important; overflow: hidden; z-index: 1; transition: 0.5s all; -webkit-transition: 0.5s all; font-family: var(--primary-font-family)!important; margin-top: 15px; }
-.submit-btn:hover{background: var(--base-color-s-main)!important;}
-.contact-form-wrapper .wpcf7-spinner { position: absolute; top: 50%; transform: translateY(-50%); }
-
 
 /*********************** contact address ***********************/
 .contact-different-address{background: url(../assets/images/conatct-pattern.png);background-repeat: no-repeat;background-position: right top;}
@@ -76,6 +64,8 @@
 
     /*********************** contact us Form ***********************/
     .contact-form-section{background-size: 30%;padding-bottom: 50px;}
+    
+    .contact-left-image { margin-right: 0px; }
 }
 
 @media (max-width: 575px){

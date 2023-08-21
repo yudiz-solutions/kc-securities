@@ -76,7 +76,6 @@ img{max-width: 100%;height: auto;}
 a{text-decoration-style:solid!important;}
 a:hover{text-decoration-style:solid!important ;}
 
-
 .custom-padding{padding: 100px 0 100px 0;}
 .custom-padding-bottom{ padding-bottom: 100px; }
 .bg-1{background: var(--secondary-s-20);}
@@ -143,7 +142,6 @@ form br{display: none;}
 .know-btn:hover{color: var(--base-color-s-main);}
 .know-btn:hover:after{ right: 0; opacity: 1; }
 /*********************** header main part ***********************/
-
 /* Header marque part start*/
 .heder-text-slide { padding: 9px 0; background: var(--secondary-s-20); max-height: 40px; display: flex; align-items: center; overflow: hidden;transition-duration: 0.3s; }
 .heder-text-slide marquee{color: var(--global-white);font-size: 14px;font-weight: 400;}
@@ -163,7 +161,6 @@ form br{display: none;}
 .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a:hover:before{ width: 18px; }
 .header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a,.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a:hover{ text-decoration: none!important;color: var(--base-color-s-main); }
 .header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a::before{width: 18px;}
-
 
 .header-navigation .navigation-login ul{ display: flex; gap: 16px; }
 
@@ -305,10 +302,33 @@ form br{display: none;}
 .custom-tabing .tab_content { display: none; }
 .custom-tabing .tab_drawer_heading { display: none; }
 
+/*********************** contact input css common ***********************/
+.contact-form-wrapper .form-control,.contact-form-wrapper .form-select{ position: relative; padding: 14px 16px; background: var(--global-white); border-radius: 4px; border: none; border-bottom: 1px solid var(--grey-shade-80); font-size: 16px; font-weight: 500; color: var(--grey-shade-60); margin: 0; line-height: 24px; }
+.contact-form-wrapper .form-control::placeholder{ color: var(--grey-shade-60); }
+.contact-form-wrapper .form-control:focus,.contact-form-wrapper .form-select:focus{ box-shadow: none; outline: none; }
+.contact-form-wrapper .field-container textarea{max-height: 100px;overflow-y: auto;}
+.contact-form-wrapper .wpcf7-not-valid-tip{ position: relative; }
+
+.contact-form-wrapper .field-container.focused .form-control,.contact-form-wrapper .field-container.focused .form-select{ border: 1px solid var(--base-color-s-main); color: var(--base-color-s-main); padding: 13px 16px; }
+.contact-form-wrapper .field-container.focused .form-control::placeholder{ color: var(--base-color-s-main); }
+.submit-btn{ position: relative!important; padding: 14px 20px!important; border: none!important; min-width: 200px!important; font-size: 16px!important; font-weight: 700!important; line-height: 24px!important; color: var(--global-white)!important; background: var(--base-color-p-main)!important; border-radius: 4px!important; overflow: hidden; z-index: 1; transition: 0.5s all; -webkit-transition: 0.5s all; font-family: var(--primary-font-family)!important; margin-top: 15px; }
+.submit-btn:hover{background: var(--base-color-s-main)!important;}
+.contact-form-wrapper .wpcf7-spinner { position: absolute; top: 50%; transform: translateY(-50%); }
+
+/*********************** Custom Accordion ***********************/
+.custom-accordion .accordion-item{margin-bottom: 8px;border: 1px solid var(--grey-shade-95)!important;border-radius: 8px!important;}
+.custom-accordion .accordion-button{color: var(--grey-shade-50)!important; 
+    background: transparent!important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    padding: 24px;
+}
+.custom-accordion .accordion-button:focus{box-shadow: none;}
+.custom-accordion .accordion-button:not(.collapsed){color: var(--base-color-s-main)!important;}
+
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
-
-
 
 @media (min-width: 1200px) and (max-width: 1399px) {
     /*********************** header main part ***********************/
@@ -390,13 +410,11 @@ form br{display: none;}
     .header-main .header-navigation { padding: 6px 0; display: flex; align-items: center; gap: 16px; flex-direction: row-reverse; }
     .header-navigation .primary-navigation>div>.menu-wrapper { gap: 12px; align-content: flex-start; }
     .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a { padding: 8px 0px; }
+    .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a::before { content: none; }
     /*********************** Footer section ***********************/
     .footer-wrapper-first .footer-logo-main-part{padding-right: 0px;}
-
     .footer-wrapper-first .quick-wrapper{padding-left: 20px;}
-
     .footer-wrapper-first .product-link-wrapper { padding-left: 0; }
-
     .footer-inner-page-link ul { display: flex; gap: 15px; flex-wrap: wrap; }
 
 }
@@ -433,15 +451,10 @@ form br{display: none;}
 
      /*********************** Footer section ***********************/
     .footer-section { padding: 50px 0 20px 0; }
-
     .footer-wrapper-first .quick-wrapper{padding-left: 0px;}
-
     .footer-wrapper-first { margin-bottom: 30px; }
-
     .footer-group-of-companies { padding: 24px; justify-content: center; align-items: center; gap: 20px; flex-direction: column;margin-bottom: 25px; }
-    
     .footer-external-website-link ul { gap: 15px; }
-
     /*********************** Custom Tab css ***********************/
     .custom-tabing .tabs { display: none !important; }
     .custom-tabing .tab_drawer_heading { position: relative; width: 100%; background-color:transparent!important; color: var(--base-color-s-main)!important; border: 2px solid var(--base-color-s-main)!important; margin: 0; font-size: 16px; font-weight: 500; padding: 8px 25px 8px 20px; display: block; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin-bottom: 20px; border-radius: 8px; text-align: left; }
@@ -453,41 +466,47 @@ form br{display: none;}
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    /*********************** Heading Typography start ***********************/
-    .title-style-1{font-size: 42px; line-height: 50px;}
-    .title-style-2{font-size: 34px; line-height: 42px;}
-    .title-style-3{font-size: 30px; line-height: 38px;}
-    .title-style-4{font-size: 28px; line-height: 36px;}
-    .title-style-5{font-size: 24px; line-height: 32px;}
-    .title-style-6{font-size: 20px; line-height: 28px;}
-
-    .title-main{margin-bottom: 28px;}
-    /*********************** Heading Typography start ***********************/
-
     /*********************** Sub Banner css ***********************/
     .sub-banner-section { min-height: 300px; }
 }
 @media (max-width: 767px){
-    .company-group-wrapper .company-group-main .company-part{margin: 10px;}
+    .custom-point ul li { font-size: 14px; line-height: 22px; }
+    .company-group-wrapper .company-group-main .company-part{margin:0 10px;}
+     /*********************** Heading Typography start ***********************/
+    .title-style-1{font-size: 28px; line-height: 36px;}
+    .title-style-2{font-size: 24px; line-height: 32px;}
+    .title-style-3{font-size: 22px; line-height: 30px;}
+    .title-style-4{font-size: 20px; line-height: 28px;}
+    .title-style-5{font-size: 18px; line-height: 26px;}
+    .title-style-6{font-size: 16px; line-height: 24px;}
+    p{font-size: 14px;line-height: 22px;}
+
+    .title-main{margin-bottom: 20px;}
+    /*********************** Heading Typography End ***********************/
+
+     /*********************** primary button ***********************/
+    .primary-button { padding: 10px 20px; font-size: 14px; line-height: 22px;min-width: 180px; }
+
+    /*********************** Common Box css ***********************/
+    .common-box { padding: 24px 20px; }
+
+    /*********************** Footer section ***********************/
+    .footer-wrapper-first .footer-logo p { font-size: 12px; font-weight: 400; margin-bottom: 0; line-height: 20px; }
+    .footer-wrapper-first .footer-quick-link .widget-title { font-size: 18px; line-height: 26px; margin-bottom: 15px; }
+    .footer-wrapper-first .footer-quick-link ul li a {font-size: 14px; line-height: 22px; }
+    .footer-wrapper-first .footer-quick-link ul li { margin-bottom: 8px; line-height: normal; }
+    .footer-wrapper-first .footer-contact-wrapper .wp-block-heading { font-size: 18px; line-height: 26px; margin-bottom: 15px; }
+    .footer-group-of-companies { gap: 10px;}
+    .footer-group-of-companies .company-heading .wp-block-heading { font-size: 18px; line-height: 26px; }
+    /*********************** contact common input ***********************/
+    .contact-form-wrapper .form-control, .contact-form-wrapper .form-select { font-size: 14px; line-height: 22px; }
+
 }
 
 @media (max-width: 575px){
     .custom-padding { padding: 35px 0 35px 0; }
     .custom-padding-bottom { padding-bottom: 35px; }
-    /*********************** Heading Typography start ***********************/
-    .title-style-1{font-size: 34px; line-height: 42px;}
-    .title-style-2{font-size: 28px; line-height: 36px;}
-    .title-style-3{font-size: 24px; line-height: 32px;}
-    .title-style-4{font-size: 22px; line-height: 30px;}
-    .title-style-5{font-size: 20px; line-height: 28px;}
-    .title-style-6{font-size: 18px; line-height: 26px;}
-    
-     .title-main{margin-bottom: 20px;}
-    /*********************** Heading Typography start ***********************/
-
-    /*********************** primary button ***********************/
-    .primary-button { padding: 10px 20px; font-size: 14px; line-height: 22px;min-width: 180px; }
-
+   
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { display: flex; display: -webkit-flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
     .header-navigation .primary-navigation>div>.menu-wrapper { display: block; width: 100%; text-align: center; overflow-y: auto; max-height: 100%; }
@@ -514,9 +533,9 @@ form br{display: none;}
     .footer-wrapper-first { margin-bottom: 15px; }
     .footer-accrodion  .accordion-item { color: var(--bs-accordion-color); background-color: transparent!important; border: none !important; margin-bottom: 0; border-bottom: 1px solid #ddd!important; border-radius: 0; padding: 10px 0; }
     .footer-accrodion .accordion-item:last-child{ margin-bottom: 0!important;border-bottom: none!important; }
-    .footer-accrodion .accordion-button { padding: 0 !important; font-size: 18px; font-weight: 600; line-height: 26px; color: var(--base-color-s-main)!important; box-shadow: none!important; background-color: transparent!important; border-radius: 0!important; }
+    .footer-accrodion .accordion-button { padding: 0 !important; font-size: 16px; font-weight: 600; line-height: 24px; color: var(--base-color-s-main)!important; box-shadow: none!important; background-color: transparent!important; border-radius: 0!important; }
      .footer-accrodion .accordion-button:focus{ box-shadow: none; }
-    .footer-accrodion .accordion-body { padding: 20px 0px 20px 0px !important;; }
+    .footer-accrodion .accordion-body { padding: 10px 0px 10px 0px !important;; }
     .footer-accrodion  .menu-quick-links-footer-container{margin: 0;}
 
     .footer-extra-content { margin-bottom: 15px; }
@@ -525,9 +544,10 @@ form br{display: none;}
     .footer-external-website-link ul { gap: 10px; }
 
     .footer-copyright-section .footer-copyright-wrapper { flex-direction: column; gap: 8px; }
-
+    .footer-group-of-companies { padding: 16px; }
+    .footer-group-of-companies .company-heading .wp-block-heading { font-size: 16px; line-height: 24px; }
      /*********************** Sub Banner css ***********************/
-    .sub-banner-section { min-height: 250px;background-position: center center; }
+    .sub-banner-section { min-height: 200px;background-position: center center; }
 
 }
 
