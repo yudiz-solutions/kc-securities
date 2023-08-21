@@ -154,4 +154,29 @@ jQuery(document).ready(function ($) {
 	$('ul.tabs li').last().addClass("tab_last");
 	
 
+    // form script
+	jQuery(".wpcf7-form input, .wpcf7-form-control.wpcf7-textarea").focus(function(e) {
+			jQuery(this).parents(".field-container").addClass("focused");
+	});
+	jQuery(".wpcf7-form input, .wpcf7-form-control.wpcf7-textarea").focusout(function(e) {
+			if (jQuery(this).val().trim().length > 0) {
+					jQuery(this).parents(".field-container").addClass("focused filled");
+			} else {
+					jQuery(this).parents(".field-container").removeClass("focused filled");
+			}
+	});
+	jQuery(".wpcf7-form select").change(function(e) {
+			if (jQuery(this).val().trim().length > 0)
+					jQuery(this).parents(".field-container").addClass("focused filled");
+			else
+					jQuery(this).parents(".field-container").removeClass("focused filled");
+	});
+	jQuery(document).on("wpcf7mailsent", ".wpcf7-form", function() {
+			jQuery(".wpcf7-form .field-container").removeClass("focused filled");
+	});
+
+
+
+
+
 });

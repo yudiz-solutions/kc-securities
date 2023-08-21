@@ -80,6 +80,7 @@ a:hover{text-decoration-style:solid!important ;}
 .custom-padding{padding: 100px 0 100px 0;}
 .custom-padding-bottom{ padding-bottom: 100px; }
 .bg-1{background: var(--secondary-s-20);}
+.bg-2{background: var(--grey-shade-97);}
 
 h1,h2,h3,h4,h5,h6{letter-spacing:normal ;}
 
@@ -297,7 +298,6 @@ form br{display: none;}
 .sub-banner-section .sub-banner-caption .title-style-1{ color: var(--global-white); }
 
 /*********************** Custom Tab css ***********************/
-.custom-tabing{gap: 24px;margin-bottom: 44px;}
 .custom-tabing .nav-link-tab{ position: relative;text-align: center; padding: 12px 16px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--grey-shade-70)!important; background: transparent!important; border-radius: 4px; border: none!important; }
 .custom-tabing .active .nav-link-tab{ background: var(--base-color-s-main)!important; color: var(--global-white)!important; }
 .custom-tabing .nav-link-tab:focus{box-shadow: none;}
