@@ -94,7 +94,7 @@ get_header();
 
 
 <!--------------------------------- contact address section Start --------------------------------->
-<section class="contact-different-address custom-padding m-0">
+<section class="contact-different-address common-star-shape-right custom-padding m-0">
     <div class="container">
         <div class="contact-different-wrapper custom-tabing">
              <ul class="tabs">

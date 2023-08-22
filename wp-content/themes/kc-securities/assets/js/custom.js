@@ -176,7 +176,15 @@ jQuery(document).ready(function ($) {
 	});
 
 
-
+    $(document).ready(function(){
+        $(".accordion-button").on('click',function(evt){
+            const elai = evt.target.closest('.accordion-item');   
+           if($('.accordion-button').hasClass('collapsed')){
+                $(".accordion-item").removeClass('active') ;
+                $(elai).addClass("active");
+            }
+        });
+    });
 
 
 });

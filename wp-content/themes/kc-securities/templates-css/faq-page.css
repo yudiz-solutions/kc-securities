@@ -1,1 +1,15 @@
 .faq-tabing .tabs{margin-bottom: 44px;}
+
+.faq-body p{ margin-bottom: 16px; }
+.faq-body p:last-child{margin-bottom: 0;}
+
+.faq-body ul,.faq-body ol{margin-bottom: 16px;}
+.faq-body ul:last-child,.faq-body ol:last-child{margin-bottom: 0;}
+
+
+@media (max-width: 767px) {
+    /*********************** Custom Accordion ***********************/
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body ul,.faq-body ol{margin-bottom: 10px;gap: 2px;}
+  
+}

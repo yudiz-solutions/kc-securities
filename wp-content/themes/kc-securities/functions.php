@@ -56,6 +56,12 @@ function enqueue_scripts()
 	else if(is_page_template('template/faq-template.php')){
 		wp_enqueue_style( 'faq_css', get_stylesheet_directory_uri() . '/templates-css/faq-page.css', array(), null, false );
 	}
+	else if(is_page_template('template/precautions-template.php')){
+		wp_enqueue_style( 'precautions_css', get_stylesheet_directory_uri() . '/templates-css/precautions-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/compliance-template.php')){
+		wp_enqueue_style( 'precautions_css', get_stylesheet_directory_uri() . '/templates-css/compliance-page.css', array(), null, false );
+	}
 
 
 }

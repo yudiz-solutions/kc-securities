@@ -84,12 +84,13 @@ a:hover{text-decoration-style:solid!important ;}
 h1,h2,h3,h4,h5,h6{letter-spacing:normal ;}
 
 /*********************** Custom point ***********************/
-.custom-point ul{ display: flex; flex-direction: column; gap: 8px; list-style: none; }
-.custom-point ul li{ position: relative; font-size: 16px; font-weight: 400; line-height: 24px; color: var(--grey-shade-40); padding:4px 0px  4px 32px ; }
-.custom-point ul li::before{ content: ""; position: absolute; width: 28px; height: 28px; background: url(./assets/images/point-icon.svg); background-repeat: no-repeat; top: 4px; left: 0; }
+.custom-point ul,.custom-point ol{ display: flex; flex-direction: column; gap: 8px; list-style: none;padding: 0; }
+.custom-point ul li,.custom-point ol li{ position: relative; font-size: 16px; font-weight: 400; line-height: 24px; color: var(--grey-shade-40); padding:4px 0px  4px 32px ; }
+.custom-point ul li::before,.custom-point ol li:before{ content: ""; position: absolute; width: 28px; height: 28px; background: url(./assets/images/point-icon.svg); background-repeat: no-repeat; top: 4px; left: 0; }
 
 /*********************** Common start shape ***********************/
 .common-star-shape{background-image: url(./assets/images/product-shape.png); background-position: left top; background-repeat: no-repeat; background-size: 33%;}
+.common-star-shape-right{background: url(./assets/images/conatct-pattern.png); background-repeat: no-repeat; background-position: right top;}
 /*********************** Heading Typography start ***********************/
 .title-style-1{ margin: 0; padding: 0; font-size: 52px; line-height: 60px; font-weight: 600;font-family: var(--primary-font-family); letter-spacing: 0; }
 .title-style-2{ margin: 0; padding: 0; font-size: 44px; line-height: 52px; font-weight: 600;color: var(--grey-shade-20); font-family: var(--primary-font-family); letter-spacing: 0; }
@@ -295,7 +296,8 @@ form br{display: none;}
 .sub-banner-section .sub-banner-caption .title-style-1{ color: var(--global-white); }
 
 /*********************** Custom Tab css ***********************/
-.custom-tabing .nav-link-tab{ position: relative;text-align: center; padding: 12px 16px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--grey-shade-70)!important; background: transparent!important; border-radius: 4px; border: none!important; }
+.custom-tabing .nav-link-tab{ position: relative;text-align: center; padding: 12px 16px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--grey-shade-70)!important; background: transparent!important; border-radius: 4px; border: none!important;transition: 0.3s all;-webkit-transition: 0.3s all; }
+.custom-tabing .nav-link-tab:hover{background: var(--base-color-s-main)!important;color: var(--global-white)!important;}
 .custom-tabing .active .nav-link-tab{ background: var(--base-color-s-main)!important; color: var(--global-white)!important; }
 .custom-tabing .nav-link-tab:focus{box-shadow: none;}
 .custom-tabing .tabs { margin: 0; padding: 0; display: flex; gap: 24px; list-style: none; width: 100%; align-items: center; }
@@ -316,16 +318,33 @@ form br{display: none;}
 .contact-form-wrapper .wpcf7-spinner { position: absolute; top: 50%; transform: translateY(-50%); }
 
 /*********************** Custom Accordion ***********************/
+.custom-accordion .accordion-item.active{border-color: var(--base-color-s-main)!important;}
 .custom-accordion .accordion-item{margin-bottom: 8px;border: 1px solid var(--grey-shade-95)!important;border-radius: 8px!important;}
-.custom-accordion .accordion-button{color: var(--grey-shade-50)!important; 
-    background: transparent!important;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26px;
-    padding: 24px;
-}
+.custom-accordion .accordion-button{color: var(--grey-shade-50)!important; background: transparent!important; font-size: 18px; font-weight: 700; line-height: 26px; padding: 24px;gap: 20px; }
 .custom-accordion .accordion-button:focus{box-shadow: none;}
-.custom-accordion .accordion-button:not(.collapsed){color: var(--base-color-s-main)!important;}
+.custom-accordion .accordion-button:not(.collapsed){color: var(--base-color-s-main)!important;box-shadow: none;}
+.custom-accordion .accordion-body{padding: 0px 24px 24px 24px;}
+.custom-accordion .accordion-button::after{ background-image: url(./assets/images/accordion-down.svg); width: 24px; height: 24px; background-size: 100%; filter:invert(94%) sepia(0%) saturate(9%) hue-rotate(125deg) brightness(89%) contrast(90%); }
+.custom-accordion .accordion-button:not(.collapsed)::after{ filter: none; }
+
+/*********************** Download Banner ***********************/
+.download-banner::before{opacity: 45%;}
+
+/*********************** Download section ***********************/
+.download-box{position: relative;background: var(--global-white); display: flex; align-items: center; gap: 16px; padding: 24px; border-radius: 8px; border: 1px solid var(--grey-shade-95); transition: 0.5s all; -webkit-transition: 0.5s all;height: 100%; }
+.download-box span{ display: block; width: 50px; height: 50px; background: var(--secondary-s-97); border-radius: 50%; padding: 8px; transition: 0.5s all; -webkit-transition: 0.5s all; flex-shrink: 0; }
+.download-box span img{ width: 34px; height: 34px; object-fit: cover; object-position: center; }
+.download-box p{font-weight: 500;margin: 0;word-break: break-word;}
+.download-box:hover{background: var(--secondary-s-97);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05);border-color: var(--base-color-s-main);}
+.download-box:hover span{background: var(--global-white);}
+.download-box:hover p{color: var(--base-color-s-main);}
+
+.sub-page-back{margin-bottom: 24px;}
+.sub-page-back ul{display: flex;list-style: none;align-items: center;gap: 24px;}
+.sub-page-back ul li,.sub-page-back ul li a{font-size: 16px;font-weight: 400;color: var(--grey-shade-50);position: relative;}
+.sub-page-back ul li:after{ content: "\f105"; font-family: 'FontAwesome'; position: absolute; right: -16px; font-size: 16px; font-weight: 500; }
+.sub-page-back ul li:first-child::after,.sub-page-back ul li:last-child::after{content: none;}
+.sub-page-back ul li.active{color: var(--base-color-s-main);font-weight: 600;}
 
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
@@ -378,7 +397,7 @@ form br{display: none;}
      /*********************** Navigation Menu drop down ***********************/
     .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children .sub-menu-toggle { position: absolute; right: 10px; top: 5px; display: block !important; z-index: 111; border: none; width:100%; height: 25px; }
     .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children .sub-menu-toggle:focus{ border: none; outline: none; }
-    .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children ul {  position: static;margin-bottom: 10px; }
+    .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children ul {  position: static;margin: 0 0 10px 0; }
     .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu:before, .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu:after { content: none; }
     .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu li:first-child{padding-top: 0!important;}
     .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu li{padding-top: 12px!important;}
@@ -457,7 +476,7 @@ form br{display: none;}
     .footer-external-website-link ul { gap: 15px; }
     /*********************** Custom Tab css ***********************/
     .custom-tabing .tabs { display: none !important; }
-    .custom-tabing .tab_drawer_heading { position: relative; width: 100%; background-color:transparent!important; color: var(--base-color-s-main)!important; border: 2px solid var(--base-color-s-main)!important; margin: 0; font-size: 16px; font-weight: 500; padding: 8px 25px 8px 20px; display: block; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin-bottom: 20px; border-radius: 8px; text-align: left; }
+    .custom-tabing .tab_drawer_heading { position: relative; width: 100%; background-color:var(--global-white)!important; color: var(--base-color-s-main)!important; border: 2px solid var(--base-color-s-main)!important; margin: 0; font-size: 16px; font-weight: 500; padding: 8px 25px 8px 20px; display: block; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; margin-bottom: 20px; border-radius: 8px; text-align: left; }
     .custom-tabing .tab_drawer_heading:before{ content: "\f107"; font-family: 'FontAwesome'; position: absolute; top: 50%; transform: translateY(-50%); right: 15px; font-size: 20px; color: var(--base-color-s-main); }
     .custom-tabing .d_active { background-color: var(--base-color-s-main)!important; color: #fff!important; }
     .custom-tabing .d_active:before{ content: "\f106"; color: var(--global-white)!important; }
@@ -470,7 +489,8 @@ form br{display: none;}
     .sub-banner-section { min-height: 300px; }
 }
 @media (max-width: 767px){
-    .custom-point ul li { font-size: 14px; line-height: 22px; }
+    .custom-point ul ,.custom-point ol{gap: 2px;}
+    .custom-point ul li ,.custom-point ol li{ font-size: 14px; line-height: 22px; }
     .company-group-wrapper .company-group-main .company-part{margin:0 10px;}
      /*********************** Heading Typography start ***********************/
     .title-style-1{font-size: 28px; line-height: 36px;}
@@ -501,6 +521,13 @@ form br{display: none;}
     /*********************** contact common input ***********************/
     .contact-form-wrapper .form-control, .contact-form-wrapper .form-select { font-size: 14px; line-height: 22px; }
 
+    /*********************** Custom Accordion ***********************/
+    .custom-accordion .accordion-button { font-size: 16px; line-height: 24px; padding: 15px; }
+    .custom-accordion .accordion-body { padding: 0px 15px 15px 15px; }
+
+    /*********************** Custom Accordion ***********************/
+    .download-box { padding: 15px; }
+
 }
 
 @media (max-width: 575px){
@@ -522,7 +549,7 @@ form br{display: none;}
     .login-outline-btn a{width: 100px;padding: 8px 10px !important;font-size: 13px;line-height: 21px;}
     .login-contact-btn{ display: none!important; }
     .header-main .header-navigation { padding: 0; }
-
+    .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu li:first-child { padding-top: 12px!important; }
     .main-navigation-contact { display: block!important; position: fixed !important; width: 90% !important; left: 50%!important; transform: translateX(-50%)!important; bottom: 10px; }
     .main-navigation-contact a{ width: 100%; }
 

@@ -137,7 +137,7 @@ get_header();
                             <p>Established in 1954, Kantilal Chhaganlal (KC), is a name synonymous with wealth management and is one of the old integrated capital market intermediaries in the financial sector. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals.</p>
                             <p>Backed by the significant cumulative experience of the top management team, we offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
                         </div>
-                        <a href="#" class="know-btn">Read More</a>
+                        <a href="<?php echo home_url("about"); ?>" class="know-btn">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -182,7 +182,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Compliance</h6>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("compliance-2"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,23 @@
+/*********************** Banner ***********************/
+.precautions-banner::before{content: none;}
+
+/*********************** Precautions section ***********************/
+.precautions-section { background-image: url(../assets/images/p-vector.svg); background-repeat: no-repeat; background-position: left bottom; }
+.precautions-content-left .title-style-2{ margin-bottom: 24px; }
+.precautions-content-left p{margin-bottom: 16px;}
+.precautions-content-left p strong{ color: var(--base-color-s-main); }
+
+.precautions-imgage { position: relative; padding-top: 105.3%; margin-left: 24px; }
+.precautions-imgage img{ position: absolute; width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; object-position: center center; border-radius: 24px; }
+
+/*********************** Media-query ***********************/
+
+
+@media (max-width: 991px){
+    .precautions-imgage {  margin-left: 0px; }
+}
+
+@media (max-width: 767px){
+.precautions-content-left .title-style-2 { margin-bottom: 15px; }
+.precautions-content-left p { margin-bottom: 10px; }
+}
