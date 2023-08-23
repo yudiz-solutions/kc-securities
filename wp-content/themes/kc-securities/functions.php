@@ -27,7 +27,6 @@ function enqueue_scripts()
 	// Scripts
 	wp_enqueue_script('Marquee-js', 'https://www.jqueryscript.net/demo/jQuery-Plugin-For-Horizontal-Text-Scrolling-Simple-Marquee/marquee.js');
 	wp_enqueue_script('jquery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js');
-
 	wp_enqueue_script('jquery-bootstrap-main-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('jquery-popper-min-js', get_stylesheet_directory_uri() . '/assets/js/popper.min.js');
 	wp_enqueue_script('jquery-slick-js', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
@@ -61,6 +60,15 @@ function enqueue_scripts()
 	}
 	else if(is_page_template('template/compliance-template.php')){
 		wp_enqueue_style( 'precautions_css', get_stylesheet_directory_uri() . '/templates-css/compliance-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/mutual-funds-template.php')){
+		wp_enqueue_style( 'mutual_fund_css', get_stylesheet_directory_uri() . '/templates-css/mutual-fund-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/product-services.php')){
+		wp_enqueue_style( 'product_services_css', get_stylesheet_directory_uri() . '/templates-css/product-services.css', array(), null, false );
+	}
+	else if(is_page_template('template/research-template.php')){
+		wp_enqueue_style( 'research_css', get_stylesheet_directory_uri() . '/templates-css/research-page.css', array(), null, false );
 	}
 
 
