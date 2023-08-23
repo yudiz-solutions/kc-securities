@@ -105,7 +105,7 @@ get_header();
         </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Chiranjeev Vaghani</p>
                     </div>
@@ -116,7 +116,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Praveen Gupta</p>
                     </div>
@@ -127,7 +127,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Amit Gupta</p>
                     </div>
@@ -151,7 +151,7 @@ get_header();
         </div>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Chetan Shah</p>
                     </div>
@@ -162,7 +162,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Vishnu Tibrewala</p>
                     </div>
@@ -173,7 +173,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Ajay Shah</p>
                     </div>
@@ -184,7 +184,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Vijay Purohit</p>
                     </div>
@@ -195,7 +195,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mr. Vineet Agrawal</p>
                     </div>
@@ -206,7 +206,7 @@ get_header();
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box">
+                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
                         <p>Mrs. Pallavi Walawalkar</p>
                     </div>
@@ -220,6 +220,29 @@ get_header();
     </div>
 </section>
 <!--------------------------------- The Executive Team End --------------------------------->
+
+
+<!-- Modal -->
+<div class="modal fade directors-modal m-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+       
+      <div class="modal-body">
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="directors-title">
+            <h6 class="title-style-6">Amit Gupta</h6>
+            <p>Director</p>
+        </div>
+        <p>"The young ambitious joined stock market merely at the age of nineteen, learned and developed the skill of arbitrage with his golden fingers and sharp business acumen. That made him confident enough to explore more avenues at the financial markets. Developed institutional business at prominent brokerage houses at Kolkata and scaled new heights of business.His thirst to achieve more ultimately landed him at the financial capital of India also known as ‘The City of Dreams.’ Mumbai nurtured him further towards his goal. He became Business Associate of reputed brokerage houses including Kantilal Chhaganlal, an organisation founded in 1954 and with his sincere & sheer hard work and destiny made him a stakeholder and Managing Director of KC Securities."</p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
 
 <?php
 
