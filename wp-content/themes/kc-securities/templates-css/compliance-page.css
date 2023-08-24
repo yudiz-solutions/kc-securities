@@ -18,7 +18,7 @@
 .directors-modal .modal-dialog{ max-width: 1224px; }
 .directors-modal .modal-content{ background: var(--global-white); border-radius: 24px; }
 .directors-modal .modal-content .modal-body{ padding: 44px; }
-.directors-modal .modal-content .modal-body .btn-close{ position: absolute; width: 32px; height: 32px; top: 24px; right: 24px; background: url(../assets/images/close-icon-modal.svg); background-size: cover; background-repeat: no-repeat; opacity: 1; }
+.directors-modal .modal-content .modal-body .btn-close{ position: absolute;padding: 0; width: 32px; height: 32px; top: 24px; right: 24px; background: url(../assets/images/close-icon-modal.svg); background-size: cover; background-repeat: no-repeat; opacity: 1; }
 .directors-modal .modal-content .modal-body .btn-close:focus{box-shadow: none;}
 .directors-modal .modal-body .directors-title{margin-bottom: 16px;}
 .directors-modal .modal-body .directors-title .title-style-6{color: var(--base-color-s-main);margin-bottom: 8px;}

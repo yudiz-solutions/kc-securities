@@ -25,7 +25,7 @@ function enqueue_scripts()
 	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css', 999);
 
 	// Scripts
-	wp_enqueue_script('Marquee-js', 'https://www.jqueryscript.net/demo/jQuery-Plugin-For-Horizontal-Text-Scrolling-Simple-Marquee/marquee.js');
+	// wp_enqueue_script('Marquee-js', 'https://www.jqueryscript.net/demo/jQuery-Plugin-For-Horizontal-Text-Scrolling-Simple-Marquee/marquee.js');
 	wp_enqueue_script('jquery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js');
 	wp_enqueue_script('jquery-bootstrap-main-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('jquery-popper-min-js', get_stylesheet_directory_uri() . '/assets/js/popper.min.js');
@@ -69,6 +69,15 @@ function enqueue_scripts()
 	}
 	else if(is_page_template('template/research-template.php')){
 		wp_enqueue_style( 'research_css', get_stylesheet_directory_uri() . '/templates-css/research-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/partner-with-us.php')){
+		wp_enqueue_style( 'partner_css', get_stylesheet_directory_uri() . '/templates-css/partner-with-us-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/investor-awareness-template.php')){
+		wp_enqueue_style( 'investor_awareness_css', get_stylesheet_directory_uri() . '/templates-css/investor-awareness-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/trade-online-template.php')){
+		wp_enqueue_style( 'trade_online_css', get_stylesheet_directory_uri() . '/templates-css/trade-online.css', array(), null, false );
 	}
 
 

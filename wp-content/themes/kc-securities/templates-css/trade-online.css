@@ -1,0 +1,23 @@
+.kc-trade-conten-part .title-style-2{
+    margin-bottom: 24px;
+}
+.kc-trade-conten-part .kc-point ul,.kc-trade-conten-part .kc-point ol{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+        flex-direction: row;
+}
+.kc-trade-conten-part .kc-point ul li,.kc-trade-conten-part .kc-point ol li{
+    width: calc(100% / 2 - 8px);
+    padding: 0px 0px 0px 32px;
+}
+
+.kc-trade-conten-part .kc-point ul li:before,.kc-trade-conten-part .kc-point ol li:before{
+    top: -1px;
+}
+
+.kc-trade-conten-part .kc-point ul li a,
+.kc-trade-conten-part .kc-point ol li a{
+    color: var(--base-color-s-main);
+    font-weight: 700;
+}

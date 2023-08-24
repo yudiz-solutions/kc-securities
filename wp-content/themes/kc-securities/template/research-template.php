@@ -107,6 +107,88 @@ get_header();
                     <a class="primary-button">View</a>
                 </div>
             </div>
+            <div class="month-tabing custom-tabing">
+                <ul class="tabs">
+                    <li class="active" rel="tab1"><button class="nav-link-tab">Recommendation</button></li>
+                    <li rel="tab2"><button class="nav-link-tab">Tools</button></li>
+                    <li rel="tab3"><button class="nav-link-tab">Market News</button></li>
+                    <li rel="tab4"><button class="nav-link-tab">Research</button></li>
+                </ul>
+                <div class="tab_container">
+
+                    <button  class="d_active tab_drawer_heading" rel="tab1">Recommendation</button>
+                    <div id="tab1" class="tab_content">
+                        <div class="date-content-wrapper">
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button  class="tab_drawer_heading" rel="tab2">Tools</button>
+                    <div id="tab2" class="tab_content">
+                        <div class="date-content-wrapper">
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                     <button  class="tab_drawer_heading" rel="tab3">Market News</button>
+                    <div id="tab3" class="tab_content">
+                        <div class="date-content-wrapper">
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button  class="tab_drawer_heading" rel="tab4">Research</button>
+                    <div id="tab4" class="tab_content">
+                        <div class="date-content-wrapper">
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                            <div class="date-content">
+                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
