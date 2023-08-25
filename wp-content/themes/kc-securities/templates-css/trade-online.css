@@ -1,23 +1,39 @@
-.kc-trade-conten-part .title-style-2{
-    margin-bottom: 24px;
-}
-.kc-trade-conten-part .kc-point ul,.kc-trade-conten-part .kc-point ol{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-        flex-direction: row;
-}
-.kc-trade-conten-part .kc-point ul li,.kc-trade-conten-part .kc-point ol li{
-    width: calc(100% / 2 - 8px);
-    padding: 0px 0px 0px 32px;
+.kc-itrade-section{background-image: url(../assets/images/trade-patten.svg);background-position:left 45% bottom;background-repeat: no-repeat;}
+.kc-laptop-tarade-section{background-image: url(../assets/images/trade-reverse.svg);}
+
+.kc-trade-conten-part .title-style-2{ margin-bottom: 24px; }
+.kc-trade-conten-part .kc-point ul,.kc-trade-conten-part .kc-point ol{ display: flex; flex-wrap: wrap; gap: 16px; flex-direction: row; }
+.kc-trade-conten-part .kc-point ul li,.kc-trade-conten-part .kc-point ol li{ width: calc(100% / 2 - 8px); padding: 0px 0px 0px 32px; }
+.kc-trade-conten-part .kc-point ul li:before,.kc-trade-conten-part .kc-point ol li:before{ top: -1px; }
+.kc-trade-conten-part .kc-point ul li a, .kc-trade-conten-part .kc-point ol li a{ color: var(--base-color-s-main); font-weight: 700; }
+
+.kc-tade-app-content{ margin-top: 24px }
+.kc-tade-app-content p{ font-size: 18px; font-weight: 600; line-height: 26px; margin-bottom: 10px; color: var(--base-color-s-main); }
+
+.kc-tade-app-content .kc-tade-app-content-image{ display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+.kc-tade-app-content .kc-tade-app-content-image .kc-tade-app-images{display: block;}
+.kc-tade-app-content .kc-tade-app-content-image .kc-tade-app-images img{width: auto;height: 50px;object-fit: cover;}
+
+
+.kc-trade-image{ position: relative; padding-top: 121%; }
+.kc-trade-laptop{ padding-top: 98.7%; }
+.kc-trade-image img{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; object-position: center center; }
+
+
+/*********************** Media-query ***********************/
+
+@media (max-width: 991px){
+    .kc-trade-image { padding-top: 65%; }
+    .kc-itrade-section { background-image: unset !important; }
 }
 
-.kc-trade-conten-part .kc-point ul li:before,.kc-trade-conten-part .kc-point ol li:before{
-    top: -1px;
+@media (max-width: 767px){
+    .kc-tade-app-content p { font-size: 16px; line-height: 24px; }
+    .kc-trade-conten-part .title-style-2 { margin-bottom: 15px; }
 }
 
-.kc-trade-conten-part .kc-point ul li a,
-.kc-trade-conten-part .kc-point ol li a{
-    color: var(--base-color-s-main);
-    font-weight: 700;
+@media (max-width: 480px){
+    .kc-trade-conten-part .kc-point ul, .kc-trade-conten-part .kc-point ol { gap: 10px; }
+    .kc-trade-conten-part .kc-point ul li, .kc-trade-conten-part .kc-point ol li { width: 100%; }
+
 }

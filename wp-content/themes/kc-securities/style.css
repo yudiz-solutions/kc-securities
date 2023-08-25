@@ -134,8 +134,9 @@ form br{display: none;}
 .primary-button:before{ content: ""; position: absolute; width: 100%; height: 0; left: 0; bottom: 0; background: var(--primary-p-40); transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 8px; z-index: -1; }
 .primary-button:hover{color: var(--global-white);}
 .primary-button:hover:before{height: 100%;}
+.primary-button:focus{background: var(--base-color-p-main)!important;}
 
-.primary-button-outline{ position: relative; display: inline-block; padding: 13px 24px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--global-white); background: transparent; border: 1px solid var(--global-white); border-radius: 8px; letter-spacing: 0; z-index: 1; overflow: hidden; min-width: 200px; text-align: center; }
+.primary-button-outline{ position: relative; display: inline-block; padding: 12px 24px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--base-color-s-main); background: transparent; border: 2px solid var(--base-color-s-main); border-radius: 8px; letter-spacing: 0; z-index: 1; overflow: hidden; min-width: 200px; text-align: center; }
 .primary-button-outline:hover{border-color: var(--base-color-s-main);background: var(--base-color-s-main);color: var(--global-white);}
 /*********************** Know More button ***********************/
 .know-btn{ position: relative;display: block;width: fit-content; font-size: 16px; font-weight: 700; line-height: 24px;color: var(--base-color-s-main);padding-right: 25px;transition: 0.5s all;-webkit-transition: 0.5s all; }
@@ -230,7 +231,6 @@ form br{display: none;}
 .footer-inner-page-link ul li a{ font-size: 14px; font-weight: 400; line-height: 22px; color: var(--grey-shade-50)!important; text-decoration: none; padding: 4px 0;transition: 0.5s all;-webkit-transition: 0.5s all; }
 .footer-inner-page-link ul li a:hover{color: var(--base-color-s-main)!important;}
 
-
 .footer-extra-content{margin-bottom: 24px;}
 .footer-extra-content p{ font-size: 12px; line-height: 20px; color: var(--grey-shade-50); margin:0 0 16px 0; }
 .footer-extra-content p a{ font-weight: 700; color: var(--base-color-s-main)!important; }
@@ -238,12 +238,10 @@ form br{display: none;}
 .footer-extra-content p:first-child{ font-size: 14px; line-height: 22px; }
 .footer-extra-content p:last-child{ margin-bottom: 0; }
 
-
 .footer-external-website-link ul{ display: flex; gap: 44px;flex-wrap: wrap; }
 .footer-external-website-link ul li{ line-height: normal; }
 .footer-external-website-link ul li a{ font-size: 14px; font-weight: 400; line-height: 22px; color: var(--grey-shade-50)!important; text-decoration: none; padding: 4px 0;transition: 0.5s all;-webkit-transition: 0.5s all;text-transform: uppercase; }
 .footer-external-website-link ul li a:hover{color: var(--base-color-s-main)!important;}
-
 /*********************** Footer section copyright ***********************/
 .footer-copyright-section{ padding: 22px 0; background: var(--secondary-s-95); }
 .footer-copyright-section .footer-copyright-wrapper{ display: flex; justify-content: space-between; align-items: center; }
@@ -357,6 +355,19 @@ form br{display: none;}
 .get-box p,.get-box p a{ color: var(--grey-shade-90); transition: 0.5s all; }
 .get-box p a:hover{text-decoration: underline;}
 
+/*********************** custom table ***********************/
+.custom-table .table{ border: none; }
+.custom-table .table>thead>tr>th{background: var(--base-color-s-main);color: var(--global-white);border: 2px solid var(--global-white);text-align: left; font-size: 16px; font-weight: 700; line-height: 24px; padding: 12px 34px; vertical-align: middle; }
+.custom-table .table>tbody>tr:nth-child(even){background: var(--grey-shade-95);}
+.custom-table .table>tbody>tr td:first-child,.custom-table .table>thead>tr th:first-child{border-radius: 8px 0 0 8px!important;}
+.custom-table .table>tbody>tr td:last-child,.custom-table .table>thead>tr th:last-child{ border-radius: 0px 8px 8px 0px!important; }
+.custom-table .table>tbody>tr>td{border: 2px solid var(--global-white);text-align: left; font-size: 16px; font-weight: 400; line-height: 24px; color: var(--grey-shade-30); padding: 12px 34px; vertical-align: middle; }
+
+/*********************** back-office ***********************/
+.back-office-section{background: url(./assets/images/about-shape.png);background-repeat: no-repeat;background-position: left bottom;}
+.back-office-wrapper .title-style-2{margin-bottom: 34px;}
+.back-office-button{display: flex;gap: 24px;justify-content: center;align-items: center;}
+
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
 
@@ -391,8 +402,6 @@ form br{display: none;}
     .primary-navigation>div>.menu-wrapper>li>.sub-menu:before,
     .primary-navigation>div>.menu-wrapper>li>.sub-menu:after{content: none;}
 }
-
-
 
 @media (min-width: 992px) and (max-width: 1199px){
     .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 88px) !important; }
@@ -447,9 +456,7 @@ form br{display: none;}
     .footer-wrapper-first .quick-wrapper{padding-left: 20px;}
     .footer-wrapper-first .product-link-wrapper { padding-left: 0; }
     .footer-inner-page-link ul { display: flex; gap: 15px; flex-wrap: wrap; }
-
 }
-    
 @media (min-width: 768px) and (max-width: 991px) {
     /*********************** Heading Typography start ***********************/
     .title-style-1{font-size: 42px; line-height: 50px;}
@@ -493,7 +500,6 @@ form br{display: none;}
     .custom-tabing .d_active { background-color: var(--base-color-s-main)!important; color: #fff!important; }
     .custom-tabing .d_active:before{ content: "\f106"; color: var(--global-white)!important; }
     .custom-tabing .tab_content{padding-bottom: 20px;}
-
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -518,7 +524,7 @@ form br{display: none;}
 
      /*********************** primary button ***********************/
     .primary-button { padding: 10px 20px; font-size: 14px; line-height: 22px;min-width: 180px; }
-
+    .primary-button-outline { padding: 8px 20px; font-size: 14px; line-height: 22px; min-width: 180px; }
     /*********************** Common Box css ***********************/
     .common-box { padding: 24px 20px; }
 
@@ -543,6 +549,10 @@ form br{display: none;}
     /*********************** Get in Touch section ***********************/
     .get-box .p-title { font-size: 16px; line-height: 24px; }
     .get-in-touch-section::before { background-size: 100% 50%; }
+
+    /*********************** custom table ***********************/
+    .custom-table .table>thead>tr>th { font-size: 14px; line-height: 22px; padding: 12px 15px; }
+    .custom-table .table>tbody>tr>td {font-size: 14px; line-height: 22px; padding: 12px 15px; }
 
 }
 
@@ -595,6 +605,7 @@ form br{display: none;}
 }
 
 @media (max-width: 480px){
+    .back-office-button { flex-direction: column;gap: 15px;}
 
 }
 

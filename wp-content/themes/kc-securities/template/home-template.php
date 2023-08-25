@@ -169,7 +169,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Investor Charter</h6>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("investor-charter"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -268,7 +268,7 @@ get_header();
                     </div>
                     <div class="trade-content">
                         <h6 class="title-style-6">KC Internet Trading</h6>
-                        <a href="#" class="primary-button">Know More</a>
+                        <a href="<?php echo home_url("trade-online"); ?>" class="primary-button">Know More</a>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@ get_header();
     <div class="container">
         <div class="common-card-wrapper">
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("mutual-funds"); ?>" class="common-filter">
                     <div class="common-filter-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
@@ -293,7 +293,7 @@ get_header();
                 </a>
             </div>
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("research"); ?>" class="common-filter">
                     <div class="common-filter-img">
                         <span>
                             <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
@@ -315,7 +315,7 @@ get_header();
                 </a>
             </div>
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("partner-with-us"); ?>" class="common-filter">
                     <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
@@ -326,7 +326,7 @@ get_header();
                 </a>
             </div>
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("faqs"); ?>" class="common-filter">
                     <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
@@ -337,7 +337,7 @@ get_header();
                 </a>
             </div>
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("download"); ?>" class="common-filter">
                     <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">

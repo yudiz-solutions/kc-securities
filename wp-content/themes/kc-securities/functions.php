@@ -79,6 +79,9 @@ function enqueue_scripts()
 	else if(is_page_template('template/trade-online-template.php')){
 		wp_enqueue_style( 'trade_online_css', get_stylesheet_directory_uri() . '/templates-css/trade-online.css', array(), null, false );
 	}
+	else if(is_page_template('template/investor-charter-template.php')){
+		wp_enqueue_style( 'investor_charter_css', get_stylesheet_directory_uri() . '/templates-css/investor-charter-page.css', array(), null, false );
+	}
 
 
 }

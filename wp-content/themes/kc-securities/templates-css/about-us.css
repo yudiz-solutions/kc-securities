@@ -1,5 +1,6 @@
 
 /*********************** About Sub page css Start ***********************/
+.about-subpage{background: url(../assets/images/about-shape.svg);background-position: left bottom;background-repeat:no-repeat ;}
 .about-sub-left .title-style-2{margin-bottom: 24px;}
 .about-sub-left p{margin-bottom: 16px;}
 .about-sub-left p:last-child{margin-bottom: 0;}
