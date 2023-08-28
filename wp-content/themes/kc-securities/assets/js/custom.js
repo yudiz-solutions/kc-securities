@@ -14,16 +14,20 @@ jQuery(document).ready(function ($) {
         slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
+        arrows:false,
         dots: false,
-        arrows: false,
+        prevArrow: jQuery('.slick-prev'),
+		nextArrow: jQuery('.slick-next'),
         responsive: [
             {
                 breakpoint: 9999,
                 settings: "unslick"
+                
             },
             {
                 breakpoint: 767,
                 settings: {
+                    arrows:true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
@@ -31,6 +35,7 @@ jQuery(document).ready(function ($) {
             {
                 breakpoint: 480,
                 settings: {
+                    arrows:true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
@@ -72,6 +77,8 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         dots: false,
         arrows: false,
+        prevArrow: jQuery('.slick-prev'),
+		nextArrow: jQuery('.slick-next'),
         responsive: [
             {
                 breakpoint: 9999,
@@ -80,6 +87,7 @@ jQuery(document).ready(function ($) {
             {
                 breakpoint: 991,
                 settings: {
+                    arrows:true,
                     slidesToShow: 2,
                     slidesToScroll: 1,
                 }
@@ -87,6 +95,7 @@ jQuery(document).ready(function ($) {
             {
                 breakpoint: 575,
                 settings: {
+                    arrows:true,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
@@ -184,10 +193,31 @@ jQuery(document).ready(function ($) {
                 $(elai).addClass("active");
             }
         });
+    }); 
+
+
+
+    $(function ($) {
+        // var $mwo = $('.marquee-with-options');
+        jQuery('.marquee-with-options').marquee({
+            //speed in milliseconds of the marquee
+            speed: 50,
+            //gap in pixels between the tickers
+            gap: 0,
+            //gap in pixels between the tickers
+            delayBeforeStart: -10000,
+            //'left' or 'right'
+            direction: 'left',
+            //direction: 'right',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            duplicated: true,
+            //on hover pause the marquee - using jQuery plugin https://github.com/tobia/Pause
+            pauseOnHover: true,
+        });
     });
 
 
     
 
-
 });
+

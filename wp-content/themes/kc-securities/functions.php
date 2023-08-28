@@ -25,11 +25,13 @@ function enqueue_scripts()
 	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css', 999);
 
 	// Scripts
-	// wp_enqueue_script('Marquee-js', 'https://www.jqueryscript.net/demo/jQuery-Plugin-For-Horizontal-Text-Scrolling-Simple-Marquee/marquee.js');
-	wp_enqueue_script('jquery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js');
+	// wp_enqueue_script('jquery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js');
 	wp_enqueue_script('jquery-bootstrap-main-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('jquery-popper-min-js', get_stylesheet_directory_uri() . '/assets/js/popper.min.js');
 	wp_enqueue_script('jquery-slick-js', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
+
+	// wp_enqueue_script('Marquee-JS', "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", array(), null, null); // Marquee JS
+	wp_enqueue_script('Marquee-JS-min', "https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js", array(), null, null); // Marquee JS
 	//custom js
 	wp_enqueue_script('custom_js', (get_stylesheet_directory_uri() . '/assets/js/custom.js'), array(), null, true);
 

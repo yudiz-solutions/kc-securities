@@ -193,15 +193,6 @@ get_header();
     </div>
 </section>
 <!--------------------------------- Month section End --------------------------------->
-
-
-
-
-
-
-
-
-
 <script>
       // Single Image Upload
     $('select').each(function(){

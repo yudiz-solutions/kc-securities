@@ -119,6 +119,10 @@ get_header();
                 </div>
             </div>
         </div>
+        <div class="slider-arrow-part">
+			<div class="slick-prev slick-arrow"></div>
+			<div class="slick-next slick-arrow"></div>
+		</div>
       
     </div>
 </section>

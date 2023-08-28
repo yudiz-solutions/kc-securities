@@ -320,11 +320,14 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <button  class="tab_drawer_heading" rel="tab1">Depository Participant</button>
-                <div id="tab2" class="tab_content"></div>
-
-                <button  class="tab_drawer_heading" rel="tab1">Research Analyst</button>
-                <div id="tab2" class="tab_content"></div>
+                <button  class="tab_drawer_heading" rel="tab2">Depository Participant</button>
+                <div id="tab2" class="tab_content">
+                    ...
+                </div>
+                <button  class="tab_drawer_heading" rel="tab3">Research Analyst</button>
+                <div id="tab3" class="tab_content">
+                    ....
+                </div>
             </div>
         </div>
     </div>
