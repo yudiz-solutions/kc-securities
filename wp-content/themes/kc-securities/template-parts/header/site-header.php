@@ -15,6 +15,10 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 
 
 
+<div id="preloader">
+	<img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/Logo-1.svg" alt="Favicon">
+	<div class="loading__bar"></div>
+</div>
 
 <div class="heder-text-slide">
 	<div class="marquee-with-options">
@@ -24,8 +28,6 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 		<span>Stock Brokers can accept securities as margin from clients only by way of pledge in the depository system w.e.f. September 01, 2020.</span>
 	</div>
 </div>
-
-
 
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?> header-main">
 	<div class="container">

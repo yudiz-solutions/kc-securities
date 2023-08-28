@@ -1,4 +1,3 @@
-
 /*********************** contact us banner ***********************/
 .contact-banner:before{ content: none; }
 
@@ -17,23 +16,17 @@
 .corporate-address-box:hover{border-color: var(--base-color-s-main);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.10);}
 
 .corporate-wrapper .last-content{margin-top: 8px;}
-
-
 .corporate-map{margin-left: 20px;}
 .corporate-map iframe{height: 600px;}
 
 /*********************** contact us Form ***********************/
 .contact-form-section{padding-bottom: 90px;background-image: url(../assets/images/contact-shape.svg);background-repeat: no-repeat;background-position: left bottom;}
 
-
 /*********************** contact address ***********************/
-.contact-different-wrapper .tabs{justify-content: center;margin-bottom: 44px;}
+.city-wrapper { margin-bottom: 44px; max-width: 261px; }
 .contact-left-image { position: relative; padding-top: 83.4%; margin-right: 24px; }
 .contact-left-image img{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 24px; }
-
 .contact-right-address .title-style-4{margin-bottom: 24px;}
-
-
 /*********************** Media-query ***********************/
 @media (min-width: 1200px) and (max-width: 1399px){
     /*********************** contact us address ***********************/

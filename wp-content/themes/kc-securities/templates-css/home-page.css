@@ -11,6 +11,7 @@
 .product-services-section{position: relative;z-index: 1;}
 .product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
 .product-wrapper>div{ width: calc(100% / 3 - 16px); }
+.product-services-section .slider-arrow-part{display: none}
 /*********************** Products & Services Home Css End ***********************/
 
 /*********************** About KC Securities Css Start ***********************/
@@ -128,6 +129,7 @@
     /*********************** Products & Services Home ***********************/
     .product-wrapper>div { width: 100%; }
     .product-wrapper .slick-slide{margin: 0 8px;height: 100%;}
+    .product-services-section .slider-arrow-part{display: block;}
 
      /*********************** About KC Securities ***********************/
     .about-wrapper { padding: 30px; }

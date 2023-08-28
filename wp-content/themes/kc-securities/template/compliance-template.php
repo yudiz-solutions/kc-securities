@@ -109,7 +109,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Chiranjeev Vaghani</p>
                     </div>
-                    <p>Mr. Chiranjeev I. Vaghani is a Graduate in Science and has over 25 years of rich and varied experience in the field of finance.</p>
+                    <p>Is a Graduate in Science and has over 25 years of rich and varied experience in the field of finance. He also serves as a Director of Milton Investments Pvt.Ltd., Milton Exports Pvt. Ltd.</p>
                     <div class="directors-postion">
                         <p>Chairman</p>
                     </div>
@@ -120,7 +120,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Praveen Gupta</p>
                     </div>
-                    <p>Mr. Praveen Gupta is a BE in computer science 1998 batch having wide and rich experience of more.</p>
+                    <p>Is a BE in computer science; having wide and rich experience of more than 22 years in Securities, Commodities & Currency markets. He heads the Broking & Clearing Division along with NRI/FPI Businesses of KC Group.</p>
                     <div class="directors-postion">
                         <p>Director</p>
                     </div>
@@ -131,7 +131,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Amit Gupta</p>
                     </div>
-                    <p>The young ambitious joined stock market merely at the age of nineteen, learned and developed the skill.</p>
+                    <p>Our Ambitious Gentleman joined stock market at the early age of Nineteen, learned and developed the skill of arbitrage with his golden fingers and sharp business acumen; Making him confident enough.</p>
                     <div class="directors-postion">
                         <p>Director</p>
                     </div>
@@ -155,7 +155,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Chetan Shah</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p>With over two decades of experience in the field of Equity Investments, Our zestful and Spirited CEO has worked in different capacities right from Analyst to Investment Manager.</p>
                     <div class="directors-postion">
                         <p>CEO</p>
                     </div>
@@ -166,7 +166,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Vishnu Tibrewala</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p>With a Degree in Commerce, and a Rich knowledge & experience of over 35 years about the markets has greatly contributed to the field of Stock Broking & Finance Industry.</p>
                     <div class="directors-postion">
                         <p>COO</p>
                     </div>
@@ -177,7 +177,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Ajay Shah</p>
                     </div>
-                    <p>Mr. Ajay Shah holds more than 25 years of experience in different areas of Capital Market.</p>
+                    <p>Holds more than 25 years of experience in different areas of Capital Market. He is acquainted with the KC group since 2015 & is serving as Compliance Officer for BSE / NSE and DP (CDSL) since inception.</p>
                     <div class="directors-postion">
                         <p>Vice President - Compliance</p>
                     </div>
@@ -188,7 +188,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Vijay Purohit</p>
                     </div>
-                    <p>Mr. Vijay Purohit is a result oriented Capital market professional with over 23 years of experience in the equity market.</p>
+                    <p>Is a result oriented Capital market professional with over 23 years of experience in the equity market serving most of the largest Domestic Institutions; Efficiently managing.</p>
                     <div class="directors-postion">
                         <p>Head - Institution Sales</p>
                     </div>
@@ -199,7 +199,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mr. Vineet Agrawal</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p>A Highly result oriented professional with over fifteen years of rich experience in IT Operations, Entailing maintenance, System & Network Administration as well as proficiently managing teams.</p>
                     <div class="directors-postion">
                         <p>Head - IT</p>
                     </div>
@@ -210,7 +210,7 @@ get_header();
                     <div class="directors-name">
                         <p>Mrs. Pallavi Walawalkar</p>
                     </div>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+                    <p>Has been with KC Group since September 2009. She holds a Post Graduate Diploma Degree in the specialized field of Finance. With over 15 years of work experience in the areas of Finance & Human Resources.</p>
                     <div class="directors-postion">
                         <p>Accounts & HR</p>
                     </div>
