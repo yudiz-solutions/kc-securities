@@ -391,7 +391,7 @@ form br{display: none;}
 .select-styled.active { border:1px solid var(--base-color-s-main); color: var(--base-color-s-main); }
 .select-styled:after { content: "\f107"; font-size: 24px; position: absolute; width: 24px; line-height: 24px; text-align: center; height: 24px; top: 50%; transform: translateY(-50%); right: 10px; font-family: 'FontAwesome'; color: var(--grey-shade-80); }
 .select-styled.active::after { content: "\f106"; color: var(--base-color-s-main); }
-.select-options { display: none; position: absolute; top: 100%; right: 0; left: 0; z-index: 999; list-style: none; border: 1px solid var(--grey-shade-90); background-color: var(--global-white); box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.04); border-radius: 0 0 8px 8px; padding: 8px; }
+.select-options { display: none; position: absolute; top: 100%; right: 0; left: 0; z-index: 11; list-style: none; border: 1px solid var(--grey-shade-90); background-color: var(--global-white); box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.04); border-radius: 0 0 8px 8px; padding: 8px; }
 .select-options li { font-family: var(--primary-font-family); margin: 0; padding: 10px 15px!important;border: none !important; font-size: 14px; font-weight: 600; color: var(--grey-shade-50); line-height: 22px; border-radius: 4px; }
 .select-options li:hover, .select-options li.is-selected { color: var(--base-color-s-main); background: var(--secondary-s-97); }
 .select-options li[rel="hide"] { display: none; }

@@ -24,6 +24,7 @@
 
 /*********************** contact address ***********************/
 .city-wrapper { margin-bottom: 44px; max-width: 261px; }
+
 .contact-left-image { position: relative; padding-top: 83.4%; margin-right: 24px; }
 .contact-left-image img{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 24px; }
 .contact-right-address .title-style-4{margin-bottom: 24px;}

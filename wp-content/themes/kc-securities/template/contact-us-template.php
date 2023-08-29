@@ -102,9 +102,9 @@ get_header();
                     <!-- <option value="hide">Select Year</option> -->
                     <option value="Mumbai">Mumbai</option>
                     <option value="Delhi">Delhi</option>
-                    <option value="2021">Ahemdabad</option>
-                    <option value="2020">Kolkata</option>
-                    <option value="2019">Nagpur</option>
+                    <option value="Ahemdabad">Ahemdabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Nagpur">Nagpur</option>
                 </select>               
             </div>
         </div>
