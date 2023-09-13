@@ -1,16 +1,4 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
-
-get_header();
-?>
+<?php get_header();?>
 
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section download-banner m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/download-banner.jpg)">
@@ -95,8 +83,4 @@ get_header();
 </section>
 <!--------------------------------- Download inner section Start --------------------------------->
 
-
-
-<?php
-get_footer();
-?>
+<?php get_footer();?>

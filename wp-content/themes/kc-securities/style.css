@@ -130,9 +130,9 @@ form br{display: none;}
 /*********************** wordpress - Comman section CSS -end ***********************/
 
 /*********************** primary button ***********************/
-.primary-button{position: relative; display: inline-block; padding: 14px 24px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--global-white); background: var(--base-color-p-main); border: none; border-radius: 8px; letter-spacing: 0; z-index: 1; overflow: hidden; min-width: 200px; text-align: center; }
+.primary-button{position: relative; display: inline-block; padding: 14px 24px; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--global-white)!important; background: var(--base-color-p-main)!important; border: none; border-radius: 8px; letter-spacing: 0; z-index: 1; overflow: hidden; min-width: 200px; text-align: center; }
 .primary-button:before{ content: ""; position: absolute; width: 100%; height: 0; left: 0; bottom: 0; background: var(--primary-p-40); transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 8px; z-index: -1; }
-.primary-button:hover{color: var(--global-white);}
+.primary-button:hover{color: var(--global-white)!important;}
 .primary-button:hover:before{height: 100%;}
 .primary-button:focus{background: var(--base-color-p-main)!important;}
 
@@ -144,9 +144,9 @@ form br{display: none;}
 .know-btn:hover{color: var(--base-color-s-main);}
 .know-btn:hover:after{ right: 0; opacity: 1; }
 
-/**/
+/* preloader */
 #preloader{ position: fixed;right: 0; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background-color: #ffff; background-position: center;margin: auto; }
-#preloader img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; height:auto;width: 180px; max-width:100%; display: inline-block;}
+#preloader img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; height:auto;width: 90px; max-width:90%; display: inline-block;}
 
 
 /*********************** header main part ***********************/
@@ -174,6 +174,8 @@ form br{display: none;}
 .header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a::before{width: 18px;}
 
 .header-navigation .navigation-login ul{ display: flex; gap: 16px; }
+
+.sub-menu .current_page_item a{color: var(--base-color-s-main)!important;text-decoration: none!important;}
 
 .header-navigation .navigation-login ul li{ display: flex; align-items: center; position: relative;}
 .contact-primary-button a{ position: relative; padding: 14px 24px!important;text-align: center; font-size: 16px; font-weight: 700; line-height: 24px; color: var(--global-white)!important; background: var(--base-color-p-main); border: none; letter-spacing: 0; border-radius: 8px; text-decoration: none; transition: 0.5s all; -webkit-transition: 0.5s all;width: 150px;z-index: 1;overflow: hidden; }
@@ -242,7 +244,7 @@ form br{display: none;}
 
 .footer-extra-content{margin-bottom: 24px;}
 .footer-extra-content p{ font-size: 12px; line-height: 20px; color: var(--grey-shade-50); margin:0 0 16px 0; }
-.footer-extra-content p a{ font-weight: 700; color: var(--base-color-s-main)!important; }
+.footer-extra-content p a{ font-weight: 700; color: var(--base-color-s-main)!important;text-decoration: none; }
 .footer-extra-content p a:hover{text-decoration: underline;}
 .footer-extra-content p:first-child{ font-size: 14px; line-height: 22px; }
 .footer-extra-content p:last-child{ margin-bottom: 0; }
@@ -324,6 +326,9 @@ form br{display: none;}
 .submit-btn{ position: relative!important; padding: 14px 20px!important; border: none!important; min-width: 200px!important; font-size: 16px!important; font-weight: 700!important; line-height: 24px!important; color: var(--global-white)!important; background: var(--base-color-p-main)!important; border-radius: 4px!important; overflow: hidden; z-index: 1; transition: 0.5s all; -webkit-transition: 0.5s all; font-family: var(--primary-font-family)!important; margin-top: 15px; }
 .submit-btn:hover{background: var(--base-color-s-main)!important;}
 .contact-form-wrapper .wpcf7-spinner { position: absolute; top: 50%; transform: translateY(-50%); }
+.submit-btn-wrapper { position: relative;}
+.submit-btn-wrapper .wpcf7-spinner { margin: 0px; position: absolute; top: 62%; left: 50%; transform: translate(-50%, -50%);z-index: 11;}
+.submitting .wpcf7-submit { pointer-events: none; color: transparent !important; }
 
 /*********************** Custom Accordion ***********************/
 .custom-accordion .accordion-item.active{border-color: var(--base-color-s-main)!important;}
@@ -395,7 +400,6 @@ form br{display: none;}
 .select-options li { font-family: var(--primary-font-family); margin: 0; padding: 10px 15px!important;border: none !important; font-size: 14px; font-weight: 600; color: var(--grey-shade-50); line-height: 22px; border-radius: 4px; }
 .select-options li:hover, .select-options li.is-selected { color: var(--base-color-s-main); background: var(--secondary-s-97); }
 .select-options li[rel="hide"] { display: none; }
-
 
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
@@ -592,7 +596,7 @@ form br{display: none;}
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { display: flex; display: -webkit-flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
     .header-navigation .primary-navigation>div>.menu-wrapper { display: block; width: 100%; text-align: center; overflow-y: auto; max-height: 100%; }
-    .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px);padding: 20px 20px 65px 20px; }
+    .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px);padding: 20px 20px 65px 12px; }
     .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px); }
     
     .primary-navigation-open .heder-text-slide{padding: 0;max-height: 0;}

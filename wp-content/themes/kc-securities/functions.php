@@ -84,6 +84,21 @@ function enqueue_scripts()
 	else if(is_page_template('template/investor-charter-template.php')){
 		wp_enqueue_style( 'investor_charter_css', get_stylesheet_directory_uri() . '/templates-css/investor-charter-page.css', array(), null, false );
 	}
+	else if(is_page_template('template/equities-derivatives-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/commodities-templates.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/ipo-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/depository-services-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
+	}
+	else if(is_page_template('template/currency-features-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
+	}
 
 
 }
@@ -267,3 +282,51 @@ function customWidgetAreas()
 
 add_action('widgets_init', 'customWidgetAreas');
 
+
+/* -------------------------------------------------------------------
+------------------------ ADD CUSTOM POST-TYPES -----------------------
+------------------------------------------------------------------- */
+function custom_postype()
+{
+    /**************** Downloads CUSTOM POST TYPE********************/
+    $downloads_listing_labels = array(
+        'name'                => _x('Downloads', 'Post Type General Name', 'kc-securities'),
+        'singular_name'       => _x('Downloads', 'Post Type Singular Name', 'kc-securities'),
+        'menu_name'           => __('Downloads', 'kc-securities'),
+        'services_item_colon'   => __('Downloads', 'kc-securities'),
+        'all_items'           => __('All Downloads', 'kc-securities'),
+        'view_item'           => __('View Downloads', 'kc-securities'),
+        'add_new_item'        => __('Add New Downloads', 'kc-securities'),
+        'add_new'             => __('Add New', 'kc-securities'),
+        'edit_item'           => __('Edit Downloads', 'kc-securities'),
+        'update_item'         => __('Update Downloads', 'kc-securities'),
+        'search_items'        => __('Search Downloads', 'kc-securities'),
+        'not_found'           => __('Not Found', 'kc-securities'),
+        'not_found_in_trash'  => __('Not found in Trash', 'kc-securities'),
+    );
+    $downloads_listing_args = array(
+        'label'               => __('Downloads', 'kc-securities'),
+        'description'         => __('Downloads Details', 'kc-securities'),
+        'labels'              => $downloads_listing_labels,
+        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'),
+        'rewrite'             => true,
+        'hierarchical'        => true,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_nav_menus'   => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'can_export'          => true,
+        'has_archive'         => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest'        => true,
+        'menu_icon'           => 'dashicons-download',
+
+    );
+    register_post_type('downloads', $downloads_listing_args);
+
+}
+add_action('init', 'custom_postype');

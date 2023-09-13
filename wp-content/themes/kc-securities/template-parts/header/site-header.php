@@ -16,7 +16,7 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 
 
 <div id="preloader">
-	<img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/Logo-1.svg" alt="Favicon">
+	<img src="<?php echo site_url(); ?>/wp-content/uploads/2023/09/1496.gif" alt="Favicon">
 	<div class="loading__bar"></div>
 </div>
 

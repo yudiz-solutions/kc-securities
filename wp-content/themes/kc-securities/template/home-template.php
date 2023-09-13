@@ -26,7 +26,7 @@ get_header();
                 <div class="banner-caption">
                     <h1 class="title-style-1">Let Us Help You to Plan Your Future</h1>
                     <p>We offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
-                    <a href="#" class="primary-button">Open an Account</a>
+                    <a href="#" class="primary-button">Backoffice Login</a>
                 </div>
             </div>
         </div>
@@ -138,8 +138,8 @@ get_header();
                     <div class="about-content-wrapper">
                         <h2 class="title-style-2">About KC Securities</h2>
                         <div class="about-content">
-                            <p>Established in 1954, Kantilal Chhaganlal (KC), is a name synonymous with wealth management and is one of the old integrated capital market intermediaries in the financial sector. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals.</p>
-                            <p>Backed by the significant cumulative experience of the top management team, we offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
+                            <p>Established in 1954, Kantilal Chhaganlal Securities Pvt Ltd (KC), has more than six decades of market intermediation and transaction execution expertise. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals.</p>
+                            <p>Backed by the significant cumulative experience of the top management team, we offer our clientele a bouquet of customized, end to end financial solutions.</p>
                         </div>
                         <a href="<?php echo home_url("about"); ?>" class="know-btn">Read More</a>
                     </div>
@@ -252,6 +252,7 @@ get_header();
     <div class="container">
         <div class="title-main text-center">
             <h2 class="title-style-2">Trade Online With KC Securities</h2>
+            <p>Extraordinary solution to manage your trade with ease</p>
         </div>
         <div class="row g-4">
             <div class="col-lg-6 col-md-6">

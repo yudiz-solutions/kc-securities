@@ -21,163 +21,30 @@ get_header();
 <section class="download-section custom-padding m-0">
     <div class="container">
         <div class="row g-3">
+ <?php
+        $args_kc_securities = array(
+                'post_type' => 'downloads',
+                'post_status' => 'publish',
+                'posts_per_page' => -1,
+                //'paged' => 1,
+        );
+        $arr_posts_kc_securities = new WP_Query($args_kc_securities);
+        ?>
+
+
+
+<?php if ($arr_posts_kc_securities->have_posts()) : ?>
+<?php while ($arr_posts_kc_securities->have_posts()) : $arr_posts_kc_securities->the_post(); ?>
             <div class="col-lg-4 col-md-6">
-                <a href="<?php echo home_url("hello-world"); ?>" class="download-box">
+                <a href="<?php echo get_the_permalink(); ?>" class="download-box">
                     <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>Complaints</p>
+                    <p><?php echo get_the_title();?></p>
                 </a>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>Compliance</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>Details of Client Bank Accounts</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>Dos and Donts</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>DP</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>E-Voting Link</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>IT</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>KYC</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p>Masters</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Ministry of Corporate Affairs(MCA)_Annual Return</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Mobile APP</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Mutual Fund</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Odin Client</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Odin Cnt</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Odin Diet</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Odin Diet Form</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Odin Latest Patch 31032023</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>office10</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Research</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Rupeeseed</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Segregation and Monitoring of Collateral</p>
-                </a>
-            </div><div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon">
-                    </span>
-                    <p>Trading Software</p>
-                </a>
-            </div>
+<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+          
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
                     <span>
@@ -186,6 +53,7 @@ get_header();
                     <p>AcroRdrDC2100720099_en_US.exe</p>
                 </a>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
                     <span>

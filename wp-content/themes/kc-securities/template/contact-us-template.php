@@ -31,7 +31,7 @@ get_header();
                             </span>
                         </div>
                         <div class="corporate-content">
-                            <p>7th Floor, Sangita Ellipse Plot No. 32, Tajpal Scheme Sahakar Road, Vile Parle(E) Mumbai, 400057</p>
+                            <p>7th Floor, Sangita Ellipse Plot No. 32,<br> Tajpal Scheme Sahakar Road, Vile Parle(E) Mumbai,<br> Mumbai, Maharashtra 400057</p>
                         </div>
                     </div>
                     <div class="corporate-address-box">
@@ -42,7 +42,7 @@ get_header();
                         </div>
                         <div class="corporate-content">
                             <p><strong>Call Us</strong></p>
-                            <p><a href="tel:02267236000">022-6723-6000/</a><a href="tel:02267236001">6001</a></p>
+                            <p><a href="tel:02267236035">022-6723-6035</a>/<a href="tel:02267236152">6152</a></p>
                         </div>
                     </div>
                     <div class="corporate-address-box">
@@ -72,29 +72,8 @@ get_header();
 <!--------------------------------- Corporate Office End --------------------------------->
 
 
-<!--------------------------------- contact Form section Start --------------------------------->
-<section class="contact-form-section custom-padding m-0 bg-2">
-    <div class="container">
-       <div class="row justify-content-center">
-            <div class="col-lg-8">
-                 <div class="title-main text-center">
-                    <h2 class="title-style-2">Connect With KC Securities</h2>
-                </div>
-                <div class="contact-form-wrapper">
-                    <?php 
-                        echo do_shortcode('[contact-form-7 id="bc401d0" title="Contact form"]');
-                    ?>
-                </div>
-            </div>
-       </div>
-        
-    </div>
-</section>
-<!--------------------------------- contact Form section End --------------------------------->
-
-
 <!--------------------------------- contact address section Start --------------------------------->
-<section class="contact-different-address common-star-shape-right custom-padding m-0">
+<section class="contact-different-address common-star-shape-right custom-padding-bottom m-0">
     <div class="container">
         <div class="city-wrapper">
             <div class="form-grp custom-select ">
@@ -102,9 +81,9 @@ get_header();
                     <!-- <option value="hide">Select Year</option> -->
                     <option value="Mumbai">Mumbai</option>
                     <option value="Delhi">Delhi</option>
-                    <option value="Ahemdabad">Ahemdabad</option>
                     <option value="Kolkata">Kolkata</option>
                     <option value="Nagpur">Nagpur</option>
+                    <option value="Indore">Indore</option>
                 </select>               
             </div>
         </div>
@@ -125,7 +104,7 @@ get_header();
                                 </span>
                             </div>
                             <div class="corporate-content">
-                                <p>7th Floor, Sangita Ellipse Plot No. 32, Tajpal Scheme Sahakar Road, Vile Parle(E) Mumbai, 400057</p>
+                                <p>7th Floor, Sangita Ellipse Plot No. 32,<br> Tajpal Scheme Sahakar Road, Vile Parle(E) Mumbai,<br> Mumbai, Maharashtra 400057</p>
                             </div>
                         </div>
                         <div class="corporate-address-box">
@@ -136,7 +115,7 @@ get_header();
                             </div>
                             <div class="corporate-content">
                                 <p><strong>Call Us</strong></p>
-                                <p><a href="tel:02267236000">022-6723-6000/</a><a href="tel:02267236001">6001</a></p>
+                                <p><a href="tel:02267236035">022-6723-6035</a>/<a href="tel:02267236152">6152</a></p>
                             </div>
                         </div>
                         <div class="corporate-address-box">
@@ -147,107 +126,13 @@ get_header();
                                 </div>
                             <div class="corporate-content">
                                 <p><strong>Email Us</strong></p>
-                                <p><a href="mailto:contactus@kcsecurities.com">contactus@kcsecurities.com</a></p>
+                                <p><a href="mailto:chetan.shah@kcsecurities.com">chetan.shah@kcsecurities.com</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="contact-different-wrapper">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="contact-left-image">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/ahmedabad.jpg" alt="Ahmedabad">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-right-address">
-                        <h4 class="title-style-4">Ahmedabad Branch</h4>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/location-contact.svg" alt="location">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p>9, Fourth Floor, Satguru Complex, Above Nike Show Room, Shivranjini Cross Road, Satellite, 132 ft Ring Road, Ahmedabad 380 015</p>
-                            </div>
-                        </div>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/call-contact.svg" alt="Call Us">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p><strong>Call Us</strong></p>
-                                <p><a href="tel:07926928970">079-2692 8970/</a><a href="tel:07926928971">2692 8971</a></p>
-                            </div>
-                        </div>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/email-contact.svg" alt="Email Us">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p><strong>Email Us</strong></p>
-                                <p><a href="mailto:ahmedabad@kcsecurities.com">ahmedabad@kcsecurities.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>            
-        </div>
-        <div class="contact-different-wrapper">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="contact-left-image">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/nagpur.jpg" alt="Nagpur">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="contact-right-address">
-                        <h4 class="title-style-4">Nagpur Branch</h4>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/location-contact.svg" alt="location">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p>110-112, Honey Archana Complex, Untkhana Road, Medical Square, Nagpur 440009.</p>
-                            </div>
-                        </div>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/call-contact.svg" alt="Call Us">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p><strong>Call Us</strong></p>
-                                <p><a href="tel:07122743380">0712-2743380/</a><a href="tel:07122743381">81/</a><a href="tel:07122743382">82/</a>
-                                <a href="07122743383">83/</a><a href="07122743384">84</a><a href="07122743385">85</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="corporate-address-box">
-                            <div class="address-box-icon">
-                                <span>
-                                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/email-contact.svg" alt="Email Us">
-                                </span>
-                            </div>
-                            <div class="corporate-content">
-                                <p><strong>Email Us</strong></p>
-                                <p><a href="mailto:nagpur@kcsecurities.com">nagpur@kcsecurities.com</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 </section>
 
