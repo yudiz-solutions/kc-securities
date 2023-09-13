@@ -32,6 +32,8 @@ function enqueue_scripts()
 
 	// wp_enqueue_script('Marquee-JS', "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", array(), null, null); // Marquee JS
 	wp_enqueue_script('Marquee-JS-min', "https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js", array(), null, null); // Marquee JS
+	// wow 
+	wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/js/wow.min.js');
 	//custom js
 	wp_enqueue_script('custom_js', (get_stylesheet_directory_uri() . '/assets/js/custom.js'), array(), null, true);
 

@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section mutual-fund-banner m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual-funds-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Mutual Funds</h1>
         </div>
     </div>
@@ -19,7 +19,7 @@ get_header();
 <!--------------------------------- Mutual Fund Start --------------------------------->
 <section class="mutual-fund-section custom-padding common-star-shape m-0">
     <div class="container">
-        <div class="accordion custom-accordion" id="accordionmutual">
+        <div class="accordion custom-accordion wow fadeInUp" id="accordionmutual">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Compliance</h1>
         </div>
     </div>
@@ -19,7 +19,7 @@ get_header();
 <!--------------------------------- Compliance Point section Start --------------------------------->
 <section class="compliance-point-section custom-padding m-0">
     <div class="container">
-        <div class="compliance-wrapper-point">
+        <div class="compliance-wrapper-point wow fadeInUp">
             <div class="compliance-point-inner">
                 <p>Don't forget to strike off blanks in your KYC.</p>
             </div>
@@ -64,10 +64,10 @@ get_header();
 <!--------------------------------- Disclosure of Complaints Start --------------------------------->
 <section class="disclosure-complaints custom-padding m-0 bg-2">
     <div class="container">
-        <div class="title-main text-center">
+        <div class="title-main text-center wow fadeInUp">
             <h2 class="title-style-2">Disclosure of Complaints</h2>
         </div>
-        <div class="row g-3">
+        <div class="row g-3 wow fadeInUp">
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
                     <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
@@ -100,10 +100,10 @@ get_header();
 <!--------------------------------- Board of Directors Start --------------------------------->
 <section class="directors-section custom-padding m-0">
     <div class="container">
-        <div class="title-main text-center">
+        <div class="title-main text-center wow fadeInUp">
             <h2 class="title-style-2">Board of Directors</h2>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">
@@ -146,10 +146,10 @@ get_header();
 <!--------------------------------- The Executive Team Start --------------------------------->
 <section class="directors-section custom-padding-bottom m-0">
     <div class="container">
-        <div class="title-main text-center">
+        <div class="title-main text-center wow fadeInUp">
             <h2 class="title-style-2">The Executive Team</h2>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <div class="directors-name">

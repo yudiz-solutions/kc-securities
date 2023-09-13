@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/09/commodities-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Commodities</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- product section Start --------------------------------->
 <section class="services-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6">
                 <div class="services-content">
                     <p>Commodities’ trading is a global phenomenon and offers tremendous potential to market participants for profit taking on small price corrections. It also provides hedgers looking at managing price risk on account of price fluctuations a means of monetising their views on the market. In developed markets, like USA, futures trading are almost 20 times that of a cash/physical market. The Indian Commodities Futures market, though nascent, offers huge potential to market players. Over a period of time, the business volumes at MCX have increased manifold since their inception. Commodities volumes are slowly but surely catching up with equity market volumes.</p>

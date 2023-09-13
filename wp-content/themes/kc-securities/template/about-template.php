@@ -10,7 +10,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/about-banner.jpg)">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">About Us</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- About Us inner page Start --------------------------------->
 <section class="about-subpage custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="about-sub-left">
                     <h2 class="title-style-2">Welcome to KC Securities</h2>
@@ -45,7 +45,7 @@ get_header();
 <!--------------------------------- About Us inner page Start --------------------------------->
 <section class="vision-mission-section common-star-shape custom-padding m-0">
     <div class="container">
-        <div class="vision-wrapper custom-tabing">
+        <div class="vision-wrapper custom-tabing wow fadeInUp">
             <ul class="tabs">
                 <li class="active" rel="tab1"><button class="nav-link-tab">Stock Brokers</button></li>
                 <li rel="tab2"><button class="nav-link-tab">Depository Participant</button></li>

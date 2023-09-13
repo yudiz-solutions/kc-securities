@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/09/depository-services-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Depository Services</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- product section Start --------------------------------->
 <section class="services-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6">
                 <div class="services-content">
                     <p>Kantilal Chhaganlal Securities is a Depository Participant of CDSL. Clients can open demat accounts with us by visiting any of our nearest branch. Upon activation of the demat account, we will send across a Welcome Letter along with the Delivery Instruction Slip book to the client. Our Depository Services are being offered to individuals as well as corporate clients.</p>

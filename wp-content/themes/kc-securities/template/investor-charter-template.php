@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Investor Charter</h1>
         </div>
     </div>
@@ -30,7 +30,7 @@ get_header();
                 <button  class="d_active tab_drawer_heading" rel="tab1">Stock Brokers</button>
                 <div id="tab1" class="tab_content">
                     <div class="investor-wrapper-part">
-                        <div class="investor-content custom-table investor-point custom-point">
+                        <div class="investor-content custom-table investor-point custom-point wow fadeInUp">
                         <h6 class="title-style-5">Services Provided to Investors</h6>
                         <ul>
                             <li>Execution of trades on behalf of investors.</li>
@@ -46,7 +46,7 @@ get_header();
                             <li>Intimation of securities held in Client Unpaid Securities Account (CUSA) Account.</li>
                         </ul>
                         </div>
-                        <div class="investor-content custom-table investor-point custom-point">
+                        <div class="investor-content custom-table investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">Rights of Investors</h6>
                             <ul>
                                 <li>Ask for and receive information from a firm about the work history and background of the person handling your account, as well as information about the firm itself.</li>
@@ -60,7 +60,7 @@ get_header();
                                 <li>Understand the terms and conditions of transactions you undertake.</li>
                             </ul>
                         </div>
-                        <div class="investor-content custom-table table-responsive investor-point custom-point">
+                        <div class="investor-content custom-table table-responsive investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">Various activities of Stock Brokers with timelines</h6>
                             <table class="table">
                                 <thead>
@@ -138,7 +138,7 @@ get_header();
                                 </tbody>
                             </table>
                         </div>  
-                        <div class="investor-content custom-table table-responsive investor-point custom-point">
+                        <div class="investor-content custom-table table-responsive investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">DOs and DON’Ts for Investors</h6>
                             <table class="table">
                                 <thead>
@@ -209,7 +209,7 @@ get_header();
                                 </tbody>
                             </table>
                         </div>
-                        <div class="investor-content custom-table table-responsive investor-point custom-point">
+                        <div class="investor-content custom-table table-responsive investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">Grievance Redressal Mechanism</h6>
                             <p><strong>Level 1</strong></p>
                             <p>Approach the Stock Broker at the designated Investor Grievance e-mail ID of the stock broker. The Stock Broker will strive to redress the grievance immediately, but not later than 30 days of the receipt of the grievance.</p>
@@ -220,7 +220,7 @@ get_header();
                                  <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/graph-image.png" alt="Graph">
                             </div>
                         </div>
-                        <div class="investor-content custom-table table-responsive investor-point custom-point">
+                        <div class="investor-content custom-table table-responsive investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">Timelines for complaint resolution process at Stock Exchanges against stock brokers</h6>
                             <table class="table">
                                 <thead>
@@ -294,7 +294,7 @@ get_header();
                                 </tbody>
                             </table>
                         </div>
-                        <div class="investor-content custom-table investor-point custom-point">
+                        <div class="investor-content custom-table investor-point custom-point wow fadeInUp">
                             <h6 class="title-style-5">Handling of Investor’s claims / complaints in case of default of a Trading Member / Clearing Member (TM/CM)</h6>
                             <p><strong>Default of TM/CM</strong></p>
                             <div class="default-pargraph">

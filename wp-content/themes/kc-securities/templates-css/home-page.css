@@ -12,6 +12,8 @@
 .product-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
 .product-wrapper>div{ width: calc(100% / 3 - 16px); }
 .product-services-section .slider-arrow-part{display: none}
+
+.product-services-section .common-box p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 /*********************** Products & Services Home Css End ***********************/
 
 /*********************** About KC Securities Css Start ***********************/

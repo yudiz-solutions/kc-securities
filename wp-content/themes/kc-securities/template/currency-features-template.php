@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/09/currency-features-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Currency Features</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- product section Start --------------------------------->
 <section class="services-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6">
                 <div class="services-content custom-point">
                     <p>The launch of currency derivatives in India, recommended jointly by SEBI and RBI, opened one more lucrative avenue for trading. A Currency Future, also known as FX Future or Foreign Exchange Future, is a future contract to exchange one currency for another at a specified date in the future at a price (exchange rate) that is fixed on the purchase date. Currently, India is a USD 34 billion OTC (over-the-counter) market.</p>

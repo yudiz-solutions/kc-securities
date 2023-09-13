@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Partner With Us</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- Authorized Persons start --------------------------------->
 <section class="authorized-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="authorized-left">
                     <h2 class="title-style-2">Authorized Persons</h2>
@@ -40,10 +40,10 @@ get_header();
 <!--------------------------------- Compliance Point section Start --------------------------------->
 <section class="sebi-rules-section custom-padding m-0">
     <div class="container">
-        <div class="title-main text-center">
+        <div class="title-main text-center wow fadeInUp">
             <h2 class="title-style-2">SEBI Rules for Authorized Person</h2>
         </div>
-        <div class="sebi-rules">
+        <div class="sebi-rules wow fadeInUp">
             <div class="sebi-rule-point">
                 <p>A ‘Sub-Broker’ which is known as ‘Authorized Person’, is any person who is not a Trading Member of a Stock Exchange but who acts on behalf of a Trading Member as an agent or otherwise for assisting investors in dealing in securities through such Trading Members. </p>
             </div>
@@ -68,7 +68,7 @@ get_header();
 <!--------------------------------- Register section start --------------------------------->
 <section class="get-in-touch-section custom-padding m-0 bg-1">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center wow fadeInUp">
             <div class="col-lg-8">
                 <div class="title-main text-center">
                     <h2 class="title-style-2">Register as a Partner Authorized Person Please Contact</h2>

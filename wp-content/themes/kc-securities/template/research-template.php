@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/research-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Research</h1>
         </div>
     </div>
@@ -19,7 +19,7 @@ get_header();
 <!--------------------------------- Help market section start --------------------------------->
 <section class="help-market-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="help-content">
                     <h2 class="title-style-2">Helps You to Analyze Market Trend</h2>
@@ -40,7 +40,7 @@ get_header();
 <!--------------------------------- Get in Touch section start --------------------------------->
 <section class="get-in-touch-section custom-padding m-0 bg-1">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center wow fadeInUp">
             <div class="col-lg-8">
                 <div class="title-main text-center">
                     <h2 class="title-style-2">Get in Touch<br> With Our Research Team</h2>
@@ -70,7 +70,7 @@ get_header();
 <!--------------------------------- Month section Start --------------------------------->
 <section class="month-content-section custom-padding m-0">
     <div class="container">
-        <div class="month-wrapper">
+        <div class="month-wrapper wow fadeInUp">
             <div class="month-date">
                 <div class="month-selecet">
                     <div class="form-grp custom-select">

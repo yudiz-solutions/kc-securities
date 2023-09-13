@@ -12,7 +12,7 @@ get_header();
     <div>
         <div class="banner-inner"  style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/businessman-checking-reports-emails.jpg)">
             <div class="container">
-                <div class="banner-caption">
+                <div class="banner-caption wow fadeInUp">
                     <h1 class="title-style-1">Open Your Trading Account Today</h1>
                     <p>Welcome to a world of financial opportunities! Whether you're an experienced trader or just starting out.</p>
                     <a href="#" class="primary-button">Open an Account</a>
@@ -23,10 +23,10 @@ get_header();
      <div>
         <div class="banner-inner" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/home-banner-2.jpg)">
               <div class="container">
-                <div class="banner-caption">
+                <div class="banner-caption wow fadeIn">
                     <h1 class="title-style-1">Let Us Help You to Plan Your Future</h1>
                     <p>We offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
-                    <a href="#" class="primary-button">Backoffice Login</a>
+                    <a href="<?php echo home_url("backoffice-2"); ?>" class="primary-button">Backoffice Login</a>
                 </div>
             </div>
         </div>
@@ -35,12 +35,12 @@ get_header();
 <!--------------------------------- Banner Main End --------------------------------->
 
 <!--------------------------------- Products & Services Start --------------------------------->
-<section class="product-services-section custom-padding common-star-shape m-0">
+<section class="product-services-section custom-padding common-star-shape m-0 ">
     <div class="container">
         <div class="title-main text-center">
-            <h2 class="title-style-2">Products & Services</h2>
+            <h2 class="title-style-2 wow fadeInUp">Products & Services</h2>
         </div>
-        <div class="product-wrapper">
+        <div class="product-wrapper wow fadeInUp">
             <div>
                 <div class="common-box">
                     <div class="common-box-img">
@@ -51,7 +51,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Equities & Derivatives</h6>
                     <p>Kantilal Chhaganlal Securities’ long term association with the capital markets, backed by quality research.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("equities-derivatives"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div>
@@ -64,7 +64,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Commodities</h6>
                     <p>Commodities’ trading is a global phenomenon and offers tremendous potential to market participants for profit.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("commodities"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div>
@@ -77,7 +77,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Depository Services</h6>
                     <p>Kantilal Chhaganlal Securities is a Depository Participant of CDSL. Clients can open demat accounts with us by visiting.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("depository-services"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div>
@@ -90,7 +90,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">IPO</h6>
                     <p>Unlock the power of seamless communication with our innovative Text-to-Place IPO (Initial Public Offering).</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("ipo"); ?>" class="know-btn">Know More</a>
                 </div>
             </div><div>
                 <div class="common-box">
@@ -102,7 +102,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Currency Futures</h6>
                     <p>The launch of currency derivatives in India, recommended jointly by SEBI and RBI, opened one more lucrative avenue.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("currency-features"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div>
@@ -115,7 +115,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Mutual Funds</h6>
                     <p>A Mutual fund is a vehicle for investing in stocks and bonds. Mutual fund pools the money of several investors and invests.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("mutual-funds"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@ get_header();
 <!--------------------------------- About KC Securities Start --------------------------------->
 <section class="about-section custom-padding-bottom m-0">
     <div class="container">
-        <div class="about-wrapper bg-1">
+        <div class="about-wrapper bg-1 wow fadeInUp">
             <div class="row g-0">
                 <div class="col-lg-7 align-self-center">
                     <div class="about-content-wrapper">
@@ -159,10 +159,10 @@ get_header();
 <section class="investor-alerts-section custom-padding m-0">
     <div class="container">
         <div class="title-main text-center">
-            <h2 class="title-style-2"> Investor Alerts and Compliance </h2>
+            <h2 class="title-style-2 wow fadeInUp"> Investor Alerts and Compliance </h2>
         </div>
       
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 col-md-6 col-sm-6">
                 <div class="common-box">
                     <div class="common-box-img">
@@ -198,11 +198,11 @@ get_header();
 <!--------------------------------- Filing Complaints on Scores Start --------------------------------->
 <section class="filing-complaints-section custom-padding bg-1 m-0">
     <div class="container">
-         <div class="title-main">
+         <div class="title-main wow fadeInUp">
             <h2 class="title-style-2">Filing Complaints on Scores</h2>
             <a href="#" class="primary-button">Register on Scores Portal</a>
         </div>
-        <div class="filing-wrapper">
+        <div class="filing-wrapper wow fadeInUp">
             <div class="filing-box">
                 <div class="filing-img">
                     <span>
@@ -250,11 +250,11 @@ get_header();
 <!--------------------------------- Trade Online With KC Securities Start --------------------------------->
 <section class="trade-section custom-padding m-0">
     <div class="container">
-        <div class="title-main text-center">
+        <div class="title-main text-center wow fadeInUp">
             <h2 class="title-style-2">Trade Online With KC Securities</h2>
             <p>Extraordinary solution to manage your trade with ease</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 col-md-6">
                 <div class="trade-wrapper-box">
                     <div class="trade-box-img">
@@ -285,7 +285,7 @@ get_header();
 <!--------------------------------- Common-part Start --------------------------------->
 <section class="common-card bg-1 m-0">
     <div class="container">
-        <div class="common-card-wrapper">
+        <div class="common-card-wrapper wow fadeInUp">
             <div>
                 <a href="<?php echo home_url("mutual-funds"); ?>" class="common-filter">
                     <div class="common-filter-img">
@@ -309,7 +309,7 @@ get_header();
                 </a>
             </div>
             <div>
-                <a href="#" class="common-filter">
+                <a href="<?php echo home_url("backoffice-2"); ?>" class="common-filter">
                     <div class="common-filter-img">
                     <span>
                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">

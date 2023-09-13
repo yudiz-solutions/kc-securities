@@ -161,7 +161,7 @@ form br{display: none;}
 /* Header marque part End*/
 
 /* Header Navigation Part start*/
-.header-main{width: 100%;max-width: 100%;margin: 0;padding: 0;background: var(--global-white);z-index: 111;transition: 0.5s all;}
+.header-main{position: sticky!important;width: 100%;max-width: 100%;margin: 0;padding: 0;background: var(--global-white);z-index: 111;transition: 0.5s all;}
 .header-main .header-wrapper { display: flex; align-items: center; justify-content: space-between; }
 .site-header .site-logo { margin: 0; padding: 0; border: 0; }
 
@@ -351,6 +351,7 @@ form br{display: none;}
 .download-box:hover{background: var(--secondary-s-97);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05);border-color: var(--base-color-s-main);}
 .download-box:hover span{background: var(--global-white);}
 .download-box:hover p{color: var(--base-color-s-main);}
+.download-box:focus{background: var(--secondary-s-97)!important;}
 
 .sub-page-back{margin-bottom: 24px;}
 .sub-page-back ul{display: flex;list-style: none;align-items: center;gap: 24px;}

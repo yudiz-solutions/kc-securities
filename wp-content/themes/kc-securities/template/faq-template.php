@@ -10,7 +10,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/faq-banner.jpg)">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">FAQ’s</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- FAQ section Start --------------------------------->
 <section class="faq-section custom-padding common-star-shape-right m-0">
     <div class="container">
-        <div class="faq-tabing custom-tabing">
+        <div class="faq-tabing custom-tabing wow fadeInUp">
             <ul class="tabs">
                 <li class="active" rel="tab1"><button class="nav-link-tab">Derivatives</button></li>
                 <li rel="tab2"><button class="nav-link-tab">Currency</button></li>

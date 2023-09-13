@@ -30,7 +30,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Equities & Derivatives</h6>
                     <p>Kantilal Chhaganlal Securities’ long term association with the capital markets, backed by quality research.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("equities-derivatives"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -43,7 +43,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Commodities</h6>
                     <p>Commodities’ trading is a global phenomenon and offers tremendous potential to market participants for profit.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("commodities"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -56,7 +56,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Depository Services</h6>
                     <p>Kantilal Chhaganlal Securities is a Depository Participant of CDSL. Clients can open demat accounts with us by visiting.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("depository-services"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -69,7 +69,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">IPO</h6>
                     <p>Unlock the power of seamless communication with our innovative Text-to-Place IPO (Initial Public Offering).</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("ipo"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -82,7 +82,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Currency Futures</h6>
                     <p>The launch of currency derivatives in India, recommended jointly by SEBI and RBI, opened one more lucrative avenue.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("currency-features"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -95,7 +95,7 @@ get_header();
                     </div>
                     <h6 class="title-style-6">Mutual Funds</h6>
                     <p>A Mutual fund is a vehicle for investing in stocks and bonds. Mutual fund pools the money of several investors and invests.</p>
-                    <a href="#" class="know-btn">Know More</a>
+                    <a href="<?php echo home_url("mutual-funds"); ?>" class="know-btn">Know More</a>
                 </div>
             </div>
         </div>

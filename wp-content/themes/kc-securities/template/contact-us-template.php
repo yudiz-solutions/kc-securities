@@ -10,7 +10,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section contact-banner m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/contact-us-banner.jpg)">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Contact Us</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- Corporate Office Start --------------------------------->
 <section class="corporate-address-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="corporate-wrapper">
                     <h4 class="title-style-4">Corporate Office</h4>
@@ -75,7 +75,7 @@ get_header();
 <!--------------------------------- contact address section Start --------------------------------->
 <section class="contact-different-address common-star-shape-right custom-padding-bottom m-0">
     <div class="container">
-        <div class="city-wrapper">
+        <div class="city-wrapper wow fadeInUp">
             <div class="form-grp custom-select ">
                 <select id="city">
                     <!-- <option value="hide">Select Year</option> -->
@@ -87,7 +87,7 @@ get_header();
                 </select>               
             </div>
         </div>
-        <div class="contact-different-wrapper">
+        <div class="contact-different-wrapper wow fadeInUp">
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="contact-left-image">

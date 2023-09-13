@@ -9,7 +9,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/trade-banner.jpg">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Trade Online</h1>
         </div>
     </div>
@@ -19,7 +19,7 @@ get_header();
 <!--------------------------------- KC iTrade Advantage start --------------------------------->
 <section class="kc-itrade-section custom-padding bg-2 m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
             <div class="col-lg-7 align-self-center">
                 <div class="kc-trade-conten-part">
                     <h2 class="title-style-2">KC iTrade Advantage</h2>
@@ -67,7 +67,7 @@ get_header();
 <!--------------------------------- KC iTrade Advantage start --------------------------------->
 <section class="kc-itrade-section kc-laptop-tarade-section custom-padding m-0">
     <div class="container">
-        <div class="row g-4">
+        <div class="row g-4 wow fadeInUp">
              <div class="col-lg-5 order-lg-1 order-2">
                 <div class="kc-trade-image kc-trade-laptop">
                      <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/kc-laptop-dashbord.svg" alt="KC Laptop Dashbord">

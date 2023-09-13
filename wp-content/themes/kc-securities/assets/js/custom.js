@@ -50,6 +50,7 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         dots: true,
         fade: true,
+        pauseOnHover:false,
         ouchThreshold: 100,
         arrows: false,
         responsive: [
@@ -201,7 +202,7 @@ jQuery(document).ready(function ($) {
         // var $mwo = $('.marquee-with-options');
         jQuery('.marquee-with-options').marquee({
             //speed in milliseconds of the marquee
-            speed: 50,
+            speed: 40,
             //gap in pixels between the tickers
             gap: 0,
             //gap in pixels between the tickers
@@ -272,7 +273,7 @@ jQuery(document).ready(function ($) {
     $('#preloader').fadeOut('100');
     });
 
-    
+new WOW().init();          
 
 
 });

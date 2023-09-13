@@ -10,7 +10,7 @@ get_header();
 <!--------------------------------- Inner page Banner Start --------------------------------->
 <section class="sub-banner-section download-banner m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/download-banner.jpg)">
     <div class="container">
-        <div class="sub-banner-caption text-center">
+        <div class="sub-banner-caption text-center wow fadeInUp">
             <h1 class="title-style-1">Download</h1>
         </div>
     </div>
@@ -20,7 +20,7 @@ get_header();
 <!--------------------------------- Download section Start --------------------------------->
 <section class="download-section custom-padding m-0">
     <div class="container">
-        <div class="row g-3">
+        <div class="row g-3 wow fadeInUp">
  <?php
         $args_kc_securities = array(
                 'post_type' => 'downloads',
