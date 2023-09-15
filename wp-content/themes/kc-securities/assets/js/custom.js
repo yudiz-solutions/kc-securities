@@ -219,54 +219,55 @@ jQuery(document).ready(function ($) {
 
 
     // custom select
-    $('select').each(function(){
-      var $this = $(this), numberOfOptions = $(this).children('option').length;
+//     $('select').each(function(){
+//       var $this = $(this), numberOfOptions = $(this).children('option').length;
     
-      $this.addClass('select-hidden'); 
-      $this.wrap('<div class="select"></div>');
-      $this.after('<div class="select-styled"></div>');
+//       $this.addClass('select-hidden'); 
+//       $this.wrap('<div class="select"></div>');
+//       $this.after('<div class="select-styled"></div>');
   
-      var $styledSelect = $this.next('div.select-styled');
-      $styledSelect.text($this.children('option').eq(0).text());
+//       var $styledSelect = $this.next('div.select-styled');
+//       $styledSelect.text($this.children('option').eq(0).text());
     
-      var $list = $('<ul />', {
-          'class': 'select-options'
-      }).insertAfter($styledSelect);
+//       var $list = $('<ul />', {
+//           'class': 'select-options'
+//       }).insertAfter($styledSelect);
     
-      for (var i = 0; i < numberOfOptions; i++) {
-          $('<li />', {
-              text: $this.children('option').eq(i).text(),
-              rel: $this.children('option').eq(i).val()
-          }).appendTo($list);
-          //if ($this.children('option').eq(i).is(':selected')){
-          //  $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
-          //}
-      }
+//       for (var i = 0; i < numberOfOptions; i++) {
+//           $('<li />', {
+//               text: $this.children('option').eq(i).text(),
+//               rel: $this.children('option').eq(i).val()
+//           }).appendTo($list);
+//           //if ($this.children('option').eq(i).is(':selected')){
+//           //  $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
+//           //}
+//       }
     
-      var $listItems = $list.children('li');
+//       var $listItems = $list.children('li');
     
-      $styledSelect.click(function(e) {
-          e.stopPropagation();
-          $('div.select-styled.active').not(this).each(function(){
-              $(this).removeClass('active').next('ul.select-options').hide();
-          });
-          $(this).toggleClass('active').next('ul.select-options').toggle();
-      });
+//       $styledSelect.click(function(e) {
+//           e.stopPropagation();
+//           $('div.select-styled.active').not(this).each(function(){
+//               $(this).removeClass('active').next('ul.select-options').hide();
+//           });
+//           $(this).toggleClass('active').next('ul.select-options').toggle();
+//       });
     
-      $listItems.click(function(e) {
-          e.stopPropagation();
-          $styledSelect.text($(this).text()).removeClass('active');
-          $this.val($(this).attr('rel'));
-          $list.hide();
-          //console.log($this.val());
-      });
+//       $listItems.click(function(e) {
+//           e.stopPropagation();
+//           $styledSelect.text($(this).text()).removeClass('active');
+//           $this.val($(this).attr('rel'));
+//           $list.hide();
+          
+//           //console.log($this.val());
+//       });
     
-      $(document).click(function() {
-          $styledSelect.removeClass('active');
-          $list.hide();
-      });
+//       $(document).click(function() {
+//           $styledSelect.removeClass('active');
+//           $list.hide();
+//       });
   
-  });
+//   });
 
   //preloader
     $(window).on("load", function() {
@@ -275,6 +276,49 @@ jQuery(document).ready(function ($) {
 
 new WOW().init();          
 
+   
+$('#city').select2(
+    {
+        minimumResultsForSearch: -1,
+    }
+);
 
+$(document).on('change', '#city', function(e) {
+    e.preventDefault();
+    var location_are = jQuery('#city').val();
+    $.ajax({
+        url: location_filter.ajaxurl,
+        data : {action:'office_location',location_are:location_are},
+        type : 'post',
+        success:function(result){
+            $('.location_area').html(result);
+        },
+        // error:function(result){
+        //     console.wrap(result);
+        // }
+    });
+    //alert(location_are);
 });
 
+$(document).on('click', '.primary-button', function(e) {
+    e.preventDefault();
+    var month = jQuery('#month').val();
+    var year = jQuery('#year').val();
+    //alert(month);
+    //alert(year);
+    $.ajax({
+        url: location_filter.ajaxurl,
+        data : {action:'research',month:month,year:year },
+        type : 'post',
+        success:function(result){
+            $('.research_post').append(result);
+        },
+        // error:function(result){
+        //     console.wrap(result);
+        // }
+    });
+    //alert(location_are);
+});
+
+
+});

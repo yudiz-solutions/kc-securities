@@ -8,116 +8,74 @@ get_header();
 ?>
 
 <!--------------------------------- Banner Main Start --------------------------------->
+<?php $banner_details = get_field('banner_details');?>
 <section class="banner-section m-0">
-    <div>
-        <div class="banner-inner"  style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/businessman-checking-reports-emails.jpg)">
-            <div class="container">
-                <div class="banner-caption wow fadeInUp">
-                    <h1 class="title-style-1">Open Your Trading Account Today</h1>
-                    <p>Welcome to a world of financial opportunities! Whether you're an experienced trader or just starting out.</p>
-                    <a href="#" class="primary-button">Open an Account</a>
-                </div>
-            </div>
-        </div>
-    </div>
-     <div>
-        <div class="banner-inner" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/home-banner-2.jpg)">
-              <div class="container">
-                <div class="banner-caption wow fadeIn">
-                    <h1 class="title-style-1">Let Us Help You to Plan Your Future</h1>
-                    <p>We offer our clientele a bouquet of customized, end to end wealth management solutions.</p>
-                    <a href="<?php echo home_url("backoffice-2"); ?>" class="primary-button">Backoffice Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php if(isset($banner_details) && !empty($banner_details)){
+            foreach($banner_details as $banner_detail){
+                $banner_image = $banner_detail['banner_image'];
+                $banner_title = $banner_detail['banner_title'];
+                $banner_content = $banner_detail['banner_content'];
+                $banner_button_link = $banner_detail['banner_button_link'];
+                ?>
+                <div>
+                    <div class="banner-inner"  style="background-image:url(<?php if(isset($banner_image) && !empty($banner_image)){ echo $banner_image['url']; }?>)">
+                        <div class="container">
+                            <div class="banner-caption wow fadeInUp">
+                                <?php if(isset($banner_title) && !empty($banner_title)){ ?>
+                                <h1 class="title-style-1"><?php echo $banner_title;?></h1>
+                                <?php } if(isset($banner_content) && !empty($banner_content)){ echo $banner_content; } 
+                                 if(isset($banner_button_link) && !empty($banner_button_link)){ ?>
+                                <a href="<?php echo $banner_button_link['url'];?>" class="primary-button"><?php echo $banner_button_link['title'];?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div><?php
+            }
+        } ?>
 </section>
 <!--------------------------------- Banner Main End --------------------------------->
 
 <!--------------------------------- Products & Services Start --------------------------------->
 <section class="product-services-section custom-padding common-star-shape m-0 ">
     <div class="container">
-        <div class="title-main text-center">
-            <h2 class="title-style-2 wow fadeInUp">Products & Services</h2>
-        </div>
+        <?php $products_services_title = get_field('products_services_title');
+            if(isset($products_services_title) && !empty($products_services_title)){ ?>
+                <div class="title-main text-center">
+                    <h2 class="title-style-2 wow fadeInUp"><?php echo $products_services_title;?></h2>
+                </div>
+            <?php } ?>
         <div class="product-wrapper wow fadeInUp">
-            <div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/equities-derivatives.svg" alt="Equities Derivatives">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/equities-derivatives.svg" alt="Equities Derivatives">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Equities & Derivatives</h6>
-                    <p>Kantilal Chhaganlal Securities’ long term association with the capital markets, backed by quality research.</p>
-                    <a href="<?php echo home_url("equities-derivatives"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
-            <div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/commodities.svg" alt="commodities">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/commodities.svg" alt="commodities">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Commodities</h6>
-                    <p>Commodities’ trading is a global phenomenon and offers tremendous potential to market participants for profit.</p>
-                    <a href="<?php echo home_url("commodities"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
-            <div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/depository-services.svg" alt="Depository Services">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/depository-services.svg" alt="Depository Services">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Depository Services</h6>
-                    <p>Kantilal Chhaganlal Securities is a Depository Participant of CDSL. Clients can open demat accounts with us by visiting.</p>
-                    <a href="<?php echo home_url("depository-services"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
-            <div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/IPO.svg" alt="IPO">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/IPO.svg" alt="IPO">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">IPO</h6>
-                    <p>Unlock the power of seamless communication with our innovative Text-to-Place IPO (Initial Public Offering).</p>
-                    <a href="<?php echo home_url("ipo"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div><div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/currency-futures.svg" alt="Currency Futures">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/currency-futures.svg" alt="Currency Futures">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Currency Futures</h6>
-                    <p>The launch of currency derivatives in India, recommended jointly by SEBI and RBI, opened one more lucrative avenue.</p>
-                    <a href="<?php echo home_url("currency-features"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
-            <div>
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual-funds.svg" alt="Mutual Funds">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual-funds.svg" alt="Mutual Funds">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Mutual Funds</h6>
-                    <p>A Mutual fund is a vehicle for investing in stocks and bonds. Mutual fund pools the money of several investors and invests.</p>
-                    <a href="<?php echo home_url("mutual-funds"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
+            <?php 
+            $service_details = get_field('service_details');
+            if(isset($service_details) && !empty($service_details)){
+                foreach($service_details as $service_detail){
+                    $service_icon = $service_detail['service_icon'];
+                    $service_title = $service_detail['service_title'];
+                    $service_content = $service_detail['service_content'];
+                    $service_button_link = $service_detail['service_button_link'];
+                    ?>
+                    <div>
+                        <div class="common-box">
+                            <div class="common-box-img">
+                                <?php if(isset($service_icon) && !empty($service_icon)){ ?>
+                                    <span>
+                                        <img src="<?php echo $service_icon['url'];?>" alt="<?php echo $service_icon['alt'];?>">
+                                        <img src="<?php echo $service_icon['url'];?>" alt="<?php echo $service_icon['alt'];?>">
+                                    </span>
+                                <?php } ?>
+
+                            </div>
+                            <?php if(isset($service_title) && !empty($service_title)){ ?>
+                                <h6 class="title-style-6"><?php echo $service_title;?></h6>
+                            <?php } if(isset($service_content) && !empty($service_content)){ echo $service_content; }?>
+                            <?php if(isset($service_button_link) && !empty($service_button_link)){ ?>
+                            <a href="<?php echo $service_button_link['url']; ?>" class="know-btn"><?php echo $service_button_link['title']; ?></a>
+                            <?php } ?>
+                        </div>
+                    </div><?php 
+                }
+            } ?>        
         </div>
         <div class="slider-arrow-part">
 			<div class="slick-prev slick-arrow"></div>
@@ -126,6 +84,7 @@ get_header();
       
     </div>
 </section>
+
 
 <!--------------------------------- Products & Services End --------------------------------->
 
@@ -136,18 +95,28 @@ get_header();
             <div class="row g-0">
                 <div class="col-lg-7 align-self-center">
                     <div class="about-content-wrapper">
-                        <h2 class="title-style-2">About KC Securities</h2>
+                        <?php $about_title = get_field('about_title');
+                              $about_content = get_field('about_content');
+                              $about_button_link = get_field('about_button_link');
+                              $about_image = get_field('about_image');
+                        ?>
+                        <?php if(isset($about_title) && !empty($about_title)){ ?>
+                        <h2 class="title-style-2"><?php echo $about_title;?></h2>
+                        <?php } if(isset($about_content) && !empty($about_content)){ ?>
                         <div class="about-content">
-                            <p>Established in 1954, Kantilal Chhaganlal Securities Pvt Ltd (KC), has more than six decades of market intermediation and transaction execution expertise. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals.</p>
-                            <p>Backed by the significant cumulative experience of the top management team, we offer our clientele a bouquet of customized, end to end financial solutions.</p>
+                            <?php echo $about_content;?>
                         </div>
-                        <a href="<?php echo home_url("about"); ?>" class="know-btn">Read More</a>
+                        <?php } if(isset($about_button_link) && !empty($about_button_link)){ ?>
+                        <a href="<?php echo $about_button_link['url'];?>" class="know-btn"><?php echo $about_button_link['title'];?></a>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="about-images">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/about.jpg" alt="About">
-                    </div>
+                    <?php if(isset($about_image) && !empty($about_image)){ ?>
+                        <div class="about-images">
+                            <img src="<?php echo $about_image['url'];?>" alt="<?php echo $about_image['alt'];?>">
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -158,39 +127,44 @@ get_header();
 <!--------------------------------- Investor Alerts and Compliance Start --------------------------------->
 <section class="investor-alerts-section custom-padding m-0">
     <div class="container">
-        <div class="title-main text-center">
-            <h2 class="title-style-2 wow fadeInUp"> Investor Alerts and Compliance </h2>
-        </div>
+        <?php $investor_main_title = get_field('investor_main_title');
+            if(isset($investor_main_title) && !empty($investor_main_title)){ ?>
+                <div class="title-main text-center">
+                    <h2 class="title-style-2 wow fadeInUp"><?php echo $investor_main_title;?></h2>
+                </div><?php 
+            } ?>    
       
         <div class="row g-4 wow fadeInUp">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter.svg" alt="Investor Charter">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter.svg" alt="Mutual Funds">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Investor Charter</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                    <a href="<?php echo home_url("investor-charter"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <div class="common-box">
-                    <div class="common-box-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance.svg" alt="Compliance">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance.svg" alt="Compliance">
-                        </span>
-                    </div>
-                    <h6 class="title-style-6">Compliance</h6>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                    <a href="<?php echo home_url("compliance-2"); ?>" class="know-btn">Know More</a>
-                </div>
-            </div>
+            <?php 
+            $investor_details = get_field('investor_details');
+            if(isset($investor_details) && !empty($investor_details)){
+                foreach($investor_details as $investor_detail){
+                    $investor_icon = $investor_detail['investor_icon'];
+                    $investor_title = $investor_detail['investor_title'];
+                    $investor_content = $investor_detail['investor_content'];
+                    $investor_button_link = $investor_detail['investor_button_link'];
+                    ?>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="common-box">
+                            <div class="common-box-img">
+                                <?php if(isset($investor_icon) && !empty($investor_icon)){ ?>
+                                    <span>
+                                        <img src="<?php echo $investor_icon['url'];?>" alt="<?php echo $investor_icon['alt'];?>">
+                                        <img src="<?php echo $investor_icon['url'];?>" alt="<?php echo $investor_icon['alt'];?>">
+                                    </span>
+                                <?php } ?>
+                            </div>
+                            <?php if(isset($investor_title) && !empty($investor_title)){ ?>
+                            <h6 class="title-style-6"><?php echo $investor_title;?></h6>
+                            <?php } if(isset($investor_content) && !empty($investor_content)){ echo $investor_content; }?>
+                            <?php if(isset($investor_button_link) && !empty($investor_button_link)){ ?>
+                            <a href="<?php echo $investor_button_link['url'];?>" class="know-btn"><?php echo $investor_button_link['title'];?></a>
+                            <?php } ?>
+                        </div>
+                    </div><?php 
+                }
+            } ?>        
         </div>
-       
     </div>
 </section>
 <!--------------------------------- Investor Alerts and Compliance End --------------------------------->
@@ -198,85 +172,87 @@ get_header();
 <!--------------------------------- Filing Complaints on Scores Start --------------------------------->
 <section class="filing-complaints-section custom-padding bg-1 m-0">
     <div class="container">
-         <div class="title-main wow fadeInUp">
-            <h2 class="title-style-2">Filing Complaints on Scores</h2>
-            <a href="#" class="primary-button">Register on Scores Portal</a>
+        <div class="title-main wow fadeInUp">
+            <?php $filing_main_title = get_field('filing_main_title');
+                 $register_button_link = get_field('register_button_link');
+            if(isset($filing_main_title) && !empty($filing_main_title)){ ?>
+            <h2 class="title-style-2"><?php echo $filing_main_title;?></h2>
+            <?php } if(isset($register_button_link) && !empty($register_button_link)){ ?>
+            <a href="<?php echo $register_button_link['url'];?>" class="primary-button"><?php echo $register_button_link['title'];?></a>
+            <?php } ?>
         </div>
         <div class="filing-wrapper wow fadeInUp">
-            <div class="filing-box">
-                <div class="filing-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/clock.svg" alt="Clock">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/clock.svg" alt="Clock">
-                    </span>
-                </div>
-                <p>Easy and <br> Quick</p>
-            </div>
-            <div class="filing-box">
-                <div class="filing-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mandatory-details.svg" alt="Mandatory Details">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mandatory-details.svg" alt="Mandatory Details">
-                    </span>
-                </div>
-                <p>Mandatory Details for Filing Complaints on Scores</p>
-            </div>
-             <div class="filing-box">
-                <div class="filing-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/effective-communication.svg" alt="Message">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/effective-communication.svg" alt="Message">
-                    </span>
-                </div>
-                <p>Effective Communication</p>
-            </div>
-            <div class="filing-box">
-                <div class="filing-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/speedy-redressal.svg" alt="Speedy Redressal">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/speedy-redressal.svg" alt="Speedy Redressal">
-                    </span>
-                </div>
-                <p>Speedy Redressal of the Grievances</p>
-            </div>
+            <?php 
+            $filing_details = get_field('filing_details');
+            if(isset($filing_details) && !empty($filing_details)){
+                foreach($filing_details as $filing_detail){
+                    $filing_icon = $filing_detail['filing_icon'];
+                    $filing_title = $filing_detail['filing_title'];
+                    ?>
+                    <div class="filing-box">
+                        <div class="filing-img">
+                            <?php if(isset($filing_icon) && !empty($filing_icon)){ ?>
+                                    <span>
+                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
+                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
+                                    </span>
+                            <?php } ?>
+                        </div>
+                        <?php if(isset($filing_title) && !empty($filing_title)){?> 
+                            <p><?php echo $filing_title;?></p>
+                        <?php } ?>
+                    </div><?php 
+                }
+            } ?>        
+          
         </div>
         <div class="filing-button d-lg-none mt-4 text-center pt-2">
-            <a href="#" class="primary-button">Register on Scores Portal</a>
+            <?php if(isset($register_button_link) && !empty($register_button_link)){ ?>
+            <a href="<?php echo $register_button_link['url'];?>" class="primary-button"><?php echo $register_button_link['title'];?></a>
+            <?php } ?>
         </div>
     </div>
 </section>
 <!--------------------------------- Filing Complaints on Scores End --------------------------------->
 
 <!--------------------------------- Trade Online With KC Securities Start --------------------------------->
+<?php $trade_title = get_field('trade_title');
+      $trade_content = get_field('trade_content');
+?>            
 <section class="trade-section custom-padding m-0">
     <div class="container">
         <div class="title-main text-center wow fadeInUp">
-            <h2 class="title-style-2">Trade Online With KC Securities</h2>
-            <p>Extraordinary solution to manage your trade with ease</p>
+            <?php if(isset($trade_title) && !empty($trade_title)){ ?>
+            <h2 class="title-style-2"><?php echo $trade_title;?></h2>
+            <?php } if(isset($trade_content) && !empty($trade_content)){ echo $trade_content; }?>
         </div>
         <div class="row g-4 wow fadeInUp">
-            <div class="col-lg-6 col-md-6">
-                <div class="trade-wrapper-box">
-                    <div class="trade-box-img">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mobile-trade.svg" alt="Trade">
-                    </div>
-                    <div class="trade-content">
-                        <h6 class="title-style-6">KC iTrade</h6>
-                        <a href="#" class="primary-button">Download App</a>
-                    </div>
-                </div>
-            </div>
-             <div class="col-lg-6 col-md-6">
-                <div class="trade-wrapper-box">
-                    <div class="trade-box-img">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mac-trade.svg" alt="Trade">
-                    </div>
-                    <div class="trade-content">
-                        <h6 class="title-style-6">KC Internet Trading</h6>
-                        <a href="<?php echo home_url("trade-online"); ?>" class="primary-button">Know More</a>
-                    </div>
-                </div>
-            </div>
+            <?php 
+            $trade_details = get_field('trade_detail');
+            if(isset($trade_details) && !empty($trade_details)){
+                foreach($trade_details as $trade_detail){
+                    $trade_image = $trade_detail['trade_image'];
+                    $trade_title = $trade_detail['trade_title'];
+                    $trade_button_link = $trade_detail['trade_button_link'];
+                    ?>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="trade-wrapper-box">
+                            <?php if(isset($trade_image) && !empty($trade_image)){ ?>
+                                <div class="trade-box-img">
+                                    <img src="<?php echo $trade_image['url'];?>" alt="<?php echo $trade_image['alt'];?>">
+                                </div>
+                            <?php } ?>
+                            <div class="trade-content">
+                                <?php if(isset($trade_title) && !empty($trade_title)){ ?>
+                                    <h6 class="title-style-6"><?php echo $trade_title;?></h6>
+                                <?php } if(isset($trade_button_link) && !empty($trade_button_link)){ ?>
+                                    <a href="<?php echo $trade_button_link['url'];?>" class="primary-button"><?php echo $trade_button_link['title'];?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div><?php 
+                }
+            } ?>        
         </div>
     </div>
 </section>
@@ -286,72 +262,31 @@ get_header();
 <section class="common-card bg-1 m-0">
     <div class="container">
         <div class="common-card-wrapper wow fadeInUp">
-            <div>
-                <a href="<?php echo home_url("mutual-funds"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mutual.svg" alt="Mutual Fund">
-                        </span>
-                    </div>
-                    <p>Mutual Fund</p>
-                </a>
-            </div>
-            <div>
-                <a href="<?php echo home_url("research"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                        <span>
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/research.svg" alt="Research">
-                        </span>
-                    </div>
-                    <p>Research</p>
-                </a>
-            </div>
-            <div>
-                <a href="<?php echo home_url("backoffice-2"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/backoffice.svg" alt="Backoffice">
-                    </span>
-                    </div>
-                    <p>Backoffice</p>
-                </a>
-            </div>
-            <div>
-                <a href="<?php echo home_url("partner-with-us"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/partner-with-us.svg" alt="Partner With Us">
-                    </span>
-                    </div>
-                    <p>Partner With Us</p>
-                </a>
-            </div>
-            <div>
-                <a href="<?php echo home_url("faqs"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/faqs.svg" alt="Faq’s">
-                    </span>
-                    </div>
-                    <p>Faq’s</p>
-                </a>
-            </div>
-            <div>
-                <a href="<?php echo home_url("download"); ?>" class="common-filter">
-                    <div class="common-filter-img">
-                    <span>
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
-                        <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/download.svg" alt="Downloads">
-                    </span>
-                    </div>
-                    <p>Downloads</p>
-                </a>
-            </div>
+            <?php 
+            $common_part_details = get_field('common_part_details');
+            if(isset($common_part_details) && !empty($common_part_details)){
+                foreach($common_part_details as $common_part_detail){
+                    $common_part_icon = $common_part_detail['common_part_icon'];
+                    $common_part_title = $common_part_detail['common_part_title'];
+                    $common_part_button_link = $common_part_detail['common_part_button_link'];
+                    ?>
+                    <div>
+                        <a href="<?php if(isset($common_part_button_link) && !empty($common_part_button_link)){ echo $common_part_button_link['url']; }?>" class="common-filter">
+                            <div class="common-filter-img">
+                                <?php if(isset($common_part_icon) && !empty($common_part_icon)){ ?>
+                                        <span>
+                                            <img src="<?php echo $common_part_icon['url'];?>" alt="<?php echo $common_part_icon['alt'];?>">
+                                            <img src="<?php echo $common_part_icon['url'];?>" alt="<?php echo $common_part_icon['alt'];?>">
+                                        </span>
+                                <?php } ?>
+                            </div>
+                            <?php if(isset($common_part_title) && !empty($common_part_title)){ ?>
+                                <p><?php echo $common_part_title;?></p>
+                            <?php } ?>
+                        </a>
+                    </div><?php 
+                }
+            } ?>        
         </div>
     </div>
 </section>

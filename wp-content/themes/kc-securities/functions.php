@@ -1,4 +1,20 @@
 <?php
+if(!defined('KC_SECURITY_CHILD_URL')){
+	define('KC_SECURITY_CHILD_URL', get_stylesheet_directory_uri() );
+}
+if(!defined('KC_SECURITY_CHILD_DIR')){
+	define('KC_SECURITY_CHILD_DIR',get_stylesheet_directory() );
+}
+
+include KC_SECURITY_CHILD_DIR.'/include/class-kc-security-admin.php';
+$Kc_Security_Admin = new Kc_Security_Admin();
+
+include KC_SECURITY_CHILD_DIR.'/include/class-kc-security-public.php';
+$Kc_Security_Public = new Kc_Security_Public();
+
+include KC_SECURITY_CHILD_DIR.'/include/class-kc-security-shortcode.php';
+$Kc_Security_Shortcodes = new Kc_Security_Shortcodes();
+
 
 // Upload SVG in media
 add_filter('upload_mimes', 'SVG_upload');
@@ -22,6 +38,7 @@ function enqueue_scripts()
 	wp_enqueue_style('slick', get_stylesheet_directory_uri() . '/assets/css/slick.css');
 	wp_enqueue_style('slick-theme', get_stylesheet_directory_uri() . '/assets/css/slick-theme.css');
 	wp_enqueue_style('animate', get_stylesheet_directory_uri() . '/assets/css/animate.min.css');
+	wp_enqueue_style('select2-min', get_stylesheet_directory_uri() . '/assets/css/select2.min.css');
 	wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/style.css', 999);
 
 	// Scripts
@@ -29,18 +46,25 @@ function enqueue_scripts()
 	wp_enqueue_script('jquery-bootstrap-main-js', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script('jquery-popper-min-js', get_stylesheet_directory_uri() . '/assets/js/popper.min.js');
 	wp_enqueue_script('jquery-slick-js', get_stylesheet_directory_uri() . '/assets/js/slick.min.js');
+	wp_enqueue_script('select2-min', get_stylesheet_directory_uri() . '/assets/js/select2.min.js');
+
 
 	// wp_enqueue_script('Marquee-JS', "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", array(), null, null); // Marquee JS
 	wp_enqueue_script('Marquee-JS-min', "https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js", array(), null, null); // Marquee JS
 	// wow 
 	wp_enqueue_script('wow', get_stylesheet_directory_uri() . '/assets/js/wow.min.js');
 	//custom js
-	wp_enqueue_script('custom_js', (get_stylesheet_directory_uri() . '/assets/js/custom.js'), array(), null, true);
+	//wp_enqueue_script('custom_js', (get_stylesheet_directory_uri() . '/assets/js/custom.js'), array(), null, true);
 
+	wp_register_script('custom_js', get_stylesheet_directory_uri(). '/assets/js/custom.js',array('jquery'), null, true);
+	wp_localize_script('custom_js', 'location_filter', array('ajaxurl' => admin_url('admin-ajax.php')));
+	wp_enqueue_script( 'custom_js' );
 
 	if(is_front_page( ) ){
 		wp_enqueue_style( 'home_css', get_stylesheet_directory_uri() . '/templates-css/home-page.css', array(), null, false );
-    }
+    } else if(is_page_template('template/home-template-html.php')){
+		wp_enqueue_style( 'home_css', get_stylesheet_directory_uri() . '/templates-css/home-page.css', array(), null, false );
+	}
 	 else if(is_page_template('template/about-template.php')){
 		wp_enqueue_style( 'about_us_css', get_stylesheet_directory_uri() . '/templates-css/about-us.css', array(), null, false );
 	}
@@ -107,182 +131,182 @@ function enqueue_scripts()
 add_action('wp_enqueue_scripts', 'enqueue_scripts', 9999);
 
 
-//schedule button
-function customWidgetAreas()
-{
+// //schedule button
+// function customWidgetAreas()
+// {
 
-	//Navigation Login
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Navigation Login', 'KC Securites'),
-			'id'            => 'navigation_login',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<nav id="%1$s" class="widget %2$s login-navigation-bar">',
-			'after_widget'  => '</nav>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Navigation Login
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Navigation Login', 'KC Securites'),
+// 			'id'            => 'navigation_login',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<nav id="%1$s" class="widget %2$s login-navigation-bar">',
+// 			'after_widget'  => '</nav>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//footer logo
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Logo', 'KC Securites'),
-			'id'            => 'footer_logo',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//footer logo
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Logo', 'KC Securites'),
+// 			'id'            => 'footer_logo',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Get KC itrade app
-	register_sidebar(
-		array(
-			'name'          => esc_html__('KC Itrade Icon', 'KC Securites'),
-			'id'            => 'footer_kc-trade_icon',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s footer_kc-icon-wrapper">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Get KC itrade app
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('KC Itrade Icon', 'KC Securites'),
+// 			'id'            => 'footer_kc-trade_icon',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer_kc-icon-wrapper">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Quick Link
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Quick link', 'KC Securites'),
-			'id'            => 'footer_quick_link',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Quick Link
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Quick link', 'KC Securites'),
+// 			'id'            => 'footer_quick_link',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Products & Services
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Product and Services', 'KC Securites'),
-			'id'            => 'footer_product_link',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Products & Services
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Product and Services', 'KC Securites'),
+// 			'id'            => 'footer_product_link',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Contact Us
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Contact Us', 'KC Securites'),
-			'id'            => 'footer_contact_us',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s footer-contact-wrapper">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Contact Us
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Contact Us', 'KC Securites'),
+// 			'id'            => 'footer_contact_us',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-contact-wrapper">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Group Companies Heading
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Group Companies Heading', 'KC Securites'),
-			'id'            => 'footer_group_name',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Group Companies Heading
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Group Companies Heading', 'KC Securites'),
+// 			'id'            => 'footer_group_name',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Group Companies slider
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Group Companies Name', 'KC Securites'),
-			'id'            => 'footer_group_slider',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Group Companies slider
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Group Companies Name', 'KC Securites'),
+// 			'id'            => 'footer_group_slider',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer inner page link
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Inner Page Link', 'KC Securites'),
-			'id'            => 'footer_inner_page_link',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer inner page link
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Inner Page Link', 'KC Securites'),
+// 			'id'            => 'footer_inner_page_link',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Content
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Content', 'KC Securites'),
-			'id'            => 'footer_content',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Content
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Content', 'KC Securites'),
+// 			'id'            => 'footer_content',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer External Website Link
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer External Website Link', 'KC Securites'),
-			'id'            => 'footer_external_website',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer External Website Link
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer External Website Link', 'KC Securites'),
+// 			'id'            => 'footer_external_website',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Copyright name
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Copyright Name', 'KC Securites'),
-			'id'            => 'footer_copy_right_name',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Copyright name
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Copyright Name', 'KC Securites'),
+// 			'id'            => 'footer_copy_right_name',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 
-	//Footer Privacy Policy
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Footer Privacy Policy', 'KC Securites'),
-			'id'            => 'footer_privancy_link',
-			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+// 	//Footer Privacy Policy
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__('Footer Privacy Policy', 'KC Securites'),
+// 			'id'            => 'footer_privancy_link',
+// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
+// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</div>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
 	
-}
+// }
 
-add_action('widgets_init', 'customWidgetAreas');
+// add_action('widgets_init', 'customWidgetAreas');
 
 
 /* -------------------------------------------------------------------

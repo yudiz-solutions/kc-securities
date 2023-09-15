@@ -74,7 +74,7 @@ get_header();
             <div class="month-date">
                 <div class="month-selecet">
                     <div class="form-grp custom-select">
-                        <select id="mounth">
+                        <select id="month">
                             <option value="hide">Select Month</option>
                             <option value="January">January</option>
                             <option value="February">February</option>
@@ -95,11 +95,14 @@ get_header();
                     <div class="form-grp custom-select ">
                         <select id="year">
                             <option value="hide">Select Year</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
+                            <?php $cur_year = date('Y');
+                            for($year = ($cur_year-10); $year <= ($cur_year+10); $year++) {
+                                if ($year == $cur_year) { ?>
+                                    <option value="<?php echo $year;?>" selected="selected"><?php echo $year;?></option>
+                                <?php } else{
+                                    echo '<option value="'.$year.'">'.$year.'</option>';
+                                } 
+                            }?>
                         </select>               
                     </div>
                 </div>
@@ -109,84 +112,63 @@ get_header();
             </div>
             <div class="month-tabing custom-tabing">
                 <ul class="tabs">
-                    <li class="active" rel="tab1"><button class="nav-link-tab">Recommendation</button></li>
+                <?php
+                    $research_categories = get_terms(array(
+                        'taxonomy'        => 'research-category',
+                        'hide_empty'      => false,
+                        'parent'          => 0,
+                        'order'           => 'ASC',
+                    ));
+                    $term_ids = array();
+                    $i=1;
+                    foreach ($research_categories as $research_category) :
+                            $term_ids[] =  $research_category->term_id;
+                            ?>
+                    <!-- <option value="hide">Select Year</option> -->
+                    <li class="<?php if($i==1){ echo 'active'; }?>" rel="tab<?php echo $i;?>"><button class="nav-link-tab"><?php echo $research_category->name;?></button></li>
+                    <?php $i++; endforeach; wp_reset_postdata();?>
+                    <!-- <li class="active" rel="tab1"><button class="nav-link-tab">Recommendation</button></li>
                     <li rel="tab2"><button class="nav-link-tab">Tools</button></li>
                     <li rel="tab3"><button class="nav-link-tab">Market News</button></li>
-                    <li rel="tab4"><button class="nav-link-tab">Research</button></li>
+                    <li rel="tab4"><button class="nav-link-tab">Research</button></li> -->
                 </ul>
-                <div class="tab_container">
-
-                    <button  class="d_active tab_drawer_heading" rel="tab1">Recommendation</button>
-                    <div id="tab1" class="tab_content">
-                        <div class="date-content-wrapper">
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button  class="tab_drawer_heading" rel="tab2">Tools</button>
-                    <div id="tab2" class="tab_content">
-                        <div class="date-content-wrapper">
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                     <button  class="tab_drawer_heading" rel="tab3">Market News</button>
-                    <div id="tab3" class="tab_content">
-                        <div class="date-content-wrapper">
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button  class="tab_drawer_heading" rel="tab4">Research</button>
-                    <div id="tab4" class="tab_content">
-                        <div class="date-content-wrapper">
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                            <div class="date-content">
-                                <p><strong>Lorem Ipsum is simply dummy text</strong></p>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab_container research_post">
+                <?php 
+                
+                    $args_research = array(
+                       'post_type' => 'research',
+                       'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'order' => 'DESC',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' =>  "research-category",
+                                'field'    => 'term_id',
+                                'terms'    => $term_ids,
+                                'operator' => 'IN'
+                            )
+                        ),
+                    );
+                    $arr_posts_research = new WP_Query($args_research);
+                    if ($arr_posts_research->have_posts()) {
+                        $j=1;
+                        while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
+                            $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
+                            $title =  get_the_title(); 
+                            ?>    
+                            <button  class="<?php if($j==1){ echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php foreach($terms as $term){
+                        echo $term_name = $term->name;}?></button>
+                            <div id="tab<?php echo $j;?>" class="tab_content">
+                                <div class="date-content-wrapper">
+                                    <div class="date-content">
+                                        <p><strong><?php echo $title;?></strong></p>
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                                    </div>
+                                </div>
+                            </div><?php 
+                            $j++;
+                    endwhile;
+                } ?>
                 </div>
             </div>
         </div>
