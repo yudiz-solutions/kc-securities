@@ -187,15 +187,37 @@ jQuery(document).ready(function ($) {
 
 
     $(document).ready(function(){
+        $(".accordion-item").removeClass('active') ;
+        var $accordionItems = jQuery('.accordion-item');
+        $accordionItems.first().addClass('active');
+       // $accordionItems.first().removeClass('collapsed');
+        //$(".accordion-button").addClass('collapsed') ;
         $(".accordion-button").on('click',function(evt){
             const elai = evt.target.closest('.accordion-item');   
            if($('.accordion-button').hasClass('collapsed')){
                 $(".accordion-item").removeClass('active') ;
                 $(elai).addClass("active");
             }
+
+            // console.log($(this).next())
+            // $(this).next().find('.accordion-item').addClass('active')
         });
     }); 
 
+
+    $(document).on('click','.tabs li',function(){
+        $(".accordion-item").removeClass('active') ;
+        $(".accordion-button").addClass('collapsed') ;
+        $(".accordion-collapse").removeClass('show') ;
+        
+        var rel = $(this).attr('rel');
+        $('#'+ rel ).find('.accordion-item:first-child').addClass('active')
+        $('#'+ rel ).find('.accordion-item:first-child').addClass('accordion-active');
+
+        $('#'+ rel ).find('.accordion-item:first-child .accordion-button').removeClass('collapsed');
+        $('#'+ rel ).find('.accordion-item:first-child .accordion-collapse').addClass('show');
+        
+    })
 
 
     $(function ($) {
@@ -310,8 +332,15 @@ $(document).on('click', '.primary-button', function(e) {
         url: location_filter.ajaxurl,
         data : {action:'research',month:month,year:year },
         type : 'post',
+        dataType: 'json',
         success:function(result){
-            $('.research_post').append(result);
+
+          //  $('.research_post').html(result);
+            $('.research_post').html(result.html);
+
+            console.log($('.tabs  .'+result.active_cat_slug));
+            $('.tabs  .'+result.active_cat_slug).trigger('click')
+           // $(".tabs li:first-child").trigger('click')
         },
         // error:function(result){
         //     console.wrap(result);

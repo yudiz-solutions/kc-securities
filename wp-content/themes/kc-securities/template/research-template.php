@@ -17,20 +17,27 @@ get_header();
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Help market section start --------------------------------->
+<?php
+ $research_title = get_field('research_title');
+ $research_content = get_field('research_content');
+ $research_image = get_field('research_image');
+?>
 <section class="help-market-section custom-padding m-0">
     <div class="container">
         <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="help-content">
-                    <h2 class="title-style-2">Helps You to Analyze Market Trend</h2>
-                    <p><strong>Stock market advice by Kantilal Chhaganlal experts helps you to analyze market trend for smarter investment decisions.</strong></p>
-                    <p>KC's Institutional Equity Research provides in-depth reporting and analysis on many of NSE, BSE listed stock with clear focus on value investing principal and to help our institutional investors create wealth with prudent and investing. KC's technical research team believes in providing cutting edge and winning calls to its customer based on its strong technical knowledge and ability to identify winning picks in markets. A winning combination of in-depth research, professional management and value based approach towards investing, forms the strong foundation of the KC group, on the basis of which we enjoy the trust of our clients and business associates.</p>
+                    <?php if(isset($research_title) && !empty($research_title)){ ?>
+                    <h2 class="title-style-2"><?php echo $research_title;?></h2>
+                    <?php } if(isset($research_content) && !empty($research_content)){ echo $research_content;} ?>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="help-image">
-                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/help-person.jpg" alt="Help Person">
-                </div>
+                <?php if(isset($research_image) && !empty($research_image)){ ?>
+                    <div class="help-image">
+                        <img src="<?php echo $research_image['url'];?>" alt="<?php echo $research_image['alt'];?>">
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -38,28 +45,39 @@ get_header();
 <!--------------------------------- Help market section End --------------------------------->
 
 <!--------------------------------- Get in Touch section start --------------------------------->
+<?php
+ $get_in_touch_title = get_field('get_in_touch_title');   
+ $authorize_details = get_field('authorize_details');
+?>
 <section class="get-in-touch-section custom-padding m-0 bg-1">
     <div class="container">
         <div class="row justify-content-center wow fadeInUp">
             <div class="col-lg-8">
-                <div class="title-main text-center">
-                    <h2 class="title-style-2">Get in Touch<br> With Our Research Team</h2>
-                </div>
+                <?php if(isset($get_in_touch_title) && !empty($get_in_touch_title)){ ?>
+                    <div class="title-main text-center">
+                        <h2 class="title-style-2"><?php echo $get_in_touch_title;?></h2>
+                    </div>
+                <?php } ?>
                 <div class="row g-4">
-                    <div class="col-lg-6">
-                       <div class="get-box">
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/call-contact.svg" alt="Call">
-                         <p class="p-title">Call Us</p>
-                         <p><a href="tel:02267236000">+91 022-6723 6000 / </a><a href="tel:02267236001">6001</a></p>
-                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                       <div class="get-box">
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/email-contact.svg" alt="Call">
-                         <p class="p-title">Email Us on</p>
-                         <p><a href="mailto:surya.nayak@kcsecurities.com">surya.nayak@kcsecurities.com</a></p>
-                       </div>
-                    </div>
+                    <?php if(isset($authorize_details) && !empty($authorize_details)){
+                            foreach ($authorize_details as $key => $value) {
+                                 $authorize_image = $value['authorize_image'];
+                                 $authorize_title = $value['authorize_title'];
+                                 $authorize_content = $value['authorize_content'];
+                                ?>
+                                <div class="col-lg-6">
+                                   <div class="get-box">
+                                    <?php if(isset($authorize_image) && !empty($authorize_image)){ ?>
+                                     <img src="<?php echo $authorize_image['url'];?>" alt="<?php echo $authorize_image['alt'];?>"><?php
+                                    } if(isset($authorize_title) && !empty($authorize_title)){ ?>
+                                         <p class="p-title"><?php echo $authorize_title;?></p>
+                                 <?php } if(isset($authorize_content) && !empty($authorize_content)){ ?>
+                                        <p><?php echo $authorize_content;?></p>
+                                 <?php } ?>
+                                   </div>
+                                </div><?php
+                            } 
+                        } ?>
                 </div>
             </div>
         </div>
@@ -125,7 +143,7 @@ get_header();
                             $term_ids[] =  $research_category->term_id;
                             ?>
                     <!-- <option value="hide">Select Year</option> -->
-                    <li class="<?php if($i==1){ echo 'active'; }?>" rel="tab<?php echo $i;?>"><button class="nav-link-tab"><?php echo $research_category->name;?></button></li>
+                    <li class="<?php if($i==1){ echo 'active'; }?> <?php echo $research_category->slug ?>" rel="tab<?php echo $i;?>"><button class="nav-link-tab"><?php echo $research_category->name;?></button></li>
                     <?php $i++; endforeach; wp_reset_postdata();?>
                     <!-- <li class="active" rel="tab1"><button class="nav-link-tab">Recommendation</button></li>
                     <li rel="tab2"><button class="nav-link-tab">Tools</button></li>
@@ -155,6 +173,7 @@ get_header();
                         while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
                             $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
                             $title =  get_the_title(); 
+                            $content = get_the_content();
                             ?>    
                             <button  class="<?php if($j==1){ echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php foreach($terms as $term){
                         echo $term_name = $term->name;}?></button>
@@ -162,7 +181,7 @@ get_header();
                                 <div class="date-content-wrapper">
                                     <div class="date-content">
                                         <p><strong><?php echo $title;?></strong></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                                        <p><strong><?php echo $content;?></strong></p> 
                                     </div>
                                 </div>
                             </div><?php 

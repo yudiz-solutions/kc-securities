@@ -1,17 +1,33 @@
 .mutual-fund-banner:after{ content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.7; background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 70.35%); z-index: -1; }
 
 /*********************** Mutual Fund section ***********************/
-.mutual-fund-section .mutual-part{margin-bottom: 24px;}
-.mutual-fund-section .mutual-part:last-child{margin-bottom: 0;}
-.mutual-fund-section .mutual-part p strong{color: var(--base-color-s-main);}
-.mutual-fund-section .mutual-part p{margin-bottom: 16px;}
-.mutual-fund-section .mutual-part p:first-child{margin-bottom: 4px;}
+.mutual-fund-section .mutual-part h1,
+.mutual-fund-section .mutual-part h2,
+.mutual-fund-section .mutual-part h3,
+.mutual-fund-section .mutual-part h4,
+.mutual-fund-section .mutual-part h5,
+.mutual-fund-section .mutual-part h6{font-size: 16px;color: var(--base-color-s-main);font-weight: 700;line-height: 24px;margin-bottom: 4px;}
+.mutual-fund-section .mutual-part p{margin-bottom: 24px;}
 .mutual-fund-section .mutual-part p:last-child{margin-bottom: 0;}
+.mutual-fund-section .mutual-part table{margin-bottom: 24px;}
 .mutual-fund-section .mutual-part .primary-button{margin-top: 8px;}
+.mutual-fund-section .mutual-part ol,.mutual-fund-section .mutual-part ul{ counter-reset: list; padding: 0; }
+.mutual-fund-section .mutual-part ol > li,.mutual-fund-section .mutual-part ul > li{ list-style: none; font-size: 16px; line-height: 24px; margin-bottom: 16px; color: var(--grey-shade-40); }
+.mutual-fund-section .mutual-part ol>li::before,.mutual-fund-section .mutual-part ul > li::before{ content: counter(list, lower-alpha) ") "; counter-increment: list; }
+
+
 
 @media (max-width: 767px) {
-    .mutual-fund-section .mutual-part { margin-bottom: 16px; }
+    .mutual-fund-section .mutual-part p{ margin-bottom: 16px; }
+    .mutual-fund-section .mutual-part h1,
+    .mutual-fund-section .mutual-part h2,
+    .mutual-fund-section .mutual-part h3,
+    .mutual-fund-section .mutual-part h4,
+    .mutual-fund-section .mutual-part h5,
+    .mutual-fund-section .mutual-part h6{font-size: 14px;line-height: 22px;}
+    .mutual-fund-section .mutual-part ol > li,.mutual-fund-section .mutual-part ul > li{ font-size: 14px; line-height: 22px; margin-bottom: 10px;}
     /*********************** custom table ***********************/
-    .custom-table .table { border: none; width: 900px; }
+    .custom-table table { border: none; width: 900px; }
+    .custom-table  .dataTables_wrapper{overflow-x: auto;}
 
 }

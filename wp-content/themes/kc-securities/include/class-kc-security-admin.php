@@ -10,6 +10,8 @@ class Kc_Security_Admin{
 
         add_action('init', array($this, 'kc_security_office_locations_post_type'), 0);
         add_action('init', array($this, 'kc_security_research_post_type'), 0);
+        add_action('init', array($this, 'kc_security_faq_post_type'), 0);
+
 
         add_action('acf/init',array($this,'kc_security_acf_setting'));
         
@@ -346,6 +348,79 @@ class Kc_Security_Admin{
     );
 
     register_taxonomy('research-category', array('research'), $args);
+    flush_rewrite_rules();
+    }
+
+    /*FAQ SECTION  */
+    public function kc_security_faq_post_type(){
+        /****************FAQ post type ********************/
+        $our_faq_service_labels = array(
+            'name'                => _x('FAQ', 'Post Type General Name', 'kc-securities'),
+            'singular_name'       => _x('FAQ', 'Post Type Singular Name', 'kc-securities'),
+            'menu_name'           => __('FAQ', 'kc-securities'),
+            'parent_item_colon'   => __('FAQ', 'kc-securities'),
+            'all_items'           => __('All FAQ', 'kc-securities'),
+            'view_item'           => __('View FAQ', 'kc-securities'),
+            'add_new_item'        => __('Add New FAQ', 'kc-securities'),
+            'add_new'             => __('Add New', 'kc-securities'),
+            'edit_item'           => __('Edit FAQ', 'kc-securities'),
+            'update_item'         => __('Update FAQ', 'kc-securities'),
+            'search_items'        => __('Search FAQ', 'kc-securities'),
+            'not_found'           => __('Not Found', 'kc-securities'),
+            'not_found_in_trash'  => __('Not found in Trash', 'kc-securities'),
+        );
+        $our_faq_service_args = array(
+            'label'               => __('FAQ', 'kc-securities'),
+            'description'         => __('FAQ news and reviews', 'kc-securities'),
+            'labels'              => $our_faq_service_labels,
+            'supports'            => array('title', 'editor', 'excerpt', 'thumbnail','author','comments','revisions', 'custom-fields'),
+            'rewrite' => array('slug' => 'faq'),
+            'hierarchical'        => true,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 10,
+            'can_export'          => true,
+            'has_archive'         => false,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'post',
+            'show_in_rest'        => true,
+            'menu_icon'           => 'dashicons-location',
+
+        );
+	register_post_type('faq', $our_faq_service_args);
+
+
+    $labels = array(
+        'name' => _x('Category', 'taxonomy general name', 'kc-securities'),
+        'singular_name' => _x('Category', 'taxonomy singular name', 'kc-securities'),
+        'search_items' => __('Search Category', 'kc-securities'),
+        'all_items' => __('All Category', 'kc-securities'),
+        'parent_item' => __('Parent Category', 'kc-securities'),
+        'parent_item_colon' => __('Parent Category:', 'kc-securities'),
+        'edit_item' => __('Edit Category', 'kc-securities'),
+        'update_item' => __('Update Category', 'kc-securities'),
+        'add_new_item' => __('Add New Category', 'kc-securities'),
+        'new_item_name' => __('New Category Name', 'kc-securities'),
+        'menu_name' => __('Category', 'kc-securities'),
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'faq'),
+        'show_in_rest' => true, //add this
+        'update_count_callback' => '_update_post_term_count',
+        
+    );
+
+    register_taxonomy('faq-category', array('faq'), $args);
     flush_rewrite_rules();
     }
 

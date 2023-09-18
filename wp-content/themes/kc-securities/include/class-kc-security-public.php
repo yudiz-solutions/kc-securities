@@ -107,6 +107,7 @@ class Kc_Security_Public{
     }
 
     public function kc_security_research(){
+        ob_start();
         $month = $_POST['month'];
         $year = $_POST['year'];
 
@@ -141,6 +142,7 @@ class Kc_Security_Public{
                 $alt = get_post_meta(get_post_thumbnail_id($arr_posts_research->ID), '_wp_attachment_image_alt', true);
                 $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
                 $title =  get_the_title(); 
+                $content = get_the_content();
                 ?>
                      <button  class="<?php if($j==1){ echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php foreach($terms as $term){
                         echo $term_name = $term->name;}?></button>
@@ -148,20 +150,21 @@ class Kc_Security_Public{
                                 <div class="date-content-wrapper">
                                     <div class="date-content">
                                         <p><strong><?php echo $title;?></strong></p>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                                        <?php echo $content;?>
                                     </div>
                                 </div>
                             </div><?php 
                             $j++;
                     endwhile; wp_reset_postdata();
                 } 
+                $output = ob_get_contents();
+    ob_end_clean();
     //return $output;
 
-    // $result = [
-    //     'max' => $max_pages,
-    //     'html' => $output,
-    //   ];
-    //   echo json_encode($result);
+    $result = [
+       'html' => $output,
+      ];
+       echo json_encode($result);
       exit;
     }
 

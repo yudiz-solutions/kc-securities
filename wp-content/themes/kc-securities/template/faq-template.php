@@ -22,120 +22,78 @@ get_header();
     <div class="container">
         <div class="faq-tabing custom-tabing wow fadeInUp">
             <ul class="tabs">
-                <li class="active" rel="tab1"><button class="nav-link-tab">Derivatives</button></li>
-                <li rel="tab2"><button class="nav-link-tab">Currency</button></li>
-                <li rel="tab3"><button class="nav-link-tab">NRI</button></li>
+                <?php 
+                        $tab_details = get_field('faq_tab_details');
+                        if(isset($tab_details) && !empty($tab_details)){
+                            $i=1;
+                            foreach ($tab_details as $key => $value) {
+                               $faq_tab_title = $value['faq_tab_title'];
+                                    if(isset($faq_tab_title) && !empty($faq_tab_title)){
+                                    ?>
+                                        <li class="<?php if($i==1){echo 'active';}?>" rel="tab<?php echo $i;?>"><button class="nav-link-tab"><?php echo $faq_tab_title;?></button></li>
+                                <?php 
+                                }
+                           $i++; }
+                        } ?>
+                <!-- <li rel="tab2"><button class="nav-link-tab">Currency</button></li>
+                <li rel="tab3"><button class="nav-link-tab">NRI</button></li> -->
             </ul>
             <div class="tab_container">
+                 <?php 
+                        $tab_details = get_field('faq_tab_details');
+                        if(isset($tab_details) && !empty($tab_details)){
+                            $j=1;
+                            $first = TRUE;
+                            foreach ($tab_details as $key => $value) {
+                                $button_value = 'false';
+                                if ($first) {
+                                  $button_value = 'true';
+                                  $first = FALSE;
+                                }
+                                
+                               $faq_tab_title = $value['faq_tab_title'];
+                                    if(isset($faq_tab_title) && !empty($faq_tab_title)){
+                                    ?>
+                                        <button  class="<?php if($j==1){echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php echo $faq_tab_title;?></button>
+                                    <?php } ?>
+                                    <div id="tab<?php echo $j;?>" class="tab_content">
+                                        <div class="accordion custom-accordion" id="accordion<?php echo $faq_tab_title;?>">
+                                            <?php $faq_question_lists = $value['faq_question_list'];
+                                                  if(isset($faq_question_lists) && !empty($faq_question_lists)){
+                                                    $k=1;
+                                                    foreach($faq_question_lists as $faq_question_list){
+                                                        $faq_question_title = $faq_question_list['faq_question_title'];?>
+                                                        <div class="accordion-item active">
+                                                            <h2 class="accordion-header" id="heading<?php echo $k;?>">
+                                                            <?php if(isset($faq_question_title) && !empty($faq_question_title)){ ?>
+                                                                    <button class="accordion-button <?php if($k!==1){echo 'collapsed';}?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $k;?>" aria-expanded="<?php echo esc_attr($button_value); ?>" aria-controls="collapse<?php echo $k;?>">
+                                                                    <?php echo $faq_question_title;?>
+                                                                </button>
+                                                                <?php } ?>
+                                                            </h2>
+                                                            <?php $faq_answer_lists = $faq_question_list['faq_answer_list'];
+                                                                  if(isset($faq_answer_lists) && !empty($faq_answer_lists)){ 
+                                                                    
+                                                                    foreach($faq_answer_lists as $faq_answer_list){
+                                                                            $faq_answer_title = $faq_answer_list['faq_answer_title'];
+                                                                        ?> 
+                                                                    <div id="collapse<?php echo $k;?>" class="accordion-collapse collapse <?php if($k==1){echo 'show';}?>" aria-labelledby="heading<?php echo $k;?>" data-bs-parent="#accordion<?php echo $faq_tab_title;?>">
+                                                                        <div class="accordion-body faq-body custom-point">
+                                                                            <?php echo $faq_answer_title;?>
+                                                                        </div>
+                                                                    </div><?php 
+                                                                    }
+                                                                  }?>
+                                                        </div><?php
+                                                  $k++; }
+                                                }?>
+                                          
+                                        </div>
+                                    </div><?php
+                            $j++; }
+                        } ?>            
                 
-                <button  class="d_active tab_drawer_heading" rel="tab1">Derivatives</button>
-                <div id="tab1" class="tab_content">
-                    <div class="accordion custom-accordion" id="accordionDerivatives">
-                        <div class="accordion-item active">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                What are Derivatives?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                    <p>The term "Derivative" indicates that it has no independent value, i.e. its value is entirely "derived" from the value of the underlying asset. The underlying asset can be Securities, Commodities, Bullion, Currency, Livestock or anything else. In other words, Derivative means a forward, future, option or any other hybrid contract of pre-determined fixed duration, linked for the purpose of contract fulfillment to the value of a specified real or financial asset or to an index of securities.</p>
-                                    <p>With Securities Laws (Second Amendment) Act, 1999, Derivatives has been included in the definition of Securities. The term Derivative has been defined in Securities Contracts (Regulations) Act, as :</p>
-                                    <ul>
-                                        <li>A security derived from a debt instrument, share, loan, whether secured or unsecured, risk instrument or contract for differences or any other form of security.</li>
-                                        <li>A contract which derives its value from the prices, or index of prices, of underlying securities.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    What is a Futures Contract?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                    <p>Futures Contract means a legally binding agreement to buy or sell the underlying security on a future date. Future contracts are the organized/standardized contracts in terms of quantity, quality (in case of commodities), delivery time and place for settlement on any date in future. The contract expires on a pre-specified date which is called the expiry date of the contract. On expiry, futures can be settled by delivery of the underlying asset or cash. Cash settlement enables the settlement of obligations arising out of the future/option contract in cash.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    What is an Option Contract?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                    <p>Option Contract is a type of Derivatives Contract which gives the buyer/holder of the contract the right (but not the obligation) to buy/sell the underlying asset at a predetermined price within or at end of a specified period. The buyer/holder of the option purchases the right from the seller/writer for a consideration which is called the premium. The seller/writer of an option is obligated to settle the option as per the terms of the contract when the buyer/holder exercises his right. The underlying asset could include securities, an index of prices of securities etc.</p>
-                                    <p>Under Securities Contracts (Regulations) Act, 1956 options on securities has been defined as "option in securities" means a contract for the purchase or sale of a right to buy or sell, or a right to buy and sell, securities in future, and includes a teji, a mandi, a teji mandi, a galli, a put, a call or a put and call in securities.</p>
-                                    <p>An Option to buy is called Call option and option to sell is called Put option. Further, if an option that is exercisable on or before the expiry date is called American option and one that is exercisable only on expiry date, is called European option. The price at which the option is to be exercised is called Strike price or Exercise price.</p>
-                                    <p>Therefore, in the case of American options the buyer has the right to exercise the option at any time on or before the expiry date. This request for exercise is submitted to the Exchange, which randomly assigns the exercise request to the sellers of the options, who are obligated to settle the terms of the contract within a specified time frame.</p>
-                                    <p>As in the case of futures contracts, option contracts can be also be settled by delivery of the underlying asset or cash. However, unlike futures cash settlement in option contract entails paying/receiving the difference between the strikes price/exercise price and the price of the underlying asset either at the time of expiry of the contract or at the time of exercise / assignment of the option contract.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingfour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                                    What are Index Futures and Index Option Contracts?
-                                </button>
-                            </h2>
-                            <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                    <p>Futures contract based on an index i.e. the underlying asset is the index, are known as Index Futures Contracts. For example, futures contract on NIFTY Index and BSE-30 Index. These contracts derive their value from the value of the underlying index.</p>
-                                    <p>Similarly, the options contracts, which are based on some index, are known as Index options contract. However, unlike Index Futures, the buyer of Index Option Contracts has only the right but not the obligation to buy / sell the underlying index on expiry. Index Option Contracts are generally European Style options i.e. they can be exercised / assigned only on the expiry date.</p>
-                                    <p>An index, in turn derives its value from the prices of securities that constitute the index and is created to represent the sentiments of the market as a whole or of a particular sector of the economy. Indices that represent the whole market are broad based indices and those that represent a particular sector are sectoral indices. In the beginning futures and options were permitted only on S&P Nifty and BSE Sensex. Subsequently, sectoral indices were also permitted for derivatives trading subject to fulfilling the eligibility criteria. Derivative contracts may be permitted on an index if 80% of the index constituents are individually eligible for derivatives trading. However, no single ineligible stock in the index shall have a weightage of more than 5% in the index. The index is required to fulfill the eligibility criteria even after derivatives trading on the index have begun. If the index does not fulfill the criteria for 3 consecutive months, then derivative contracts on such index would be discontinued.</p>
-                                    <p>By its very nature, index cannot be delivered on maturity of the Index futures or Index option contracts therefore, these contracts are essentially cash settled on Expiry.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingfive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                                    What is the structure of derivatives markets in India?
-                                </button>
-                            </h2>
-                            <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                   <p>Derivative trading in India takes can place either on a separate and independent Derivative Exchange or on a separate segment of an existing Stock Exchange. Derivative Exchange/Segment function as a Self-Regulatory Organization (SRO) and SEBI acts as the oversight regulator. The clearing & settlement of all trades on the Derivative Exchange/Segment would have to be through a Clearing Corporation/House, which is independent in governance and membership from the Derivative Exchange/Segment.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingsix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
-                                    What is the regulatory framework of derivatives markets in India?
-                                </button>
-                            </h2>
-                            <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix" data-bs-parent="#accordionDerivatives">
-                                <div class="accordion-body faq-body custom-point">
-                                   <p>With the amendment in the definition of ''securities'' under SC(R)A (to include derivative contracts in the definition of securities), derivatives trading takes place under the provisions of the Securities Contracts (Regulation) Act, 1956 and the Securities and Exchange Board of India Act, 1992.</p>
-                                   <p>Dr. L.C Gupta Committee constituted by SEBI had laid down the regulatory framework for derivative trading in India. SEBI has also framed suggestive bye-law for Derivative Exchanges/Segments and their Clearing Corporation/House which lays down the provisions for trading and settlement of derivative contracts. The Rules, Bye-laws & Regulations of the Derivative Segment of the Exchanges and their Clearing Corporation/House have to be framed in line with the suggestive Bye-laws. SEBI has also laid the eligibility conditions for Derivative Exchange/Segment and its Clearing Corporation/House. The eligibility conditions have been framed to ensure that Derivative Exchange/Segment & Clearing Corporation/House provide a transparent trading environment, safety & integrity and provide facilities for redressal of investor grievances. Some of the important eligibility conditions are -</p>
-                                  <ul>
-                                        <li> Derivative trading to take place through an online screen based Trading System. </li>
-                                        <li> The Derivatives Exchange/Segment shall have online surveillance capability to monitor positions, prices, and volumes on a real time basis to deter market manipulation. </li>
-                                        <li> The Derivatives Exchange/ Segment should have arrangements for dissemination of information about trades, quantities and quotes on a real time basis through atleast two information vending networks, which are easily accessible to investors across the country. </li>
-                                        <li> The Derivatives Exchange/Segment should have arbitration and investor grievances redressal mechanism operative from all the four areas / regions of the country. </li>
-                                        <li> The Derivatives Exchange/Segment should have satisfactory system of monitoring investor complaints and preventing irregularities in trading. </li>
-                                        <li> The Derivative Segment of the Exchange would have a separate Investor Protection Fund. </li>
-                                        <li> The Clearing Corporation/House shall perform full novation, i.e. the Clearing Corporation/House shall interpose itself between both legs of every trade, becoming the legal counterparty to both or alternatively should provide an unconditional guarantee for settlement of all trades. </li>
-                                        <li> The Clearing Corporation/House shall have the capacity to monitor the overall position of Members across both derivatives market and the underlying securities market for those Members who are participating in both. </li>
-                                        <li> The level of initial margin on Index Futures Contracts shall be related to the risk of loss on the position. The concept of value-at-risk shall be used in calculating required level of initial margins. The initial margins should be large enough to cover the one-day loss that can be encountered on the position on 99% of the days. </li>
-                                        <li> The Clearing Corporation/House shall establish facilities for electronic funds transfer (EFT) for swift movement of margin payments. </li>
-                                        <li> In the event of a Member defaulting in meeting its liabilities, the Clearing Corporation/House shall transfer client positions and assets to another solvent Member or close-out all open positions. </li>
-                                        <li> The Clearing Corporation/House should have capabilities to segregate initial margins deposited by Clearing Members for trades on their own account and on account of his client. The Clearing Corporation/House shall hold the clients’ margin money in trust for the client purposes only and should not allow its diversion for any other purpose. </li>
-                                        <li> The Clearing Corporation/House shall have a separate Trade Guarantee Fund for the trades executed on Derivative Exchange / Segment. </li>
-                                        <li> Presently, SEBI has permitted Derivative Trading on the Derivative Segment of BSE and the F&O Segment of NSE. </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button  class="tab_drawer_heading" rel="tab2">Currency</button>
+                <!-- <button  class="tab_drawer_heading" rel="tab2">Currency</button>
                 <div id="tab2" class="tab_content">
                     <div class="accordion custom-accordion" id="accordionCurrency">
                         <div class="accordion-item active">
@@ -308,13 +266,29 @@ get_header();
                                 </div>
                             </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 </section>
 <!--------------------------------- FAQ section End --------------------------------->
-
+<script>
+    jQuery(document).ready(function(){
+    if(jQuery('.accordion-button').hasClass('collapsed')){
+      jQuery('.accordion-button').parents('.accordion-item').siblings().removeClass('accordion-active');
+    }
+    var $accordionItems = jQuery('.accordion-item');
+    $accordionItems.first().addClass('accordion-active');
+    jQuery(document).on('click','.accordion-button',function () {       
+      jQuery('.accordion-button').parents('.accordion-item').removeClass('accordion-active');
+      if(!jQuery(this).hasClass('collapsed')){
+          jQuery(this).parents('.accordion-item').addClass('accordion-active');
+        }else {
+          jQuery(this).parents('.accordion-item').removeClass('accordion-active');
+        }
+    });
+});
+</script>
 <?php
 
 get_footer();

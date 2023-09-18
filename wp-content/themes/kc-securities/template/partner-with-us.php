@@ -18,19 +18,27 @@ get_header();
 
 
 <!--------------------------------- Authorized Persons start --------------------------------->
+<?php $authorized_title = get_field('authorized_title');
+      $authorized_content = get_field('authorized_content');
+      $authorized_image = get_field('authorized_image');  
+ ?>
+
 <section class="authorized-section custom-padding m-0">
     <div class="container">
         <div class="row g-4 wow fadeInUp">
             <div class="col-lg-6 align-self-center">
                 <div class="authorized-left">
-                    <h2 class="title-style-2">Authorized Persons</h2>
-                    <p>Kantilal Chagganlal, established in 1954, is a name synonymous with wealth management and is one of the old integrated capital market intermediaries in the financial sector. Over the years, KC has stood the test of time, has helped clients understand and simplify the investment process to achieve their financial goals. Therefore we hereby invite you to become our partners (Authorized Persons).</p>
+                    <?php if(isset($authorized_title) && !empty($authorized_title)){ ?>
+                        <h2 class="title-style-2"><?php echo $authorized_title;?></h2>
+                    <?php } if(isset($authorized_content) && !empty($authorized_content)){ echo $authorized_content; }?>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="authorized-images">
-                    <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/authorized-persons.jpg" alt="Authorized Persons">
-                </div>
+                <?php if(isset($authorized_image) && !empty($authorized_image)){ ?>
+                    <div class="authorized-images">
+                        <img src="<?php echo $authorized_image['url'];?>" alt="<?php echo $authorized_image['alt'];?>">
+                    </div><?php 
+                } ?>    
             </div>
         </div>
     </div>
@@ -38,66 +46,70 @@ get_header();
 <!--------------------------------- Authorized Persons End --------------------------------->
 
 <!--------------------------------- Compliance Point section Start --------------------------------->
+<?php $sebi_rules_title = get_field('sebi_rules_title');
+      $sebi_details = get_field('sebi_details');
+ ?>
 <section class="sebi-rules-section custom-padding m-0">
     <div class="container">
-        <div class="title-main text-center wow fadeInUp">
-            <h2 class="title-style-2">SEBI Rules for Authorized Person</h2>
-        </div>
+        <?php if(isset($sebi_rules_title) && !empty($sebi_rules_title)){ ?>
+            <div class="title-main text-center wow fadeInUp">
+                <h2 class="title-style-2"><?php echo $sebi_rules_title;?></h2>
+            </div>
+        <?php } ?>
         <div class="sebi-rules wow fadeInUp">
-            <div class="sebi-rule-point">
-                <p>A ‘Sub-Broker’ which is known as ‘Authorized Person’, is any person who is not a Trading Member of a Stock Exchange but who acts on behalf of a Trading Member as an agent or otherwise for assisting investors in dealing in securities through such Trading Members. </p>
-            </div>
-            <div class="sebi-rule-point">
-                <p>SEBI has directed that no Trading Member shall deal with a person who is acting as a Sub-Broker unless he is registered with SEBI and it shall be the responsibility of the Trading Member to ensure that his clients are not acting in the capacity of an Authorized Persons unless they are registered with SEBI.</p>
-            </div>
-            <div class="sebi-rule-point">
-                <p>The agreement lays down the rights and responsibilities of Trading Members as well as Authorized Persons.</p>
-            </div>
-            <div class="sebi-rule-point">
-                <p>It is mandatory for Trading Members to enter into an agreement with all the Sub-Brokers.</p>
-            </div>
-            <div class="sebi-rule-point">
-                <p>All Authorized Persons are required to obtain a Certificate of Registration from SEBI without which they are not permitted to deal in securities.</p>
-            </div>
-        
+            <?php if(isset($sebi_details) && !empty($sebi_details)){
+                    foreach ($sebi_details as $key => $value) {
+                        $sebi_content = $value['sebi_content'];
+                        ?>
+                        <div class="sebi-rule-point">
+                         <?php if(isset($sebi_content) && !empty($sebi_content)){ echo $sebi_content; }?>    
+                        </div><?php
+                    }
+                } ?>
         </div>
     </div>
 </section>
 <!--------------------------------- Compliance Point section End --------------------------------->
 
 <!--------------------------------- Register section start --------------------------------->
+<?php
+ $get_in_touch_title = get_field('get_in_touch_title');   
+ $authorize_details = get_field('authorize_details');
+?>
 <section class="get-in-touch-section custom-padding m-0 bg-1">
     <div class="container">
         <div class="row justify-content-center wow fadeInUp">
             <div class="col-lg-8">
-                <div class="title-main text-center">
-                    <h2 class="title-style-2">Register as a Partner Authorized Person Please Contact</h2>
-                </div>
+                <?php if(isset($get_in_touch_title) && !empty($get_in_touch_title)){ ?>
+                    <div class="title-main text-center">
+                        <h2 class="title-style-2"><?php echo $get_in_touch_title;?></h2>
+                    </div>
+                <?php } ?>
                 <div class="row g-4">
-                    <div class="col-lg-6">
-                       <div class="get-box">
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/call-contact.svg" alt="Call">
-                         <p class="p-title">Call Us</p>
-                         <p><a href="tel:02267236020">022-67236020</a></p>
-                       </div>
-                    </div>
-                    <div class="col-lg-6">
-                       <div class="get-box">
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/email-contact.svg" alt="Call">
-                         <p class="p-title">Email Us on</p>
-                         <p><a href="mailto:sales@kcsecurities.com">sales@kcsecurities.com</a></p>
-                       </div>
-                    </div>
+                    <?php if(isset($authorize_details) && !empty($authorize_details)){
+                            foreach ($authorize_details as $key => $value) {
+                                 $authorize_image = $value['authorize_image'];
+                                 $authorize_title = $value['authorize_title'];
+                                 $authorize_content = $value['authorize_content'];
+                                ?>
+                                <div class="col-lg-6">
+                                   <div class="get-box">
+                                    <?php if(isset($authorize_image) && !empty($authorize_image)){ ?>
+                                     <img src="<?php echo $authorize_image['url'];?>" alt="<?php echo $authorize_image['alt'];?>"><?php
+                                    } if(isset($authorize_title) && !empty($authorize_title)){ ?>
+                                         <p class="p-title"><?php echo $authorize_title;?></p>
+                                 <?php } if(isset($authorize_content) && !empty($authorize_content)){ ?>
+                                        <p><?php echo $authorize_content;?></p>
+                                 <?php } ?>
+                                   </div>
+                                </div><?php
+                            } 
+                        } ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--------------------------------- Register section End --------------------------------->
-
-
-
-
 <?php
-
 get_footer();
