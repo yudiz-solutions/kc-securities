@@ -17,47 +17,49 @@ get_header();
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- KC iTrade Advantage start --------------------------------->
+<?php $kc_itrade_title = get_field('kc_itrade_title');
+       $kc_itrade_content = get_field('kc_itrade_content');
+       $itrade_app_title = get_field('itrade_app_title');
+       $google_details = get_field('google_details');
+       $kc_itrade_image = get_field('kc_itrade_image'); 
+?>
 <section class="kc-itrade-section custom-padding bg-2 m-0">
     <div class="container">
         <div class="row g-4 wow fadeInUp">
             <div class="col-lg-7 align-self-center">
                 <div class="kc-trade-conten-part">
-                    <h2 class="title-style-2">KC iTrade Advantage</h2>
+                    <?php if(isset($kc_itrade_title) && !empty($kc_itrade_title)){ ?>
+                        <h2 class="title-style-2"><?php echo $kc_itrade_title;?></h2>
+                    <?php } ?>
                     <div class="kc-point custom-point">
-                        <ul>
-                            <li>Live streaming quotes.</li>
-                            <li>User defined market watches.</li>
-                            <li>Time Tested Research.</li>
-                            <li>In-App Calling.</li>
-                            <li>Simple & Intuitive.</li>
-                            <li>Contextual Analytics.</li>
-                            <li>Extensive charting and unlimited historical data.</li>
-                            <li>Multi-exchange internet based trading application.</li>
-                            <li>Compact easy to deploy self-installing kit.</li>
-                            <li>Streaming quotes for continuous rates refresh.</li>
-                            <li>Integrated Net Positions View with Multiple Filters.</li>
-                            <li>Integrated Net Positions View with Multiple Filters.</li>
-                            <li>Facilitates Order and Trade book functions with fully customizable views at all levels.</li>
-                            <li>Contact us at <a href="mailto:ebroking@kcsecurities.com">ebroking@kcsecurities.com</a> from registered Email Id.</li>
-                        </ul>
+                        <?php if(isset($kc_itrade_content) && !empty($kc_itrade_content)){ echo $kc_itrade_content; }?>
                     </div>
                     <div class="kc-tade-app-content">
-                        <p>Get KC iTrade App</p>
+                        <?php if(isset($itrade_app_title) && !empty($itrade_app_title)){ ?>
+                        <p><?php echo $itrade_app_title;?></p>
+                        <?php } ?>
                         <div class="kc-tade-app-content-image">
-                            <a href="#" class="kc-tade-app-images">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/play-store-icon.svg" alt="Google Play Store">
-                        </a>
-                        <a href="#" class="kc-tade-app-images">
-                            <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/apple-store-icon.svg" alt="Apple Store Icon">
-                        </a>
+                            <?php if(isset($google_details) && !empty($google_details)){
+                                    foreach($google_details as $google_detail){
+                                        $google_image = $google_detail['google_play_image'];
+                                        $google_link = $google_detail['link'];
+                                        if(isset($google_image) && !empty($google_image)){
+                                ?>
+                                <a href="<?php if(isset($google_link) && !empty($google_link)){}?>" class="kc-tade-app-images">
+                                    <img src="<?php echo $google_image['url'];?>" alt="<?php echo $google_image['alt'];?>">
+                                </a>
+                            <?php } } } ?>
+                        
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
-                <div class="kc-trade-image">
-                     <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/mobie-kc-image.svg" alt="Mobile KC">
-                </div>
+                <?php if(isset($kc_itrade_image) && !empty($kc_itrade_image)){ ?>
+                    <div class="kc-trade-image">
+                        <img src="<?php echo $kc_itrade_image['url'];?>" alt="<?php echo $kc_itrade_image['alt'];?>">
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -65,33 +67,28 @@ get_header();
 <!--------------------------------- KC iTrade Advantage End --------------------------------->
 
 <!--------------------------------- KC iTrade Advantage start --------------------------------->
+<?php $kc_internet_title = get_field('kc_internet_title');
+       $kc_internet_content = get_field('kc_internet_content');
+       $kc_internet_image = get_field('kc_internet_image');
+      
+?>
 <section class="kc-itrade-section kc-laptop-tarade-section custom-padding m-0">
     <div class="container">
         <div class="row g-4 wow fadeInUp">
              <div class="col-lg-5 order-lg-1 order-2">
-                <div class="kc-trade-image kc-trade-laptop">
-                     <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/kc-laptop-dashbord.svg" alt="KC Laptop Dashbord">
-                </div>
+                 <?php if(isset($kc_internet_image) && !empty($kc_internet_image)){ ?>
+                    <div class="kc-trade-image kc-trade-laptop">
+                        <img src="<?php echo $kc_internet_image['url'];?>" alt="<?php echo $kc_internet_image['alt'];?>">
+                    </div>
+                <?php } ?>
             </div>
             <div class="col-lg-7 align-self-center order-lg-2 order-1">
                 <div class="kc-trade-conten-part">
-                    <h2 class="title-style-2">KC Internet Trading Advantage</h2>
+                    <?php if(isset($kc_internet_title) && !empty($kc_internet_title)){ ?>
+                        <h2 class="title-style-2"><?php echo $kc_internet_title;?></h2>
+                    <?php } ?>
                     <div class="kc-point custom-point">
-                        <ul>
-                            <li>High speed trading.</li>
-                            <li>Live order status.</li>
-                            <li>Paperless transactions.</li>
-                            <li>After hours order placement facility.</li>
-                            <li>Customized AMC Scheme to reduce cost of your trade.</li>
-                            <li>Integrated banking, De-mat and Trading account with digital contract notes.</li>
-                            <li>Advantage of mobility - Access all your account from anywhere; home, Office, Cyber Cafe, Laptop.</li>
-                            <li>Integrated back office - Access all your information at anytime from anywhere.</li>
-                            <li>Integrated banking, De-mat and Trading account with digital contract notes.</li>
-                            <li>Research reports (Fundamental & Technical).</li>
-                            <li>Phone Trade.</li>
-                            <li>Intra-day calls & flash news.</li>
-                            <li>24X7 web enabled back office.</li>
-                        </ul>
+                        <?php if(isset($kc_internet_content) && !empty($kc_internet_content)){ echo $kc_internet_content; }?>
                     </div>
                 </div>
             </div>

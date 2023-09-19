@@ -122,7 +122,7 @@ get_header();
                             $term_ids[] =  $office_are_category->term_id;
                             ?>
                     <!-- <option value="hide">Select Year</option> -->
-                    <option data-category="<?php echo $office_are_category->term_id; ?>" value="<?php echo $office_are_category->name;?>" class="location_are"><?php echo $office_are_category->name;?></option>
+                    <option data-category="<?php echo $office_are_category->term_id; ?>" value="<?php echo $office_are_category->name;?>" <?php if($office_are_category->name == 'Mumbai'){ echo "SELECTED";}?>  class="location_are"><?php echo $office_are_category->name;?></option>
                 <?php endforeach; ?>
                     <!-- <option value="Delhi">Delhi</option>
                     <option value="Kolkata">Kolkata</option>
@@ -142,7 +142,7 @@ get_header();
                             array(
                                 'taxonomy' =>  "areas",
                                 'field'    => 'term_id',
-                                'terms'    => $term_ids,
+                                'terms'    => 11,
                                 'operator' => 'IN'
                             )
                         ),

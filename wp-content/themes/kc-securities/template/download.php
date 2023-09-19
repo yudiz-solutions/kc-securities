@@ -44,24 +44,40 @@ get_header();
 <?php endwhile; ?>
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
-          
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/exe-icon.svg" alt="EXE Icon">
-                    </span>
-                    <p>AcroRdrDC2100720099_en_US.exe</p>
-                </a>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span>
-                         <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/pdf-icon.svg" alt="PDF Icon">
-                    </span>
-                    <p>Risk Disclosures on Derivatives.pdf</p>
-                </a>
-            </div>
+            <?php $download_link_details = get_field('download_link_details');
+                if(isset($download_link_details) && !empty($download_link_details)){
+                    foreach($download_link_details as $download_link_detail){
+                        $download_link = $download_link_detail['download_link'];
+                        $download_file_name = $download_link_detail['download_file_name'];
+                        if ($download_link) {
+                            $file_url = $download_link['url'];
+                            $file_extension = pathinfo($file_url, PATHINFO_EXTENSION);
+                            
+                            // Define an array of allowed file extensions and their corresponding icons
+                            $icons = array(
+                                'pdf' => 'pdf-icon.svg',
+                                'doc' => 'doc-icon.svg',
+                                'text' => 'text-icon.svg',
+                                'xls' => 'xl-icon.svg',
+                                'xlsx' => 'xl-icon.svg',
+                            );
+                        
+                         ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="<?php echo $file_url;?>" class="download-box" target = "_blank">
+                                <?php 
+                                        if (isset($icons[$file_extension])) {
+                                                $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension];
+                                        } ?>
+                                        <span> <img src="<?php echo $icon_url; ?>"> </span>
+                                        <?php if(isset($download_file_name) && !empty($download_file_name)){ ?>
+                                                <p><?php echo $download_file_name;?></p>
+                                    <?php } ?>
+                                </a>
+                            </div><?php 
+                        }
+                    } 
+                } ?>
         </div>
     </div>
 </section>

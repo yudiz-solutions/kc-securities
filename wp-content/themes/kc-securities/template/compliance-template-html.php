@@ -76,19 +76,19 @@ get_header();
             </div>
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
+                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/doc-icon.svg" alt="XL Icon"> </span>
                     <p>Disclosure of Complaint - CDSL.xlsx</p>
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
+                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/pdf-icon.svg" alt="XL Icon"> </span>
                     <p>Disclosure of Complaint - MCX.xlsx</p>
                 </a>
             </div>
             <div class="col-lg-4 col-md-6">
                 <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
+                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/text-icon.svg" alt="XL Icon"> </span>
                     <p>Disclosure of Complaint - NSE.xlsx</p>
                 </a>
             </div>

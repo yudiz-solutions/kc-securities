@@ -6,14 +6,27 @@
 
 get_header();
 ?>
-
+<?php $backoffice_title = get_field('backoffice_title');
+       $backoffice_details = get_field('backoffice_details');
+?>  
 <section class="back-office-section custom-padding m-0">
     <div class="container">
         <div class="back-office-wrapper text-center wow fadeInUp">
-            <h2 class="title-style-2">Backoffice Login</h1>
+            <?php if(isset($backoffice_title) && !empty($backoffice_title)){ ?>
+                <h2 class="title-style-2"><?php echo $backoffice_title;?></h1>
+            <?php } ?>
             <div class="back-office-button">
-                <a href="#" class="primary-button">Client Login</a>
-                <a href="#" class="primary-button-outline">Branch/AP Login</a>
+                <?php if(isset($backoffice_details) && !empty($backoffice_details)){ 
+                        foreach($backoffice_details as $backoffice_detail){
+                            $backoffice_link = $backoffice_detail['backoffice_link'];
+                            $backoffice_title = $backoffice_detail['backoffice_title'];
+                            ?>
+                            <?php if(isset($backoffice_title) && !empty($backoffice_title)){ ?>
+                                <a href="<?php $backoffice_link;?>" class="primary-button<?php if($backoffice_title == 'Branch/AP Login'){echo '-outline';}?>"><?php echo $backoffice_title;?></a><?php 
+                            }
+                        } 
+                    }?>
+                
             </div>
         </div>
     </div>

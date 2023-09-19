@@ -17,126 +17,117 @@ get_header();
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Compliance Point section Start --------------------------------->
+<?php 
+    $compliance_point_details = get_field('compliance_point_details');
+?>
 <section class="compliance-point-section custom-padding m-0">
     <div class="container">
         <div class="compliance-wrapper-point wow fadeInUp">
-            <div class="compliance-point-inner">
-                <p>Don't forget to strike off blanks in your KYC.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Don't submit an incomplete KYC form.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Don't share your trading password.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Investor awareness.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Beware of assured/fixed returns.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Get your accounts settled periodically.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Examine & review your trading account periodically.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Keep a regular check of your running account.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Do not invest in schemes run by unregistered SEBI entities.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Demat Debit and Pledge Instruction.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Check your securities / MF / bonds in the consolidated account statement issued by NSDL/CDSL every month.</p>
-            </div>
-            <div class="compliance-point-inner">
-                <p>Precautions for clients dealing in Options.</p>
-            </div>
+            <?php if(isset($compliance_point_details) && !empty($compliance_point_details)){
+                    foreach($compliance_point_details as $compliance_point_detail){
+                        $compliance_content = $compliance_point_detail['compliance_content']; 
+                        if(isset($compliance_content) && !empty($compliance_content)){ 
+                            ?>
+                            <div class="compliance-point-inner">
+                                <?php echo $compliance_content;?>
+                            </div><?php
+                        }
+                    }
+                }?>
         </div>
     </div>
 </section>
 <!--------------------------------- Compliance Point section End --------------------------------->
 
 <!--------------------------------- Disclosure of Complaints Start --------------------------------->
+<?php 
+    $disclosure_title = get_field('disclosure_title');
+?>
 <section class="disclosure-complaints custom-padding m-0 bg-2">
     <div class="container">
-        <div class="title-main text-center wow fadeInUp">
-            <h2 class="title-style-2">Disclosure of Complaints</h2>
-        </div>
+        <?php if(isset($disclosure_title) && !empty($disclosure_title)){ ?>
+            <div class="title-main text-center wow fadeInUp">
+                <h2 class="title-style-2"><?php echo $disclosure_title;?></h2>
+            </div>
+        <?php } ?>
         <div class="row g-3 wow fadeInUp">
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
-                    <p>Disclosure of Complaint - BSE.xlsx</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
-                    <p>Disclosure of Complaint - CDSL.xlsx</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
-                    <p>Disclosure of Complaint - MCX.xlsx</p>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/xl-icon.svg" alt="XL Icon"> </span>
-                    <p>Disclosure of Complaint - NSE.xlsx</p>
-                </a>
-            </div>
+            <?php  $disclosure_excle_details = get_field('disclosure_excle_details');
+                   if(isset($disclosure_excle_details) && !empty($disclosure_excle_details)){
+                        foreach($disclosure_excle_details as $disclosure_excle_detail){
+                            $disclosure_title = $disclosure_excle_detail['disclosure_title'];
+                            $disclosure_download_pdf = $disclosure_excle_detail['disclosure_download_pdf'];
+                            if ($disclosure_download_pdf) {
+                                $file_url = $disclosure_download_pdf['url'];
+                                $file_extension = pathinfo($file_url, PATHINFO_EXTENSION);
+                                
+                                // Define an array of allowed file extensions and their corresponding icons
+                                $icons = array(
+                                    'pdf' => 'pdf-icon.svg',
+                                    'doc' => 'doc-icon.svg',
+                                    'text' => 'text-icon.svg',
+                                    'xls' => 'xl-icon.svg',
+                                    'xlsx' => 'xl-icon.svg',
+                                );
+                                ?>
+                          
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="<?php echo $file_url;?>" class="download-box" target = "_blank" >
+                                    <?php 
+                                    if (isset($icons[$file_extension])) {
+                                            $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension];
+                                    } ?>
+                                        <span> <img src="<?php echo $icon_url; ?>"> </span>
+                                        
+                                        <?php if(isset($disclosure_title) && !empty( $disclosure_title)){ ?>
+                                            <p><?php echo $disclosure_title;?></p>
+                                        <?php } ?>
+                                    </a>
+                                </div><?php
+                            }
+                               
+                        }
+                    } ?>
         </div>
     </div>
 </section>
 <!--------------------------------- Disclosure of Complaints End --------------------------------->
 
 <!--------------------------------- Board of Directors Start --------------------------------->
+<?php 
+    $board_of_directors_title = get_field('board_of_directors_title');
+?>
 <section class="directors-section custom-padding m-0">
     <div class="container">
+        <?php if(isset($board_of_directors_title) && !empty($board_of_directors_title)){ ?>
         <div class="title-main text-center wow fadeInUp">
-            <h2 class="title-style-2">Board of Directors</h2>
+            <h2 class="title-style-2"><?php echo $board_of_directors_title;?></h2>
         </div>
+        <?php } ?>
         <div class="row g-4 wow fadeInUp">
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Chiranjeev Vaghani</p>
-                    </div>
-                    <p>Is a Graduate in Science and has over 25 years of rich and varied experience in the field of finance. He also serves as a Director of Milton Investments Pvt.Ltd., Milton Exports Pvt. Ltd.</p>
-                    <div class="directors-postion">
-                        <p>Chairman</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Praveen Gupta</p>
-                    </div>
-                    <p>Is a BE in computer science; having wide and rich experience of more than 22 years in Securities, Commodities & Currency markets. He heads the Broking & Clearing Division along with NRI/FPI Businesses of KC Group.</p>
-                    <div class="directors-postion">
-                        <p>Director</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Amit Gupta</p>
-                    </div>
-                    <p>Our Ambitious Gentleman joined stock market at the early age of Nineteen, learned and developed the skill of arbitrage with his golden fingers and sharp business acumen; Making him confident enough.</p>
-                    <div class="directors-postion">
-                        <p>Director</p>
-                    </div>
-                </a>
-            </div>
+            <?php  $directors_details = get_field('directors_details');
+                    if(isset($directors_details) && !empty($directors_details)){
+                        $i = 1;
+                        foreach($directors_details as $directors_detail){
+                            $directors_name = $directors_detail['directors_name'];
+                            $directors_content = $directors_detail['directors_content'];
+                            $directors_postion = $directors_detail['directors_postion'];
+                            ?>
+                                <div class="col-lg-4 col-md-6">
+                                    <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal-<?php echo $i;?>">
+                                        <?php if(isset($directors_name) && !empty($directors_name)){ ?>
+                                            <div class="directors-name">
+                                                <p><?php echo $directors_name;?></p>
+                                            </div><?php 
+                                        }if(isset($directors_content) && !empty($directors_content)){echo $directors_content; }?>
+                                        <?php if(isset($directors_postion) && !empty($directors_postion)){ ?>
+                                            <div class="directors-postion">
+                                                <p><?php echo $directors_postion;?></p>
+                                            </div>
+                                        <?php } ?>
+                                    </a>
+                                </div><?php
+                       $i++; }
+                    } ?>           
         </div>
     </div>
 </section>
@@ -144,78 +135,41 @@ get_header();
 
 
 <!--------------------------------- The Executive Team Start --------------------------------->
+<?php 
+    $executive_title = get_field('executive_title');
+?>
 <section class="directors-section custom-padding-bottom m-0">
     <div class="container">
-        <div class="title-main text-center wow fadeInUp">
-            <h2 class="title-style-2">The Executive Team</h2>
-        </div>
+        <?php if(isset($executive_title) && !empty($executive_title)){ ?>
+            <div class="title-main text-center wow fadeInUp">
+                <h2 class="title-style-2"><?php echo $executive_title;?></h2>
+            </div>
+        <?php } ?>
         <div class="row g-4 wow fadeInUp">
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Chetan Shah</p>
-                    </div>
-                    <p>With over two decades of experience in the field of Equity Investments, Our zestful and Spirited CEO has worked in different capacities right from Analyst to Investment Manager.</p>
-                    <div class="directors-postion">
-                        <p>CEO</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Vishnu Tibrewala</p>
-                    </div>
-                    <p>With a Degree in Commerce, and a Rich knowledge & experience of over 35 years about the markets has greatly contributed to the field of Stock Broking & Finance Industry.</p>
-                    <div class="directors-postion">
-                        <p>COO</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Ajay Shah</p>
-                    </div>
-                    <p>Holds more than 25 years of experience in different areas of Capital Market. He is acquainted with the KC group since 2015 & is serving as Compliance Officer for BSE / NSE and DP (CDSL) since inception.</p>
-                    <div class="directors-postion">
-                        <p>Vice President - Compliance</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Vijay Purohit</p>
-                    </div>
-                    <p>Is a result oriented Capital market professional with over 23 years of experience in the equity market serving most of the largest Domestic Institutions; Efficiently managing.</p>
-                    <div class="directors-postion">
-                        <p>Head - Institution Sales</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mr. Vineet Agrawal</p>
-                    </div>
-                    <p>A Highly result oriented professional with over fifteen years of rich experience in IT Operations, Entailing maintenance, System & Network Administration as well as proficiently managing teams.</p>
-                    <div class="directors-postion">
-                        <p>Head - IT</p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <div class="directors-name">
-                        <p>Mrs. Pallavi Walawalkar</p>
-                    </div>
-                    <p>Has been with KC Group since September 2009. She holds a Post Graduate Diploma Degree in the specialized field of Finance. With over 15 years of work experience in the areas of Finance & Human Resources.</p>
-                    <div class="directors-postion">
-                        <p>Accounts & HR</p>
-                    </div>
-                </a>
-            </div>
+            <?php  $executive_team_details = get_field('executive_team_details');
+                    if(isset($executive_team_details) && !empty($executive_team_details)){
+                        $i = 1;
+                        foreach($executive_team_details as $executive_team_detail){
+                            $executive_directors_name = $executive_team_detail['executive_directors_name'];
+                            $executive_directors_content = $executive_team_detail['executive_directors_content'];
+                            $executive_directors_postion = $executive_team_detail['executive_directors_postion'];
+                            ?>
+                            <div class="col-lg-4 col-md-6">
+                                <a href="#" class="directors-box" data-bs-toggle="modal" data-bs-target="#executiveModal<?php echo $i;?>">
+                                    <?php if(isset($directors_name) && !empty($directors_name)){ ?>
+                                        <div class="directors-name">
+                                            <p><?php echo $executive_directors_name;?></p>
+                                        </div>
+                                    <?php } if(isset($executive_directors_content) && !empty($executive_directors_content)){echo $executive_directors_content; }?>
+                                    <?php if(isset($executive_directors_postion) && !empty($executive_directors_postion)){ ?>
+                                        <div class="directors-postion">
+                                            <p><?php echo $executive_directors_postion;?></p>
+                                        </div>
+                                    <?php } ?>
+                                </a>
+                            </div><?php
+                       $i++; }
+                    } ?>        
         </div>
     </div>
 </section>
@@ -223,24 +177,67 @@ get_header();
 
 
 <!-- Modal -->
-<div class="modal fade directors-modal m-0" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-       
-      <div class="modal-body">
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <div class="directors-title">
-            <h6 class="title-style-6">Amit Gupta</h6>
-            <p>Director</p>
-        </div>
-        <p>"The young ambitious joined stock market merely at the age of nineteen, learned and developed the skill of arbitrage with his golden fingers and sharp business acumen. That made him confident enough to explore more avenues at the financial markets. Developed institutional business at prominent brokerage houses at Kolkata and scaled new heights of business.His thirst to achieve more ultimately landed him at the financial capital of India also known as ‘The City of Dreams.’ Mumbai nurtured him further towards his goal. He became Business Associate of reputed brokerage houses including Kantilal Chhaganlal, an organisation founded in 1954 and with his sincere & sheer hard work and destiny made him a stakeholder and Managing Director of KC Securities."</p>
-      </div>
-      
-    </div>
-  </div>
-</div>
+<?php  $directors_details = get_field('directors_details');
+        if(isset($directors_details) && !empty($directors_details)){
+            $i = 1;
+            foreach($directors_details as $directors_detail){
+                $directors_name = $directors_detail['directors_name'];
+                $directors_content = $directors_detail['directors_content'];
+                $directors_postion = $directors_detail['directors_postion'];
+                ?>
+                <div class="modal fade directors-modal m-0" id="exampleModal-<?php echo $i;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    
+                    <div class="modal-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="directors-title">
+                            <?php if(isset($directors_name) && !empty($directors_name)){ ?>
+                                <h6 class="title-style-6"><?php echo $directors_name;?></h6>
+                            <?php } if(isset($directors_postion) && !empty($directors_postion)){ ?>
+                                <p><?php echo $directors_postion;?></p>
+                            <?php } ?>
+                        </div>
+                        <?php if(isset($directors_content) && !empty($directors_content)){ echo $directors_content;}?>
+                    </div>
+                    
+                    </div>
+                </div>
+                </div><?php 
+            $i++;   }
+        } ?>
 
-
+<!-- /**** Executive Modal Section Start */ -->
+<?php $executive_team_details  = get_field('executive_team_details');
+    if(isset($executive_team_details)&& !empty($executive_team_details)){ 
+        $k=1;
+        foreach($executive_team_details as $executive_team_detail){
+            $executive_directors_name = $executive_team_detail['executive_directors_name'];
+            $executive_directors_content = $executive_team_detail['executive_directors_content'];
+            $executive_directors_postion = $executive_team_detail['executive_directors_postion'];
+            ?>            
+            <div class="modal fade directors-modal m-0" id="executiveModal<?php echo $k;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="directors-title">
+                        <?php if(isset($executive_directors_name) && !empty($executive_directors_name)){ ?>
+                                <h6 class="title-style-6"><?php echo $executive_directors_name;?></h6>
+                        <?php } if(isset($executive_directors_postion) && !empty($executive_directors_postion)){ ?>
+                        <p><?php echo $executive_directors_postion;?></p>
+                        <?php } ?>
+                    </div>
+                    <?php if(isset($executive_directors_content) && !empty($executive_directors_content)){ echo $executive_directors_content; }?>
+                </div>
+                
+                </div>
+            </div>
+            </div><?php
+        $k++; }
+    }?>    
+<!-- /**** Executive Modal Section End */ -->
 
 
 

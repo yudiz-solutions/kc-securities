@@ -47,6 +47,11 @@
     /*********************** contact address ***********************/
     .contact-left-image { padding-top: 110%; margin-right: 10px; }
 }
+@media (max-width: 1199px) {
+    .corporate-address-box .corporate-content p br{
+        display: none;
+        }
+}
 
 
 @media (max-width: 991px){

@@ -75,7 +75,7 @@ get_header();
                                                 $vision_content = $value['vision_content'];
                                                 ?>
                                                     <div class="col-lg-6">
-                                                        <div class="mission-box">
+                                                        <div class="mission-box custom-point">
                                                             <div class="mission-box-img">
                                                                 <?php if(isset($vision_icon) && !empty($vision_icon)){ ?>
                                                                     <span>

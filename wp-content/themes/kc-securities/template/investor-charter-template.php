@@ -50,43 +50,33 @@ get_header();
                                   $first = FALSE;
                                 }
                                 
-                               $investor_tab_title = $value['investor_tab_title'];
-                                    if(isset($investor_tab_title) && !empty($investor_tab_title)){
-                                    ?>
-                                    <button  class="<?php if($j==1){echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php echo $investor_tab_title;?></button>
-                                    <?php } ?>
-                                    <div id="tab<?php echo $j;?>" class="tab_content">
-              
-                    <div class="investor-wrapper-part investor-point custom-point custom-table">
-                        <?php $investor_content_details =  $value['investor_content_detail'];
-                               if(isset($investor_content_details) && !empty($investor_content_details)){
-                                    foreach($investor_content_details as $investor_content_detail){
-                                        $investor_content = $investor_content_detail['investor_content'];
-                                        if(isset($investor_content) && !empty($investor_content)){echo $investor_content;}
-                                    }
+                                    $investor_tab_title = $value['investor_tab_title'];
+                                        if(isset($investor_tab_title) && !empty($investor_tab_title)){ ?>
+                                            <button  class="<?php if($j==1){echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php echo $investor_tab_title;?></button>
+                                        <?php } ?>
+                                        <div id="tab<?php echo $j;?>" class="tab_content">
+                
+                                            <div class="investor-wrapper-part investor-point custom-point custom-table">
+                                                <?php $investor_content_details =  $value['investor_content_detail'];
+                                                    if(isset($investor_content_details) && !empty($investor_content_details)){
+                                                            foreach($investor_content_details as $investor_content_detail){
+                                                            $investor_content = $investor_content_detail['investor_content'];
+                                                                if(isset($investor_content) && !empty($investor_content)){echo $investor_content;}
+                                                               
+                                                            }
+                                                        
+                                                    }?>  
+                                            </div>
+                                        </div><?php
                                    
-                               }?>  
-                    </div><?php
-                           $j++; }
+                                $j++;    
+                            }
                         }?>
-                </div>
-
-                <!-- <button  class="tab_drawer_heading" rel="tab2">Depository Participant</button>
-                <div id="tab2" class="tab_content">
-                    ...
-                </div>
-                <button  class="tab_drawer_heading" rel="tab3">Research Analyst</button>
-                <div id="tab3" class="tab_content">
-                    ....
-                </div> -->
             </div>
         </div>
     </div>
 </section>
 <!--------------------------------- Investor Charter section End --------------------------------->
-
-
-
 <?php
 
 get_footer();
