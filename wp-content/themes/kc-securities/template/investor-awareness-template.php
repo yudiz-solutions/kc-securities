@@ -7,13 +7,7 @@
 get_header();
 ?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-awareness-banner.jpg">
-    <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
-            <h1 class="title-style-1">Investor Awareness</h1>
-        </div>
-    </div>
-</section>
+<?php echo do_shortcode('[comman_subpage_banner]');?>
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Investor Awareness section Start --------------------------------->

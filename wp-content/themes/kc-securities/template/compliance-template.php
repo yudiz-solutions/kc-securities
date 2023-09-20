@@ -7,13 +7,9 @@
 get_header();
 ?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/compliance-banner.jpg">
-    <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
-            <h1 class="title-style-1">Compliance</h1>
-        </div>
-    </div>
-</section>
+<!--------------------------------- Inner page Banner Start --------------------------------->
+<?php echo do_shortcode('[comman_subpage_banner]');?>
+<!--------------------------------- Inner page Banner End --------------------------------->
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Compliance Point section Start --------------------------------->
@@ -67,6 +63,9 @@ get_header();
                                     'text' => 'text-icon.svg',
                                     'xls' => 'xl-icon.svg',
                                     'xlsx' => 'xl-icon.svg',
+                                    'rar' =>  'rar.svg',
+                                    'jpg' =>  'jpg.svg',
+                                    'zip' =>  'zip.svg',
                                 );
                                 ?>
                           

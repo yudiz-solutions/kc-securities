@@ -107,9 +107,10 @@ class Kc_Security_Public{
     }
 
     public function kc_security_research(){
-        ob_start();
-        $month = $_POST['month'];
-        $year = $_POST['year'];
+       
+       $month = $_POST['month'];
+       $year = $_POST['year'];
+     
 
         $args_research = array(
            'post_type' => 'research',
@@ -131,34 +132,77 @@ class Kc_Security_Public{
         );
        
         $arr_posts_research = new WP_Query($args_research);
-        // echo "<pre>";
-        // print_r($arr_posts_research);
-        // echo "</pre>";
+        
+        ob_start();
 
+        $postdata = array();
         if ($arr_posts_research->have_posts()) {
+            
             $j=1;
             while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
-                $image_url = wp_get_attachment_image_src(get_post_thumbnail_id($arr_posts_research->ID), 'full');
-                $alt = get_post_meta(get_post_thumbnail_id($arr_posts_research->ID), '_wp_attachment_image_alt', true);
                 $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
-                $title =  get_the_title(); 
-                $content = get_the_content();
+                
+                if( !empty($terms)){
+                    foreach( $terms as $key => $term){                        
+                        $postdata[$term->term_id][] = get_the_ID();
+                    }
+                }                 
+            endwhile; 
+        }
+       
+
+        if( !empty($postdata)){
+            $i = 1;
+            echo '<ul class="tabs">';
+            foreach($postdata as $term_id => $post){
+                    $term  = get_term( $term_id );                    
                 ?>
-                     <button  class="<?php if($j==1){ echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php foreach($terms as $term){
-                        echo $term_name = $term->name;}?></button>
-                            <div id="tab<?php echo $j;?>" class="tab_content">
-                                <div class="date-content-wrapper">
-                                    <div class="date-content">
-                                        <p><strong><?php echo $title;?></strong></p>
-                                        <?php echo $content;?>
-                                    </div>
-                                </div>
-                            </div><?php 
-                            $j++;
-                    endwhile; wp_reset_postdata();
-                } 
-                $output = ob_get_contents();
-    ob_end_clean();
+                <li class="<?php echo ($i == 1 ) ? 'active' : '' ?> <?php echo $term->name ?>" rel="tab<?php echo $i ?>"><button class="nav-link-tab"><?php echo $term->name ?></button></li>
+            <?php 
+                $i++;
+            }
+            echo '</ul>';
+        }
+        
+
+        
+        if( !empty($postdata)){ 
+
+            $j = 1;
+        ?>    
+        <div class="tab_container research_post">
+            <?php foreach($postdata as $term_id => $post_ids ){  
+                 $term  = get_term( $term_id );             
+                ?>
+                <button class="<?php echo ($j == 1 ) ? 'd_active' : '' ?> tab_drawer_heading" rel="tab<?php echo $j ?>"><?php echo $term->name ?> </button>
+                <div id="tab<?php echo $j ?>" class="tab_content"  <?php echo $style ?> >
+                <?php
+                    foreach( $post_ids as $post_id){
+                    $post = get_post( $post_id );
+                    $style = '';
+                    if( $j == 1 ){
+                        $style = 'style="display:block"';
+                    }
+                ?>
+                    
+                        <div class="date-content-wrapper">
+                            <div class="date-content">
+                                <p><strong><?php echo $post->post_title;?></strong></p>
+                                <p><strong><?php echo $post->post_content;?></strong></p> 
+                            </div>
+                        </div>
+                   
+                <?php } ?>
+                </div>
+            <?php $j++; } ?>
+        </div>
+        <?php } ?>
+
+        
+        <?php
+       
+        $output = ob_get_clean();                
+    
     //return $output;
 
     $result = [

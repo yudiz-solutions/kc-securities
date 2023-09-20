@@ -7,13 +7,7 @@
 get_header();
 ?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/trade-banner.jpg">
-    <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
-            <h1 class="title-style-1">Trade Online</h1>
-        </div>
-    </div>
-</section>
+<?php echo do_shortcode('[comman_subpage_banner]');?>
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- KC iTrade Advantage start --------------------------------->
@@ -43,9 +37,11 @@ get_header();
                                     foreach($google_details as $google_detail){
                                         $google_image = $google_detail['google_play_image'];
                                         $google_link = $google_detail['link'];
+                                        $new_target = ($google_link['target'] == "_blank") ? "target='_blank'" : "";
+
                                         if(isset($google_image) && !empty($google_image)){
                                 ?>
-                                <a href="<?php if(isset($google_link) && !empty($google_link)){}?>" class="kc-tade-app-images">
+                                <a href="<?php if(isset($google_link) && !empty($google_link)){echo $google_link['url']; }?>" <?php echo $new_target; ?> class="kc-tade-app-images">
                                     <img src="<?php echo $google_image['url'];?>" alt="<?php echo $google_image['alt'];?>">
                                 </a>
                             <?php } } } ?>

@@ -130,10 +130,12 @@ jQuery(document).ready(function ($) {
     $(".tab_content:first").show();
 
   /* if in tab mode */
-    $("ul.tabs li").click(function() {
-		
+   // $("ul.tabs li").click(function() {
+    $(document).on('click','ul.tabs li',function(){
       $(".tab_content").hide();
       var activeTab = $(this).attr("rel"); 
+   
+      console.log($("#"+activeTab))
       $("#"+activeTab).fadeIn();		
 		
       $("ul.tabs li").removeClass("active");
@@ -144,8 +146,9 @@ jQuery(document).ready(function ($) {
 	  
     });
 	/* if in drawer mode */
-	$(".tab_drawer_heading").click(function() {
-      
+
+	//$(".tab_drawer_heading").click(function() {
+    $(document).on('click','.tab_drawer_heading',function(){
       $(".tab_content").hide();
       var d_activeTab = $(this).attr("rel"); 
       $("#"+d_activeTab).fadeIn();
@@ -304,6 +307,16 @@ $('#city').select2(
         minimumResultsForSearch: -1,
     }
 );
+$('#month').select2(
+    {
+        minimumResultsForSearch: -1,
+    }
+);
+$('#year').select2(
+    {
+        minimumResultsForSearch: -1,
+    }
+);
 
 $(document).on('change', '#city', function(e) {
     e.preventDefault();
@@ -322,8 +335,9 @@ $(document).on('change', '#city', function(e) {
     //alert(location_are);
 });
 
-$(document).on('click', '.primary-button', function(e) {
+$(document).on('click', '#research_view', function(e) {
     e.preventDefault();
+    var category = jQuery('.d_active').text();    
     var month = jQuery('#month').val();
     var year = jQuery('#year').val();
     //alert(month);
@@ -336,10 +350,11 @@ $(document).on('click', '.primary-button', function(e) {
         success:function(result){
 
           //  $('.research_post').html(result);
-            $('.research_post').html(result.html);
+            $('.month-tabing').html(result.html);
 
-            console.log($('.tabs  .'+result.active_cat_slug));
-            $('.tabs  .'+result.active_cat_slug).trigger('click')
+            //console.logO($('.tabs li:firt-child'))
+
+            $('.tabs li:first-child').trigger('click')
            // $(".tabs li:first-child").trigger('click')
         },
         // error:function(result){

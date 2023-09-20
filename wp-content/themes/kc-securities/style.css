@@ -351,7 +351,7 @@ form br{display: none;}
 .download-box:hover{background: var(--secondary-s-97);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05);border-color: var(--base-color-s-main);}
 .download-box:hover span{background: var(--global-white);}
 .download-box:hover p{color: var(--base-color-s-main);}
-.download-box:focus{background: var(--secondary-s-97)!important;}
+.download-box:focus{background: transparent!important;}
 
 .sub-page-back{margin-bottom: 24px;}
 .sub-page-back ul{display: flex;list-style: none;align-items: center;gap: 24px;}
@@ -406,9 +406,8 @@ form br{display: none;}
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{ color: var(--base-color-s-main); background: var(--secondary-s-97); }
 .select2-dropdown{ border: 1px solid var(--grey-shade-90); background-color: var(--global-white); box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.04); border-radius: 0 0 8px 8px; z-index: 11; }
 
-
 /*bottom-top*/
-.progress-wrap {position: fixed;right: 25px;bottom: 15px;height: 46px;width: 46px;cursor: pointer;display: block;border-radius: 50px;box-shadow: inset  0 0 0 2px rgba(255,255,255,0.2);z-index: 11;opacity: 0;visibility: hidden;transform: translateY(15px);-webkit-transition: all 200ms linear;transition: all 200ms linear;}
+.progress-wrap {position: fixed;right: 25px;bottom: 15px;height: 46px;width: 46px;cursor: pointer;display: block;border-radius: 50px;box-shadow: inset 0 0 0 2px rgb(105 105 105 / 20%);z-index: 11;opacity: 0;visibility: hidden;transform: translateY(15px);-webkit-transition: all 200ms linear;transition: all 200ms linear;}
 .progress-wrap.active-progress {opacity: 1; visibility: visible; transform: translateY(0); }
 .progress-wrap::after {position: absolute;font-family: 'FontAwesome';content: '\f062';text-align: center;line-height: 46px;font-size: 18px;color: var(--base-color-p-main);left: 0;top: 0;height: 46px;width: 46px;cursor: pointer;display: block;z-index: 1;-webkit-transition: all 200ms linear;transition: all 200ms linear;}
 .progress-wrap:hover::after {opacity: 0; }
@@ -416,8 +415,10 @@ form br{display: none;}
 .progress-wrap:hover::before {opacity: 1; }
 .progress-wrap svg path {fill: none; }
 .progress-wrap svg.progress-circle path {stroke: var(--base-color-p-main);stroke-width: 4;box-sizing:border-box;-webkit-transition: all 200ms linear;transition: all 200ms linear;}
-/**/
 
+
+/* 404 */
+.error-inner { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; }
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
 
@@ -603,6 +604,19 @@ form br{display: none;}
     /*********************** custom table ***********************/
     .custom-table table>thead>tr>th { font-size: 14px; line-height: 22px; padding: 12px 15px; }
     .custom-table table>tbody>tr>td {font-size: 14px; line-height: 22px; padding: 12px 15px; }
+
+    .trade-section .title-main p { font-size: 18px; line-height: 26px; }
+
+
+    .progress-wrap { height: 30px; width: 30px;line-height: 0; }
+        .progress-wrap::before,.progress-wrap::after {
+           
+            line-height: 30px;
+            font-size: 10px;
+         
+            height: 30px;
+            width: 30px;
+        }
 
 }
 

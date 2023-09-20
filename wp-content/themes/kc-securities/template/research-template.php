@@ -7,13 +7,7 @@
 get_header();
 ?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/research-banner.jpg">
-    <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
-            <h1 class="title-style-1">Research</h1>
-        </div>
-    </div>
-</section>
+<?php echo do_shortcode('[comman_subpage_banner]');?>
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Help market section start --------------------------------->
@@ -125,7 +119,7 @@ get_header();
                     </div>
                 </div>
                 <div class="month-selecet">
-                    <a class="primary-button">View</a>
+                    <a class="primary-button" id="research_view">View</a>
                 </div>
             </div>
             <div class="month-tabing custom-tabing">
@@ -152,13 +146,17 @@ get_header();
                 </ul>
                 <div class="tab_container research_post">
                     <?php 
-                
+                     
+                     if($_POST){
+                        $month = $_POST['month'];
+                        $year = $_POST['year'];
+                    }            
                     $args_research = array(
                        'post_type' => 'research',
                        'post_status' => 'publish',
                         'posts_per_page' => -1,
                         'order' => 'DESC',
-                        'tax_query' => array(
+                       'tax_query' => array(
                             array(
                                 'taxonomy' =>  "research-category",
                                 'field'    => 'term_id',
@@ -166,11 +164,15 @@ get_header();
                                 'operator' => 'IN'
                             )
                         ),
+                        
                     );
+                
                     $arr_posts_research = new WP_Query($args_research);
+                   
                     if ($arr_posts_research->have_posts()) {
                         $j=1;
                         while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
+                            
                             $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
                             $title =  get_the_title(); 
                             $content = get_the_content();

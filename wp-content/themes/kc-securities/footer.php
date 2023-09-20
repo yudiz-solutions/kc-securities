@@ -126,9 +126,6 @@
                 </div>
             </div>
         </div>
-
-        <strong>2. For the Multi-level complaint resolution mechanism available at the Depositories please refer to link Complaint Resolution process at Depositories </strong>
-
             <!--Bottom-to-top-->
         <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

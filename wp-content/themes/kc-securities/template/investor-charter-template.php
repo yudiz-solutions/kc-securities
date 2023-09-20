@@ -7,19 +7,13 @@
 get_header();
 ?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/investor-charter-banner.jpg">
-    <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
-            <h1 class="title-style-1">Investor Charter</h1>
-        </div>
-    </div>
-</section>
+<?php echo do_shortcode('[comman_subpage_banner]');?>
 <!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Investor Charter section start --------------------------------->
 <section class="investor-charter-section custom-padding m-0">
     <div class="container">
-        <div class="investor-charter-tabing custom-tabing">
+        <div class="investor-charter-tabing custom-tabing wow fadeInUp">
             <ul class="tabs">
                 <?php 
                         $tab_details = get_field('investor_details');

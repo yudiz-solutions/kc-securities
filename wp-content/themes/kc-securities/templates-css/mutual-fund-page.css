@@ -16,6 +16,15 @@
 .mutual-fund-section .mutual-part ol>li::before,.mutual-fund-section .mutual-part ul > li::before{ content: counter(list, lower-alpha) ") "; counter-increment: list; }
 
 
+.custom-accordion .accordion-button{ font-size: 24px; line-height: 32px; font-weight: 600; padding: 36px 24px; }
+
+@media (min-width: 768px) and (max-width: 991px){
+    .custom-accordion .accordion-button{ font-size: 20px; line-height: 28px; padding: 36px 24px; }
+}
+@media (max-width: 767px){
+    .custom-accordion .accordion-button{ font-size: 18px; line-height: 26px; padding:24px; }
+}
+
 
 @media (max-width: 767px) {
     .mutual-fund-section .mutual-part p{ margin-bottom: 16px; }
