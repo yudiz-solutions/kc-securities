@@ -15,9 +15,25 @@
 .month-tabing .tabs{margin-bottom: 24px;}
 .date-content-wrapper .date-content{margin-bottom: 16px;}
 .date-content-wrapper .date-content:last-child{margin-bottom: 0;}
-.date-content-wrapper .date-content p strong{color: var(--base-color-s-main);font-weight: 700;}
-.date-content-wrapper .date-content p{margin-bottom: 4px;}
+/* .date-content-wrapper .date-content p strong{color: var(--base-color-s-main);font-weight: 700;} */
+.date-content-wrapper .date-content p{margin-bottom: 16px;}
 .date-content-wrapper .date-content p:last-child{margin-bottom: 0;}
+
+.date-content-wrapper .date-content h1,
+.date-content-wrapper .date-content h2,
+.date-content-wrapper .date-content h3,
+.date-content-wrapper .date-content h4,
+.date-content-wrapper .date-content h5,
+.date-content-wrapper .date-content h6{
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--base-color-s-main);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+
+
 
 
 @media (max-width: 991px){

@@ -148,6 +148,8 @@ class Kc_Security_Public{
                     }
                 }                 
             endwhile; 
+        }else{
+            echo "not record found";
         }
        
 
@@ -187,7 +189,7 @@ class Kc_Security_Public{
                     
                         <div class="date-content-wrapper">
                             <div class="date-content">
-                                <p><strong><?php echo $post->post_title;?></strong></p>
+                                <h6><?php echo $post->post_title;?></h6>
                                 <p><strong><?php echo $post->post_content;?></strong></p> 
                             </div>
                         </div>

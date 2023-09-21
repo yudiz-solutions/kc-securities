@@ -127,74 +127,76 @@ get_header();
                 </div>
             </div>
             <div class="month-tabing custom-tabing">
-                <ul class="tabs">
+               
                 <?php
-                    $research_categories = get_terms(array(
-                        'taxonomy'        => 'research-category',
-                        'hide_empty'      => false,
-                        'parent'          => 0,
-                        'order'           => 'ASC',
-                    ));
-                    $term_ids = array();
-                    $i=1;
-                    foreach ($research_categories as $research_category) :
-                            $term_ids[] =  $research_category->term_id;
-                            ?>
-                    <!-- <option value="hide">Select Year</option> -->
-                    <li class="<?php if($i==1){ echo 'active'; }?> <?php echo $research_category->slug ?>" rel="tab<?php echo $i;?>"><button class="nav-link-tab"><?php echo $research_category->name;?></button></li>
-                    <?php $i++; endforeach; wp_reset_postdata();?>
-                    <!-- <li class="active" rel="tab1"><button class="nav-link-tab">Recommendation</button></li>
-                    <li rel="tab2"><button class="nav-link-tab">Tools</button></li>
-                    <li rel="tab3"><button class="nav-link-tab">Market News</button></li>
-                    <li rel="tab4"><button class="nav-link-tab">Research</button></li> -->
-                </ul>
-                <div class="tab_container research_post">
-                    <?php 
-                     
-                     if($_POST){
-                        $month = $_POST['month'];
-                        $year = $_POST['year'];
-                    }            
                     $args_research = array(
-                       'post_type' => 'research',
-                       'post_status' => 'publish',
-                        'posts_per_page' => -1,
-                        'order' => 'DESC',
-                       'tax_query' => array(
-                            array(
-                                'taxonomy' =>  "research-category",
-                                'field'    => 'term_id',
-                                'terms'    => $term_ids,
-                                'operator' => 'IN'
-                            )
-                        ),
-                        
-                    );
-                
-                    $arr_posts_research = new WP_Query($args_research);
+                        'post_type' => 'research',
+                        'post_status' => 'publish',
+                         'posts_per_page' => -1,
+                         'order' => 'DESC',
                    
-                    if ($arr_posts_research->have_posts()) {
-                        $j=1;
-                        while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
-                            
-                            $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
-                            $title =  get_the_title(); 
-                            $content = get_the_content();
-                            ?>    
-                            <button  class="<?php if($j==1){ echo 'd_active';}?> tab_drawer_heading" rel="tab<?php echo $j;?>"><?php foreach($terms as $term){
-                        echo $term_name = $term->name;}?></button>
-                            <div id="tab<?php echo $j;?>" class="tab_content">
+                     );
+                 
+                     $arr_posts_research = new WP_Query($args_research);
+                    
+                         $postdata = array();
+                         if ($arr_posts_research->have_posts()) {
+                             
+                             $j=1;
+                             while ($arr_posts_research->have_posts()) : $arr_posts_research->the_post();
+                                 $terms = get_the_terms( $arr_posts_research->ID, 'research-category' );
+                                 
+                                 if( !empty($terms)){
+                                     foreach( $terms as $key => $term){                        
+                                         $postdata[$term->term_id][] = get_the_ID();
+                                     }
+                                 }                 
+                             endwhile; 
+                         }else{
+                                echo "not record found";
+                         }
+                         if( !empty($postdata)){
+                            $i = 1;
+                            echo '<ul class="tabs">';
+                            foreach($postdata as $term_id => $post){
+                                    $term  = get_term( $term_id );                    
+                                ?>
+                                <li class="<?php echo ($i == 1 ) ? 'active' : '' ?> <?php echo $term->name ?>" rel="tab<?php echo $i ?>"><button class="nav-link-tab"><?php echo $term->name ?></button></li>
+                            <?php 
+                                $i++;
+                            }
+                            echo '</ul>';
+                        }
+                  
+                    if( !empty($postdata)){ 
+                        $j = 1;
+                        ?>    
+                        <div class="tab_container research_post">
+                            <?php foreach($postdata as $term_id => $post_ids ){  
+                                $term  = get_term( $term_id );             
+                                ?>
+                                <button class="<?php echo ($j == 1 ) ? 'd_active' : '' ?> tab_drawer_heading" rel="tab<?php echo $j ?>"><?php echo $term->name ?> </button>
+                                <div id="tab<?php echo $j ?>" class="tab_content" >
+                                <?php
+                                    foreach( $post_ids as $post_id){
+                                    $post = get_post( $post_id );
+                                    $style = '';
+                                    if( $j == 1 ){
+                                        $style = 'style="display:block"';
+                                    }
+                                ?>
                                 <div class="date-content-wrapper">
                                     <div class="date-content">
-                                        <p><strong><?php echo $title;?></strong></p>
-                                        <p><strong><?php echo $content;?></strong></p> 
+                                        <h6><?php echo $post->post_title;?></strong></h6>
+                                        <p><?php echo $post->post_content;?></p> 
                                     </div>
                                 </div>
-                            </div><?php 
-                            $j++;
-                    endwhile;
-                } ?>
-                </div>
+                        
+                            <?php } ?>
+                        </div>
+                    <?php $j++; } ?>
+                    </div>
+                    <?php }  ?>
             </div>
         </div>
     </div>

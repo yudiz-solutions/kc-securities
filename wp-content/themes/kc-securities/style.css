@@ -296,7 +296,7 @@ form br{display: none;}
 .navigation-login .login-navigation-bar>.menu-navigation-login-container ul>.menu-item-has-children> .sub-menu>li:last-child{margin-bottom: 0; }
 .navigation-login .login-navigation-bar>.menu-navigation-login-container ul>.menu-item-has-children>.sub-menu>li a { text-align: left; font-size: 16px; line-height: 24px; font-weight: 400; padding: 4px 0!important; margin: 0; color: var(--grey-shade-50)!important; border: none; }
 .navigation-login .login-navigation-bar>.menu-navigation-login-container ul>.menu-item-has-children>.sub-menu>li a:hover{text-decoration: none;color: var(--base-color-s-main)!important;background: transparent!important;}
-.navigation-login .login-navigation-bar>.menu-navigation-login-container ul>.menu-item-has-children>.sub-menu>li a:focus{background: transparent;}
+.navigation-login .login-navigation-bar>.menu-navigation-login-container ul>.menu-item-has-children>.sub-menu>li a:focus{background: var(--global-white)!important;}
 .primary-navigation>div>.menu-wrapper>li>.sub-menu:before,
 .primary-navigation>div>.menu-wrapper>li>.sub-menu:after{content: none;}
 
@@ -466,7 +466,7 @@ form br{display: none;}
 }
 @media (max-width: 1199px) {
      /*********************** Navigation Menu drop down ***********************/
-    .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children .sub-menu-toggle { position: absolute; right: 10px; top: 5px; display: block !important; z-index: 111; border: none; width:25px; height: 25px; }
+    .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children .sub-menu-toggle { position: absolute; right: 10px; top: 5px; display: block !important; z-index: 111; border: none; width:100%; height: 25px; }
     .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children .sub-menu-toggle:focus{ border: none; outline: none; }
     .header-navigation .primary-navigation>.primary-menu-container ul>.menu-item-has-children ul {  position: static;margin: 0 0 10px 0; }
     .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu:before, .header-navigation .primary-navigation>div>.menu-wrapper>li>.sub-menu:after { content: none; }
