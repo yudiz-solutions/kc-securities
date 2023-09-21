@@ -93,7 +93,11 @@ get_header();
                                     } if(isset($authorize_title) && !empty($authorize_title)){ ?>
                                          <p class="p-title"><?php echo $authorize_title;?></p>
                                  <?php } if(isset($authorize_content) && !empty($authorize_content)){ ?>
+                                        <?php if($authorize_content == 'sales@kcsecurities.com'){ ?>
+                                            <p><a href="mailto:<?php echo $authorize_content;?>"><?php echo $authorize_content;?></a></p>
+                                       <?php  } else{ ?>
                                         <p><?php echo $authorize_content;?></p>
+                                      <?php  } ?>
                                  <?php } ?>
                                    </div>
                                 </div><?php
