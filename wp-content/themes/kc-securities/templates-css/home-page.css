@@ -167,6 +167,7 @@
     /*********************** Trade Online With KC Securities***********************/
     .trade-content { padding: 15px; }
     .trade-content .title-style-6 { margin-bottom: 15px; }
+    .trade-section .title-main p { font-size: 18px; line-height: 26px; }
 }
 
 

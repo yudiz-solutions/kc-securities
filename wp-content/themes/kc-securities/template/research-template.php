@@ -153,7 +153,9 @@ get_header();
                                  }                 
                              endwhile; 
                          }else{
-                                echo "not record found";
+                                echo "<div class='record-found'>";
+                                echo "No record found";
+                                echo "</div>";
                          }
                          if( !empty($postdata)){
                             $i = 1;
@@ -188,7 +190,7 @@ get_header();
                                 <div class="date-content-wrapper">
                                     <div class="date-content">
                                         <h6><?php echo $post->post_title;?></strong></h6>
-                                        <p><?php echo $post->post_content;?></p> 
+                                        <?php echo $post->post_content;?> 
                                     </div>
                                 </div>
                         
