@@ -14,10 +14,10 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 ?>
 
 
-
 <div id="preloader">
-	<img src="<?php echo site_url(); ?>/wp-content/uploads/2023/09/spinner.gif" alt="Favicon">
+	<img src="<?php echo site_url(); ?>/wp-content/uploads/2023/09/spinner.gif" class="img-fuild" alt="Skin-care">
 </div>
+
 <?php $marquee_list = get_field('header_marquee_details','option');?>
 <div class="heder-text-slide">
 	<div class="marquee-with-options">

@@ -148,7 +148,6 @@ form br{display: none;}
 #preloader{ position: fixed;right: 0; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; background-color: #ffff; background-position: center;margin: auto; }
 #preloader img { position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; height:auto;width: 90px; max-width:90%; display: inline-block;}
 
-
 /*********************** header main part ***********************/
 /* Header marque part start*/
 .heder-text-slide { padding: 9px 0; background: var(--secondary-s-20); max-height: 40px; display: flex; align-items: center; overflow: hidden;transition-duration: 0.3s; }
@@ -607,15 +606,8 @@ form br{display: none;}
 
 
 
-    .progress-wrap { height: 30px; width: 30px;line-height: 0; }
-        .progress-wrap::before,.progress-wrap::after {
-           
-            line-height: 30px;
-            font-size: 10px;
-         
-            height: 30px;
-            width: 30px;
-        }
+    .progress-wrap { height: 36px; width: 36px;line-height: 0; }
+    .progress-wrap::before,.progress-wrap::after { line-height: 36px; font-size: 10px; height: 36px; width: 36px; }
 
 }
 

@@ -1,4 +1,10 @@
 jQuery(document).ready(function ($) {
+    //preloader
+   jQuery('html').addClass("overflow-hidden");
+		setTimeout(function() {
+			jQuery("#preloader").fadeOut("slow");
+			jQuery('html').removeClass("overflow-hidden");
+		}, 100);
 
     //sticky
     jQuery(window).scroll(function () {
@@ -294,10 +300,7 @@ jQuery(document).ready(function ($) {
   
 //   });
 
-  //preloader
-    $(window).on("load", function() {
-    $('#preloader').fadeOut('100');
-    });
+  
 
 new WOW().init();          
 
