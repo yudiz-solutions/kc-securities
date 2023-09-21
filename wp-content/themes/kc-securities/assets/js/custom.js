@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 		setTimeout(function() {
 			jQuery("#preloader").fadeOut("slow");
 			jQuery('html').removeClass("overflow-hidden");
-		}, 100);
+		}, 1000);
 
     //sticky
     jQuery(window).scroll(function () {
