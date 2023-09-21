@@ -150,7 +150,7 @@ class Kc_Security_Public{
             endwhile; 
         }else{
             echo "<div class='record-found'>";
-            echo "Not record found";
+            echo "No record found";
             echo "</div>";
         }
        
