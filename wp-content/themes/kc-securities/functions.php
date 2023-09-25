@@ -179,7 +179,7 @@ function Articles_posttype_init() {
 		'exclude_from_search'   => false,
 		'show_in_rest'          => false,
 		'publicly_queryable'    => true,
-		'menu_icon'             => 'dashicons-images-alt2',
+		'menu_icon'             => 'dashicons-download',
 		'taxonomies' => array( 'download_categories')
 	) );
 
