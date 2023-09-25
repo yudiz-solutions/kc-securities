@@ -20,9 +20,10 @@ get_header();
                         foreach($backoffice_details as $backoffice_detail){
                             $backoffice_link = $backoffice_detail['backoffice_link'];
                             $backoffice_title = $backoffice_detail['backoffice_title'];
+                            $backoffice_new_target = ($backoffice_link['target'] == "_blank") ? "target='_blank'" : "";
                             ?>
-                            <?php if(isset($backoffice_title) && !empty($backoffice_title)){ ?>
-                                <a href="<?php $backoffice_link;?>" class="primary-button<?php if($backoffice_title == 'Branch/AP Login'){echo '-outline';}?>"><?php echo $backoffice_title;?></a><?php 
+                            <?php if(isset($backoffice_link) && !empty($backoffice_link)){ ?>
+                                <a href="<?php echo $backoffice_link['url'];?>" class="primary-button<?php if($backoffice_title == 'Branch/AP Login'){echo '-outline';}?>" <?php echo $backoffice_new_target;?>><?php echo $backoffice_title;?></a><?php 
                             }
                         } 
                     }?>

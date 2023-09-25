@@ -351,6 +351,9 @@ class Kc_Security_Admin{
     flush_rewrite_rules();
     }
 
+ 
+
+
    
     public function kc_security_acf_setting(){
         acf_add_options_page(array(

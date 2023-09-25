@@ -15,29 +15,20 @@ get_header();
 <section class="download-section custom-padding m-0">
     <div class="container">
         <div class="row g-3 wow fadeInUp">
- <?php
-        $args_kc_securities = array(
-                'post_type' => 'downloads',
-                'post_status' => 'publish',
-                'posts_per_page' => -1,
-                //'paged' => 1,
-        );
-        $arr_posts_kc_securities = new WP_Query($args_kc_securities);
-        ?>
-
-
-
-<?php if ($arr_posts_kc_securities->have_posts()) : ?>
-<?php while ($arr_posts_kc_securities->have_posts()) : $arr_posts_kc_securities->the_post(); ?>
-            <div class="col-lg-4 col-md-6">
-                <a href="<?php echo get_the_permalink(); ?>" class="download-box">
-                    <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
-                    <p><?php echo get_the_title();?></p>
-                </a>
-            </div>
-<?php endwhile; ?>
-<?php endif; ?>
-<?php wp_reset_postdata(); ?>
+            <?php
+            $cats = get_terms(array('taxonomy'=>'download_categories', 'hide_empty'=> 0, 'hierarchical'=>1));
+           if($cats){
+                foreach ($cats as $cat) {
+                    if($cat->parent == 0){ ?>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="<?php echo get_term_link($cat->slug, 'download_categories'); ?>" class="download-box">
+                                <span> <img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/file.svg" alt="File Icon"> </span>
+                                <p><?php echo $cat->name;?></p>
+                            </a>
+                        </div><?php
+                    }
+                }
+            }?>
             <?php $download_link_details = get_field('download_link_details');
                 if(isset($download_link_details) && !empty($download_link_details)){
                     foreach($download_link_details as $download_link_detail){
@@ -76,7 +67,6 @@ get_header();
     </div>
 </section>
 <!--------------------------------- Download section End --------------------------------->
-
 <?php
 
 get_footer();

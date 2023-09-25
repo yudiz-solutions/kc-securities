@@ -511,6 +511,7 @@ form br{display: none;}
     .footer-wrapper-first .quick-wrapper{padding-left: 20px;}
     .footer-wrapper-first .product-link-wrapper { padding-left: 0; }
     .footer-inner-page-link ul { display: flex; gap: 15px; flex-wrap: wrap; }
+    .footer-wrapper-first .conatct-wrapper .contact-inner p br{display: none;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
     /*********************** Heading Typography start ***********************/

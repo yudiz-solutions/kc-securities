@@ -129,228 +129,80 @@ function enqueue_scripts()
 add_action('wp_enqueue_scripts', 'enqueue_scripts', 9999);
 
 
-// //schedule button
-// function customWidgetAreas()
-// {
-
-// 	//Navigation Login
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Navigation Login', 'KC Securites'),
-// 			'id'            => 'navigation_login',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<nav id="%1$s" class="widget %2$s login-navigation-bar">',
-// 			'after_widget'  => '</nav>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//footer logo
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Logo', 'KC Securites'),
-// 			'id'            => 'footer_logo',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Get KC itrade app
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('KC Itrade Icon', 'KC Securites'),
-// 			'id'            => 'footer_kc-trade_icon',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer_kc-icon-wrapper">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Quick Link
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Quick link', 'KC Securites'),
-// 			'id'            => 'footer_quick_link',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Products & Services
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Product and Services', 'KC Securites'),
-// 			'id'            => 'footer_product_link',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-quick-navigation">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Contact Us
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Contact Us', 'KC Securites'),
-// 			'id'            => 'footer_contact_us',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s footer-contact-wrapper">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Group Companies Heading
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Group Companies Heading', 'KC Securites'),
-// 			'id'            => 'footer_group_name',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Group Companies slider
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Group Companies Name', 'KC Securites'),
-// 			'id'            => 'footer_group_slider',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer inner page link
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Inner Page Link', 'KC Securites'),
-// 			'id'            => 'footer_inner_page_link',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Content
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Content', 'KC Securites'),
-// 			'id'            => 'footer_content',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer External Website Link
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer External Website Link', 'KC Securites'),
-// 			'id'            => 'footer_external_website',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Copyright name
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Copyright Name', 'KC Securites'),
-// 			'id'            => 'footer_copy_right_name',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-
-// 	//Footer Privacy Policy
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__('Footer Privacy Policy', 'KC Securites'),
-// 			'id'            => 'footer_privancy_link',
-// 			'description'   => esc_html__('Add widgets here to appear in your footer.', 'KC Securites'),
-// 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</div>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-	
-// }
-
-// add_action('widgets_init', 'customWidgetAreas');
-
-
 /* -------------------------------------------------------------------
 ------------------------ ADD CUSTOM POST-TYPES -----------------------
 ------------------------------------------------------------------- */
-function custom_postype()
-{
-    /**************** Downloads CUSTOM POST TYPE********************/
-    $downloads_listing_labels = array(
-        'name'                => _x('Downloads', 'Post Type General Name', 'kc-securities'),
-        'singular_name'       => _x('Downloads', 'Post Type Singular Name', 'kc-securities'),
-        'menu_name'           => __('Downloads', 'kc-securities'),
-        'services_item_colon'   => __('Downloads', 'kc-securities'),
-        'all_items'           => __('All Downloads', 'kc-securities'),
-        'view_item'           => __('View Downloads', 'kc-securities'),
-        'add_new_item'        => __('Add New Downloads', 'kc-securities'),
-        'add_new'             => __('Add New', 'kc-securities'),
-        'edit_item'           => __('Edit Downloads', 'kc-securities'),
-        'update_item'         => __('Update Downloads', 'kc-securities'),
-        'search_items'        => __('Search Downloads', 'kc-securities'),
-        'not_found'           => __('Not Found', 'kc-securities'),
-        'not_found_in_trash'  => __('Not found in Trash', 'kc-securities'),
-    );
-    $downloads_listing_args = array(
-        'label'               => __('Downloads', 'kc-securities'),
-        'description'         => __('Downloads Details', 'kc-securities'),
-        'labels'              => $downloads_listing_labels,
-        'supports'            => array('title', 'editor', 'excerpt', 'thumbnail'),
-        'rewrite'             => true,
-        'hierarchical'        => true,
-        'public'              => true,
-        'show_ui'             => true,
-        'show_in_menu'        => true,
-        'show_in_nav_menus'   => true,
-        'show_in_admin_bar'   => true,
-        'menu_position'       => 5,
-        'can_export'          => true,
-        'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'post',
-        'show_in_rest'        => true,
-        'menu_icon'           => 'dashicons-download',
 
+/**
+ * Registers the `Articles` post type.
+ */
+add_action( 'init', 'Articles_posttype_init' );
+function Articles_posttype_init() {
+	
+	register_post_type( 'download', array(
+		'labels'                	=> array(
+			'name'                  => __( 'Download', 'shalom' ),
+			'singular_name'         => __( 'Download', 'shalom' ),
+			'all_items'             => __( 'All Download', 'shalom' ),
+			'archives'              => __( 'Download Archives', 'shalom' ),
+			'attributes'            => __( 'Download Attributes', 'shalom' ),
+			'insert_into_item'      => __( 'Insert into Download', 'shalom' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this Download', 'shalom' ),
+			'featured_image'        => _x( 'Featured Image', 'Download', 'shalom' ),
+			'set_featured_image'    => _x( 'Set featured image', 'Download', 'shalom' ),
+			'remove_featured_image' => _x( 'Remove featured image', 'Download', 'shalom' ),
+			'use_featured_image'    => _x( 'Use as featured image', 'Download', 'shalom' ),
+			'filter_items_list'     => __( 'Filter Download list', 'shalom' ),
+			'items_list_navigation' => __( 'Download list navigation', 'shalom' ),
+			'items_list'            => __( 'Download list', 'shalom' ),
+			'new_item'              => __( 'New Download', 'shalom' ),
+			'add_new'               => __( 'Add New', 'shalom' ),
+			'add_new_item'          => __( 'Add New Download', 'shalom' ),
+			'edit_item'             => __( 'Edit Download', 'shalom' ),
+			'view_item'             => __( 'View Download', 'shalom' ),
+			'view_items'            => __( 'View Download', 'shalom' ),
+			'search_items'          => __( 'Search Download', 'shalom' ),
+			'not_found'             => __( 'No Download found', 'shalom' ),
+			'not_found_in_trash'    => __( 'No Download found in trash', 'shalom' ),
+			'parent_item_colon'     => __( 'Parent Download:', 'shalom' ),
+			'menu_name'             => __( 'Download', 'shalom' ),
+		),
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'public'                => true,
+		'hierarchical'          => false,
+		'show_ui'               => true,
+		'show_in_nav_menus'     => true,
+		'has_archive'           => true,
+		'rewrite'               => true,
+		'query_var'             => true,
+		'menu_position'         => 4,
+		'exclude_from_search'   => false,
+		'show_in_rest'          => false,
+		'publicly_queryable'    => true,
+		'menu_icon'             => 'dashicons-images-alt2',
+		'taxonomies' => array( 'download_categories')
+	) );
+
+	register_taxonomy(
+        'download_categories',
+        'download',
+        array(
+			'show_admin_column' => true,
+		   	'hierarchical' => true,
+		   	'label' => 'Download Category',
+		   	'show_ui' => true,
+		   	'show_in_menu' => true,
+		   	'show_in_nav_menus' => true,
+		   	'query_var' => true,
+		   	// 'rewrite' => array( 'slug' => 'articles-categories' ),
+			'rewrite' => array(
+				'with_front' => true,
+				'hierarchical' => true,
+				'slug' => 'download-categories',
+			),
+        )
     );
-    register_post_type('downloads', $downloads_listing_args);
+
+	
 
 }
-add_action('init', 'custom_postype');

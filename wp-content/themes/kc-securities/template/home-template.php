@@ -16,6 +16,7 @@ get_header();
                 $banner_title = $banner_detail['banner_title'];
                 $banner_content = $banner_detail['banner_content'];
                 $banner_button_link = $banner_detail['banner_button_link'];
+                $new_target = ($banner_button_link['target'] == "_blank") ? "target='_blank'" : "";
                 ?>
                 <div>
                     <div class="banner-inner"  style="background-image:url(<?php if(isset($banner_image) && !empty($banner_image)){ echo $banner_image['url']; }?>)">
@@ -25,7 +26,7 @@ get_header();
                                 <h1 class="title-style-1"><?php echo $banner_title;?></h1>
                                 <?php } if(isset($banner_content) && !empty($banner_content)){ echo $banner_content; } 
                                  if(isset($banner_button_link) && !empty($banner_button_link)){ ?>
-                                <a href="<?php echo $banner_button_link['url'];?>" class="primary-button"><?php echo $banner_button_link['title'];?></a>
+                                <a href="<?php echo $banner_button_link['url'];?>" class="primary-button" <?php echo $new_target;?> ><?php echo $banner_button_link['title'];?></a>
                                 <?php } ?>
                             </div>
                         </div>
@@ -175,10 +176,11 @@ get_header();
         <div class="title-main wow fadeInUp">
             <?php $filing_main_title = get_field('filing_main_title');
                  $register_button_link = get_field('register_button_link');
+                 $register_new_target = ($register_button_link['target'] == "_blank") ? "target='_blank'" : "";
             if(isset($filing_main_title) && !empty($filing_main_title)){ ?>
             <h2 class="title-style-2"><?php echo $filing_main_title;?></h2>
             <?php } if(isset($register_button_link) && !empty($register_button_link)){ ?>
-            <a href="<?php echo $register_button_link['url'];?>" class="primary-button"><?php echo $register_button_link['title'];?></a>
+            <a href="<?php echo $register_button_link['url'];?>" class="primary-button" <?php echo $register_new_target;?>><?php echo $register_button_link['title'];?></a>
             <?php } ?>
         </div>
         <div class="filing-wrapper wow fadeInUp">
@@ -234,6 +236,7 @@ get_header();
                     $trade_image = $trade_detail['trade_image'];
                     $trade_title = $trade_detail['trade_title'];
                     $trade_button_link = $trade_detail['trade_button_link'];
+                    $trade_new_target = ($trade_button_link['target'] == "_blank") ? "target='_blank'" : "";
                     ?>
                     <div class="col-lg-6 col-md-6">
                         <div class="trade-wrapper-box">
@@ -246,7 +249,7 @@ get_header();
                                 <?php if(isset($trade_title) && !empty($trade_title)){ ?>
                                     <h6 class="title-style-6"><?php echo $trade_title;?></h6>
                                 <?php } if(isset($trade_button_link) && !empty($trade_button_link)){ ?>
-                                    <a href="<?php echo $trade_button_link['url'];?>" class="primary-button"><?php echo $trade_button_link['title'];?></a>
+                                    <a href="<?php echo $trade_button_link['url'];?>" class="primary-button" <?php echo $trade_new_target;?>><?php echo $trade_button_link['title'];?></a>
                                 <?php } ?>
                             </div>
                         </div>
