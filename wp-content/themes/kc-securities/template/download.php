@@ -16,7 +16,7 @@ get_header();
     <div class="container">
         <div class="row g-3 wow fadeInUp">
             <?php
-            $cats = get_terms(array('taxonomy'=>'download_categories', 'hide_empty'=> 0, 'hierarchical'=>1));
+            $cats = get_terms(array('taxonomy'=>'download_categories', 'hide_empty'=> 0, 'hierarchical'=>1,'parent' => 0));
            if($cats){
                 foreach ($cats as $cat) {
                     if($cat->parent == 0){ ?>

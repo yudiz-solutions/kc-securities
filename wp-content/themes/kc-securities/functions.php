@@ -206,3 +206,20 @@ function Articles_posttype_init() {
 	
 
 }
+
+function change_archive_page_title( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	}elseif ( is_tag() ) {
+
+		$title = single_tag_title( '', false );
+
+	} elseif ( is_author() ) {
+
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+	}
+	return $title;
+}
+ 
+add_filter( 'get_the_archive_title', 'change_archive_page_title' );

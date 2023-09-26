@@ -1,22 +1,20 @@
 <?php get_header();?>
 <!--------------------------------- Inner page Banner Start --------------------------------->
-<section class="sub-banner-section m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/download-banner.jpg)">
+<section class="sub-banner-section download-banner m-0" style="background-image:url(<?php echo site_url(); ?>/wp-content/uploads/2023/08/download-banner.jpg)">
     <div class="container">
-        <div class="sub-banner-caption text-center wow fadeInUp">
+        <div class="sub-banner-caption text-center">
             <h1 class="title-style-1">Download</h1>
         </div>
     </div>
-</section>
-<!--------------------------------- Inner page Banner End --------------------------------->
+</section><!--------------------------------- Inner page Banner End --------------------------------->
 
 <!--------------------------------- Download inner section Start --------------------------------->
 <section class="sub-download-section custom-padding m-0">
 	<div class="container">
 		<div class="sub-page-back">
 			<ul>
-				<li><a href="<?php echo home_url("downloads"); ?>"><img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/back-icon.svg" alt="File Icon"></a></li>
-				<li><a href="<?php echo home_url("downloads"); ?>" class="">Back</a></li>
-				<!-- <li class="active"><?php //echo get_the_title();?></li> -->
+                <li><button class="p-0 border-0 bg-transparent" onclick="history.back();"><img src="<?php echo site_url(); ?>/wp-content/uploads/2023/08/back-icon.svg" alt="File Icon"></button></li>
+				<li><button class="p-0 border-0 bg-transparent" onclick="history.back();"> Back </button></li>
 
 			</ul>
 		</div>
@@ -37,7 +35,7 @@
                     )
                              
                 );
-                
+              
                 $products = get_posts( $args );
                 foreach($products as $post)
                 {  
@@ -61,17 +59,20 @@
                                     if (isset($icons[$file_extension])) {
                                         $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; ?>
                                         <span> <img src="<?php echo $icon_url; ?>"> </span><?php 
-                                    }if(isset($post) && !empty($post)){
+                                    }
+                                    if(isset($post) && !empty($post)){
                                         echo "<p>" . $post->post_title . "</p>";      
                                     }else{
                                         echo '';
                                     }
+                                   // echo "<p>" . the_title() . "</p>"; 
                                 ?>
                             </a>  
                         </div><?php
                     }
                     
                 } 
+          
                 /**Second Child Category */    
                 $children = get_terms( $term->taxonomy, array(
                     'parent'    => $term->term_id,
@@ -87,6 +88,7 @@
                         </div>
                         <?php
                     }
+                if(isset($children->term_id)):
                     $args = array(
                         'posts_per_page' => -1,
                         'post_type'      => 'download',
@@ -96,14 +98,14 @@
                             array(
                                 'taxonomy'         => 'download_categories',
                                 'field'            => 'term_id',
-                                'terms'            => $subcat->term_id,
+                                'terms'            => $children->term_id,
                                 'include_children' => false
                             )
                         )
                                  
                     );
                     $products = get_posts( $args );
-                    foreach($products as $post){
+                    foreach($products as $value){
                         $download_link = get_field('download_document_link');
                         if(isset($download_link) && !empty($download_link)){
                             $file_url = $download_link['url'];
@@ -125,8 +127,8 @@
                                     if (isset($icons[$file_extension])) {
                                             $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; ?>
                                             <span> <img src="<?php echo $icon_url; ?>"> </span> 
-                                <?php  }  if(isset($post) && !empty($post)){
-                                            echo "<p>" . $post->post_title . "</p>";      
+                                <?php  }  if(isset($value) && !empty($value)){
+                                            echo "<p>" . $value->post_title . "</p>";      
                                         }else{
                                             echo '';
                                         }
@@ -136,6 +138,7 @@
                             </div><?php 
                         }   
                     }
+                endif;
                 } ?>
         </div>
             
