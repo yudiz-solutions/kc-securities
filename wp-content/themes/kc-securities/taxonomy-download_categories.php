@@ -48,18 +48,25 @@
                         $icons = array(
                             'pdf' => 'pdf-icon.svg',
                             'doc' => 'doc-icon.svg',
-                            'text' => 'text-icon.svg',
+                            'txt' => 'text-icon.svg',
                             'xls' => 'xl-icon.svg',
                             'xlsx' => 'xl-icon.svg',
+                            'csv'  => 'xl-icon.svg',
+                            'rar'  => 'rar.svg',
+                            'jpg'  => 'jpg.svg', 
+                            'exe'  => 'exe-icon.svg',
+                            'zip' => 'zip.svg',
                         );
                         ?>
                         <div class="col-lg-4 col-md-6">
                             <a href="<?php if(isset($download_link) && !empty($download_link)){echo $download_link['url'];}else{echo "#";}?>" class="download-box" target = "_blank">
                                 <?php 
                                     if (isset($icons[$file_extension])) {
-                                        $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; ?>
-                                        <span> <img src="<?php echo $icon_url; ?>"> </span><?php 
-                                    }
+                                        $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; 
+                                    }else{
+                                        $icon_url = get_stylesheet_directory_uri().'/assets/images/comman-icon.svg';
+                                    } ?>
+                                    <span> <img src="<?php echo $icon_url; ?>"> </span><?php
                                     if(isset($post) && !empty($post)){
                                         echo "<p>" . $post->post_title . "</p>";      
                                     }else{
@@ -116,18 +123,26 @@
                             $icons = array(
                                 'pdf' => 'pdf-icon.svg',
                                 'doc' => 'doc-icon.svg',
-                                'text' => 'text-icon.svg',
+                                'txt' => 'text-icon.svg',
                                 'xls' => 'xl-icon.svg',
                                 'xlsx' => 'xl-icon.svg',
+                                'csv'  => 'xl-icon.svg',
+                                'rar'  => 'rar.svg',
+                                'jpg'  => 'jpg.svg', 
+                                'exe'  => 'exe-icon.svg',
+                                'zip' => 'zip.svg',
                             );
                             ?>
                             <div class="col-lg-4 col-md-6">
                                 <a href="<?php if(isset($download_link) && !empty($download_link)){echo $download_link['url'];}else{echo "#";}?>" class="download-box" target = "_blank">
                                     <?php 
                                     if (isset($icons[$file_extension])) {
-                                            $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; ?>
+                                            $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension]; 
+                                    } else{
+                                        $icon_url = get_stylesheet_directory_uri().'/assets/images/comman-icon.svg';
+                                    } ?>      
                                             <span> <img src="<?php echo $icon_url; ?>"> </span> 
-                                <?php  }  if(isset($value) && !empty($value)){
+                                <?php  if(isset($value) && !empty($value)){
                                             echo "<p>" . $value->post_title . "</p>";      
                                         }else{
                                             echo '';

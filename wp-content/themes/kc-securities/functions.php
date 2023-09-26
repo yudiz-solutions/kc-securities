@@ -218,6 +218,8 @@ function change_archive_page_title( $title ) {
 
 		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
 
+	}elseif (is_post_type_archive()) {
+		$title = post_type_archive_title( '', false );
 	}
 	return $title;
 }
