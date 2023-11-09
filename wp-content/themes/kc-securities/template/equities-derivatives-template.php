@@ -18,6 +18,7 @@ get_header();
             <div class="col-lg-6">
                 <div class="services-content">
                      <?php echo do_shortcode('[product_service_inner_page]');?>
+
                 </div>
             </div>
             <div class="col-lg-6">

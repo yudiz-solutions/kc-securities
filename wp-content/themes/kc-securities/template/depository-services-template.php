@@ -41,6 +41,12 @@ $service_details = get_field('service_details');
                                 } 
                             } ?>
                     </div>
+                    <?php 
+                    $depository_button_link = get_field('button_link');
+                    $new_button_link = ($depository_button_link['target'] == '_blank') ? "target='_blank'" : "";
+                    if(isset($depository_button_link) && !empty($depository_button_link)){ ?>
+               <a href="<?php echo $depository_button_link['url'];?>" <?php echo $new_button_link;?> class="primary-button mt-3"><?php echo $depository_button_link['title'];?></a>  
+               <?php } ?>
                 </div>
             </div>
             <div class="col-lg-6">

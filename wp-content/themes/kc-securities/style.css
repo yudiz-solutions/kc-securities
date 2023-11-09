@@ -166,16 +166,18 @@ form br{display: none;}
 
 .header-main .header-navigation{ padding:0;display: flex; align-items: center;gap: 22px; }
 .header-navigation .primary-navigation>div>.menu-wrapper{ gap: 12px; align-items: center; }
-.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a { position: relative; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--grey-shade-50); padding:32px 8px; transition: 0.5s all; }
+.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a { position: relative; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--grey-shade-50); padding:40px 8px; transition: 0.5s all; }
 .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a::before{ content: ""; position: absolute; width: 0px; height: 3px; left: 50%;bottom: 0; transform: translate(-50%, -22px); background: var(--base-color-s-main); transition: 0.5s all; -webkit-transition: 0.5s all; }
 .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a:hover:before{ width: 18px; }
-.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a,.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a:hover{ text-decoration: none!important;color: var(--base-color-s-main); }
+.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a,
+.header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a:hover{ text-decoration: none!important;color: var(--base-color-s-main); }
 .header-navigation .primary-navigation .primary-menu-container>ul>.current_page_item>a::before{width: 18px;}
 
-.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_parent a{color: var(--base-color-s-main);}
-.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_parent a::before{width: 18px;}
+/*.header-navigation .primary-navigation .primary-menu-container>ul>.current_page_parent.current_page_parent a{color: var(--base-color-s-main);}*/
+.header-navigation .primary-navigation .primary-menu-container>ul>.current-page-ancestor.current-page-ancestor a { color: var(--base-color-s-main); }
+.header-navigation .primary-navigation .primary-menu-container>ul>.current-page-ancestor.current-page-ancestor a::before{width: 18px;}
 
-.header-navigation .navigation-login ul{ display: flex; gap: 16px; }
+.header-navigation .navigation-login ul{ display: flex; gap: 16px;position:relative; }
 
 .sub-menu .current_page_item a{color: var(--base-color-s-main)!important;text-decoration: none!important;}
 
@@ -219,7 +221,7 @@ form br{display: none;}
 
 .footer-wrapper-first .footer-contact-wrapper .wp-block-heading{ font-size: 20px; font-weight: 600; line-height: 28px; color: var(--base-color-s-main); margin-bottom: 24px; }
 
-.footer-wrapper-first .conatct-wrapper .contact-inner{ margin-bottom: 16px; }
+.footer-wrapper-first .conatct-wrapper .contact-inner{ margin-bottom: 16px;display: block;text-decoration: none; }
 .footer-wrapper-first .conatct-wrapper .contact-inner:last-child {margin-bottom: 0;}
 .footer-wrapper-first .conatct-wrapper .contact-inner img{ margin-bottom: 4px; }
 .footer-wrapper-first .conatct-wrapper .contact-inner p{margin-bottom: 0;}
@@ -231,7 +233,7 @@ form br{display: none;}
 .footer-group-of-companies .company-heading .wp-block-heading{ position: relative; font-size: 20px; font-weight: 600; line-height: 28px; color: var(--base-color-s-main); }
 .company-group-wrapper { display: flex; justify-content: flex-end; align-items: center; width: 100%; }
 .company-group-wrapper .widget_block{ width: 100%; }
-.company-group-wrapper .company-group-main{ display: flex; gap: 16px; width: 100%;margin: 0; }
+.company-group-wrapper .company-group-main{ display: flex; gap: 16px; width: 100%;margin: 0;justify-content: flex-end; }
 .company-group-wrapper .company-group-main .company-part{ width: calc(100% / 3 - 8px); }
 .company-group-wrapper .company-group-main .company-name{ position: relative; padding: 16px; min-height: 76px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--grey-shade-95); border-radius: 8px; text-align: center;transition: 0.5s all;-webkit-transition: 0.5s all; }
 .company-group-wrapper .company-group-main .company-name p{ font-size: 14px; font-weight: 500; line-height: 22px; margin: 0; color: var(--grey-shade-50);transition: 0.5s all;-webkit-transition: 0.5s all; }
@@ -353,11 +355,11 @@ form br{display: none;}
 .download-box:hover{background: var(--secondary-s-97);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05);border-color: var(--base-color-s-main);}
 .download-box:hover span{background: var(--global-white);}
 .download-box:hover p{color: var(--base-color-s-main);}
-.download-box:focus{background: transparent!important;}
+.download-box:focus{background: var(--secondary-s-97)!important;}
 
 .sub-page-back{margin-bottom: 24px;}
 .sub-page-back ul{display: flex;list-style: none;align-items: center;gap: 24px;}
-.sub-page-back ul li,.sub-page-back ul li a{font-size: 16px;font-weight: 400;color: var(--grey-shade-50);position: relative;}
+.sub-page-back ul li,.sub-page-back ul li button{font-size: 16px;font-weight: 400;color: var(--grey-shade-50)!important;position: relative;}
 .sub-page-back ul li:after{ content: "\f105"; font-family: 'FontAwesome'; position: absolute; right: -16px; font-size: 16px; font-weight: 500; }
 .sub-page-back ul li:first-child::after,.sub-page-back ul li:last-child::after{content: none;}
 .sub-page-back ul li.active{color: var(--base-color-s-main);font-weight: 600;}
@@ -421,6 +423,11 @@ form br{display: none;}
 
 /* 404 */
 .error-inner { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 40px; }
+
+.header-navigation .navigation-login ul .old-website-button {position: absolute;top: -24px;right: 0;}
+.header-navigation .navigation-login ul .old-website-button a{font-size: 14px;line-height: 22px;font-weight: 600;color: var(--base-color-s-main);text-decoration:none;}
+.header-navigation .navigation-login ul .old-website-button a:hover{color:var(--base-color-s-main);text-decoration:underline;}
+
 /*********************** Media-query ***********************/
 @media (min-width: 1400px){.container{max-width: 1224px;padding: 0;}}
 
@@ -487,7 +494,7 @@ form br{display: none;}
     .site-header.has-logo.has-title-and-tagline.has-menu { justify-content: space-between; }
     .menu-button-container { display: block; position: relative; padding: 0;margin: 0!important; }
     .primary-navigation-open .primary-navigation { width: 100%; position: relative; z-index: 2; }
-    .primary-navigation>.primary-menu-container { background-color: var(--white);z-index: 111; transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 127px); top: auto; background: var(--global-white);  }
+    .primary-navigation>.primary-menu-container { background-color: var(--white);z-index: 111; transform: translateY(var(--global--spacing-vertical)); transition: 0.5s all; display: flex; padding: 20px; overflow-y: auto; height: calc(100dvh - 145px); top: auto; background: var(--global-white);  }
     .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { position: fixed; transform: translateY(0) translateX(100%); }
     .primary-navigation-open .has-logo.has-title-and-tagline .primary-navigation>.primary-menu-container { transform: translateX(0) translateY(0); }
     .primary-navigation .primary-menu-container>ul>.menu-item { display: block; position: relative; width: 100%; }
@@ -501,7 +508,7 @@ form br{display: none;}
     #primary-mobile-menu .dropdown-icon.close { background: url(./assets/images/close-icon.svg) no-repeat center / cover; background-size: auto; }
     #primary-mobile-menu .dropdown-icon.open, #primary-mobile-menu .dropdown-icon.close { width: 32px; height: 32px;border-radius: 5px; }
     /**** Header Navigation ***/
-    .header-main { padding: 12px 0; }
+    .header-main { padding: 25px 0; }
     .header-main .header-navigation { padding: 6px 0; display: flex; align-items: center; gap: 16px; flex-direction: row-reverse; }
     .header-navigation .primary-navigation>div>.menu-wrapper { gap: 12px; align-content: flex-start; }
     .header-navigation .primary-navigation .primary-menu-container>ul>.menu-item>a { padding: 8px 0px; }
@@ -527,6 +534,8 @@ form br{display: none;}
 
     /*********************** Sub Banner css ***********************/
     .sub-banner-section { min-height: 300px; }
+
+    .company-group-wrapper .company-group-main { justify-content: center; } 
 }
 
 
@@ -536,8 +545,9 @@ form br{display: none;}
 
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { height: calc(100dvh - 117px); }
-    .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 78px); }
-
+    .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 100px); }
+	.header-navigation .navigation-login ul .old-website-button a {font-size: 14px;line-height: 22px;}
+	
     /**** Header Navigation ***/
     .site-header .site-logo img { max-width: 140px;object-fit: cover; }
     .contact-primary-button a{ width: 110px;padding: 10px 15px!important;font-size: 14px;line-height: 22px; }
@@ -624,8 +634,8 @@ form br{display: none;}
     /*********************** Navigation Menu Toogle ***********************/
     .primary-navigation>.primary-menu-container { display: flex; display: -webkit-flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
     .header-navigation .primary-navigation>div>.menu-wrapper { display: block; width: 100%; text-align: center; overflow-y: auto; max-height: 100%; }
-    .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px);padding: 20px 20px 65px 12px; }
-    .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 65px); }
+    .primary-navigation>.primary-menu-container { height: calc(100dvh - 85px);padding: 20px 20px 65px 12px; }
+    .sticky .primary-navigation>.primary-menu-container { height: calc(100dvh - 85px); }
     
     .primary-navigation-open .heder-text-slide{padding: 0;max-height: 0;}
 

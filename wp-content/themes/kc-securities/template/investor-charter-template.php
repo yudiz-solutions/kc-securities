@@ -61,12 +61,60 @@ get_header();
                                                         
                                                     }?>  
                                             </div>
+                                            <div class="investor-wrapper-part mt-5">
+                                                <?php $invester_document_title = $value['invester_document_title'];?>
+                                                <?php if(isset($invester_document_title) && !empty($invester_document_title)){ ?>
+                                                    <h6><?php echo $invester_document_title;?></h6>
+                                                <?php } ?>
+                                                <div class="row g-3 wow fadeInUp">
+                                                <?php  $investor_excle_details = $value['investor_excle_details'];
+                                                    if(isset($investor_excle_details) && !empty($investor_excle_details)){
+                                                            foreach($investor_excle_details as $investor_excle_detail){
+                                                                $investor_title = $investor_excle_detail['investor_title'];
+                                                                $investor_download_pdf = $investor_excle_detail['investor_download_pdf'];
+                                                                if ($investor_download_pdf) {
+                                                                    $file_url = $investor_download_pdf['url'];
+                                                                    $file_extension = pathinfo($file_url, PATHINFO_EXTENSION);
+                                                                    
+                                                                    // Define an array of allowed file extensions and their corresponding icons
+                                                                    $icons = array(
+                                                                        'pdf' => 'pdf-icon.svg',
+                                                                        'doc' => 'doc-icon.svg',
+                                                                        'text' => 'text-icon.svg',
+                                                                        'xls' => 'xl-icon.svg',
+                                                                        'xlsx' => 'xl-icon.svg',
+                                                                        'rar' =>  'rar.svg',
+                                                                        'jpg' =>  'jpg.svg',
+                                                                        'zip' =>  'zip.svg',
+                                                                    );
+                                                                    ?>
+                                                            
+                                                                    <div class="col-lg-4 col-md-6">
+                                                                        <a href="<?php echo $file_url;?>" class="download-box" target = "_blank" >
+                                                                        <?php 
+                                                                        if (isset($icons[$file_extension])) {
+                                                                                $icon_url = get_stylesheet_directory_uri().'/assets/images/'. $icons[$file_extension];
+                                                                        } ?>
+                                                                            <span> <img src="<?php echo $icon_url; ?>"> </span>
+                                                                            
+                                                                            <?php if(isset($investor_title) && !empty( $investor_title)){ ?>
+                                                                                <p><?php echo $investor_title;?></p>
+                                                                            <?php } ?>
+                                                                        </a>
+                                                                    </div><?php
+                                                                }
+                                                                
+                                                            }
+                                                        } ?>
+                                            </div>
+                                            </div>
                                         </div><?php
                                    
                                 $j++;    
                             }
                         }?>
             </div>
+            
         </div>
     </div>
 </section>

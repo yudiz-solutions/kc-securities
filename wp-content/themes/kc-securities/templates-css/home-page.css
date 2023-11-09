@@ -35,44 +35,50 @@
 /*********************** Investor Alerts and Compliance Css End ***********************/
 
 /*********************** Filing Complaints on Scores Css Start ***********************/
+.filing-complaints-section{padding: 60px 0;}
 .filing-complaints-section .title-main { display: flex; align-items: center; justify-content: space-between; }
-.filing-complaints-section .title-main .title-style-2{color: var(--global-white);}
 .filing-wrapper{display: flex;flex-wrap: wrap;gap: 24px;}
-.filing-wrapper>div{width: calc(100% / 4 - 18px);}
+.filing-wrapper>div{width: calc(100% / 3 - 18px);}
 
-.filing-box{position: relative;display: flex;gap: 16px;align-items: center; background: rgba(255, 255, 255, 0.05);border-radius: 8px; padding:15px;min-height: 108px;border: 1px solid transparent;transition: 0.5s all; -webkit-transition: 0.5s all;}
-.filing-box .filing-img{ background: var(--global-white); width: 76px; height: 76px; padding: 16px; border-radius: 8px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
+.filing-box{position: relative;display: flex;gap: 16px;align-items: center; background: var(--secondary-s-97);border-radius: 8px; padding:15px;min-height: 108px;border: 1px solid transparent;transition: 0.5s all; -webkit-transition: 0.5s all;}
+.filing-box .filing-img{ background: var(--secondary-s-95); width: 76px; height: 76px; padding: 16px; border-radius: 8px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
 .filing-box .filing-img>span { position: relative; overflow: hidden; display: block; width: 44px; height: 44px; transition: 0.5s all; -webkit-transition: 0.5s all; }
 .filing-box .filing-img>span img { position: absolute; object-fit: cover; transition: 0.5s all; -webkit-transition: 0.5s all;width: 76px; }
 .filing-box .filing-img>span img:nth-child(2) { transform: translateY(42px); }
-.filing-box p{color: var(--global-white);margin: 0;}
+.filing-box p{color: var(--grey-shade-20);margin: 0;font-weight: 600;margin-bottom: 8px;}
+.filing-box .filling-content ul{padding-left: 15px;}
+.filing-box .filling-content ul li{font-size:16px;font-weight: 500;line-height: 24px;color: var(--grey-shade-40);}
 .filing-box:hover{ border-color:var(--global-white) ; }
 .filing-box:hover .filing-img>span img:first-child { transform: translateY(-55px); }
 .filing-box:hover .filing-img>span img:nth-child(2) { transform: translateY(0px); }
+
+.filing-complaints-section .primary-button{ font-size: 14px; line-height: 22px; }
 /*********************** Filing Complaints on Scores Css End ***********************/
 
 /*********************** Trade Online With KC Securities Css Start ***********************/
-.trade-section .title-main .title-style-2{margin-bottom: 8px;}
-.trade-section .title-main p{font-size: 20px;font-weight: 600;line-height: 28px;color: var(--grey-shade-20);}
-.trade-wrapper-box{position: relative;border: 1px solid var(--grey-shade-95);border-radius: 24px;transition: 0.5s all;-webkit-transition: 0.5s all;}
-.trade-wrapper-box:hover{border-color: var(--base-color-s-main);}
+.trade-section{background: var(--secondary-s-20);}
+.trade-section .title-main .title-style-2{margin-bottom: 8px;color: var(--global-white);}
+.trade-section .title-main p{font-size: 20px;font-weight: 600;line-height: 28px;color: var(--global-white);}
+.trade-wrapper-box{position: relative;border: 1px solid var(--base-color-s-main);border-radius: 24px;transition: 0.5s all;-webkit-transition: 0.5s all;}
+.trade-wrapper-box:hover{border-color: var(--global-white);}
+.trade-wrapper-box:hover .trade-content{border-color: var(--global-white);}
 .trade-box-img{padding: 28px 20px;text-align: center;display: flex;align-items: center;justify-content: center; background: url(../assets/images/trade-shape.svg); background-repeat: no-repeat; background-position: left bottom; background-size: 28%; }
-.trade-content{position: relative;padding: 24px;text-align: center;background: var(--secondary-s-97);border-radius: 0 0 24px 24px;}
-.trade-content .title-style-6{margin-bottom: 24px;}
+.trade-content{position: relative;padding: 24px;text-align: center;border-top: 1px solid var(--base-color-s-main); border-radius: 0 0 24px 24px;transition: 0.5s all;}
+.trade-content .title-style-6{margin-bottom: 24px;color: var(--global-white);}
 /*********************** Trade Online With KC Securities Css End ***********************/
 
 /*********************** Common-part Css Start ***********************/
-.common-card{ padding: 80px 0; }
+.common-card{ padding: 80px 0;background: var(--secondary-s-97);}
 .common-card-wrapper{display: flex;gap: 24px;flex-wrap: wrap;}
 .common-card-wrapper>div{ width: calc(100% / 6 - 20px); }
-.common-filter { position: relative; display: flex; gap: 16px; align-items: center; border-radius: 8px; background: rgba(255, 255, 255, 0.05); padding: 15px; min-height: 108px; border: 1px solid transparent; transition: 0.5s all; -webkit-transition: 0.5s all; flex-direction: column; }
-.common-filter .common-filter-img{ background: rgba(255, 255, 255, 0.10); width: 66px; height: 66px; padding: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
+.common-filter { position: relative; display: flex; gap: 16px; align-items: center; border-radius: 8px; background: var(--secondary-s-95); padding: 15px; min-height: 108px; border: 1px solid transparent; transition: 0.5s all; -webkit-transition: 0.5s all; flex-direction: column; }
+.common-filter .common-filter-img{ background: var(--secondary-s-90); width: 66px; height: 66px; padding: 16px; transition: 0.5s all; -webkit-transition: 0.5s all; border-radius: 50%; }
 .common-filter .common-filter-img>span { position: relative; overflow: hidden; display: block; width: 34px; height: 34px; transition: 0.5s all; -webkit-transition: 0.5s all; }
 .common-filter .common-filter-img>span img { position: absolute; object-fit: cover; transition: 0.5s all; -webkit-transition: 0.5s all;width: 34px;height: 34px;object-position: center; }
-.common-filter .common-filter-img>span img:first-child{filter: brightness(0) invert(1);}
+/* .common-filter .common-filter-img>span img:first-child{filter: brightness(0) invert(1);} */
 .common-filter .common-filter-img>span img:nth-child(2) { transform: translateY(42px); }
-.common-filter p{color: var(--global-white);margin: 0;font-weight: 600;}
-.common-filter:hover{ border-color:var(--global-white) ; }
+.common-filter p{color: var(--grey-shade-40);margin: 0;font-weight: 600;}
+.common-filter:focus{ background: var(--secondary-s-95)!important; }
 .common-filter:hover .common-filter-img {background: var(--global-white);}
 .common-filter:hover .common-filter-img>span img:first-child { transform: translateY(-55px); }
 .common-filter:hover .common-filter-img>span img:nth-child(2) { transform: translateY(0px); }
@@ -86,7 +92,6 @@
 
      /*********************** Common Box css ***********************/
     .filing-wrapper .filing-box { gap: 12px; padding: 12px; }
-    .filing-box p {font-size: 15px;line-height: 23px; }
 }
 
 
@@ -147,6 +152,11 @@
     /*********************** Common-part  ***********************/
     .common-card { padding: 40px 0; }
     .common-card-wrapper>div { width: calc(100% / 3 - 16px); }
+
+    .filing-complaints-section{padding: 40px 0;}
+
+    .filing-box p{font-size: 16px;}
+    .filing-box .filling-content ul li{font-size:14px;line-height: 22px;}
 }
 
 

@@ -84,7 +84,7 @@ get_header();
 <!--------------------------------- Get in Touch section End --------------------------------->
 
 <!--------------------------------- Month section Start --------------------------------->
-<section class="month-content-section custom-padding m-0">
+<section class="month-content-section custom-padding d-none m-0">
     <div class="container">
         <div class="month-wrapper wow fadeInUp">
             <div class="month-date">

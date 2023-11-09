@@ -10,7 +10,7 @@ class Kc_Security_Admin{
 
         add_action('init', array($this, 'kc_security_office_locations_post_type'), 0);
         add_action('init', array($this, 'kc_security_research_post_type'), 0);
-     
+
 
 
         add_action('acf/init',array($this,'kc_security_acf_setting'));
@@ -352,6 +352,9 @@ class Kc_Security_Admin{
     }
 
  
+   
+
+
 
 
    

@@ -50,6 +50,7 @@ get_header();
                                 'jpg'  => 'jpg.svg', 
                                 'exe'  => 'exe-icon.svg',
                                 'zip' => 'zip.svg',
+                                'apk' => 'apk-icon.svg',
                              );
                         
                          ?>

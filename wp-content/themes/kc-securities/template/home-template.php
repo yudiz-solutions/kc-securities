@@ -170,53 +170,6 @@ get_header();
 </section>
 <!--------------------------------- Investor Alerts and Compliance End --------------------------------->
 
-<!--------------------------------- Filing Complaints on Scores Start --------------------------------->
-<section class="filing-complaints-section custom-padding bg-1 m-0">
-    <div class="container">
-        <div class="title-main wow fadeInUp">
-            <?php $filing_main_title = get_field('filing_main_title');
-                 $register_button_link = get_field('register_button_link');
-                 $register_new_target = ($register_button_link['target'] == "_blank") ? "target='_blank'" : "";
-            if(isset($filing_main_title) && !empty($filing_main_title)){ ?>
-            <h2 class="title-style-2"><?php echo $filing_main_title;?></h2>
-            <?php } if(isset($register_button_link) && !empty($register_button_link)){ ?>
-            <a href="<?php echo $register_button_link['url'];?>" class="primary-button" <?php echo $register_new_target;?>><?php echo $register_button_link['title'];?></a>
-            <?php } ?>
-        </div>
-        <div class="filing-wrapper wow fadeInUp">
-            <?php 
-            $filing_details = get_field('filing_details');
-            if(isset($filing_details) && !empty($filing_details)){
-                foreach($filing_details as $filing_detail){
-                    $filing_icon = $filing_detail['filing_icon'];
-                    $filing_title = $filing_detail['filing_title'];
-                    ?>
-                    <div class="filing-box">
-                        <div class="filing-img">
-                            <?php if(isset($filing_icon) && !empty($filing_icon)){ ?>
-                                    <span>
-                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
-                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
-                                    </span>
-                            <?php } ?>
-                        </div>
-                        <?php if(isset($filing_title) && !empty($filing_title)){?> 
-                            <p><?php echo $filing_title;?></p>
-                        <?php } ?>
-                    </div><?php 
-                }
-            } ?>        
-          
-        </div>
-        <div class="filing-button d-lg-none mt-4 text-center pt-2">
-            <?php if(isset($register_button_link) && !empty($register_button_link)){ ?>
-            <a href="<?php echo $register_button_link['url'];?>" class="primary-button"><?php echo $register_button_link['title'];?></a>
-            <?php } ?>
-        </div>
-    </div>
-</section>
-<!--------------------------------- Filing Complaints on Scores End --------------------------------->
-
 <!--------------------------------- Trade Online With KC Securities Start --------------------------------->
 <?php $trade_title = get_field('trade_title');
       $trade_content = get_field('trade_content');
@@ -262,7 +215,7 @@ get_header();
 <!--------------------------------- Trade Online With KC Securities End --------------------------------->
 
 <!--------------------------------- Common-part Start --------------------------------->
-<section class="common-card bg-1 m-0">
+<section class="common-card m-0">
     <div class="container">
         <div class="common-card-wrapper wow fadeInUp">
             <?php 
@@ -294,6 +247,57 @@ get_header();
     </div>
 </section>
 <!--------------------------------- Common-part End --------------------------------->
+
+<!--------------------------------- Filing Complaints on Scores Start --------------------------------->
+<section class="filing-complaints-section custom-padding m-0">
+    <div class="container">
+        <div class="title-main wow fadeInUp">
+            <?php $filing_main_title = get_field('filing_main_title');
+                 $register_button_link = get_field('register_button_link');
+                 $register_new_target = ($register_button_link['target'] == "_blank") ? "target='_blank'" : "";
+            if(isset($filing_main_title) && !empty($filing_main_title)){ ?>
+            <h2 class="title-style-2"><?php echo $filing_main_title;?></h2>
+            <?php } if(isset($register_button_link) && !empty($register_button_link)){ ?>
+            <a href="<?php echo $register_button_link['url'];?>" class="primary-button" <?php echo $register_new_target;?>><?php echo $register_button_link['title'];?></a>
+            <?php } ?>
+        </div>
+        <div class="filing-wrapper wow fadeInUp">
+            <?php 
+            $filing_details = get_field('filing_details');
+            if(isset($filing_details) && !empty($filing_details)){
+                foreach($filing_details as $filing_detail){
+                    $filing_icon = $filing_detail['filing_icon'];
+                    $filing_title = $filing_detail['filing_title'];
+                    $filing_content = $filing_detail['filing_content'];
+                    ?>
+                    <div class="filing-box">
+                        <div class="filing-img">
+                            <?php if(isset($filing_icon) && !empty($filing_icon)){ ?>
+                                    <span>
+                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
+                                        <img src="<?php echo $filing_icon['url'];?>" alt="<?php echo $filing_icon['alt'];?>">
+                                    </span>
+                            <?php } ?>
+                        </div>
+                        <div class="filling-content">
+                        <?php if(isset($filing_title) && !empty($filing_title)){?> 
+                            <p><?php echo $filing_title;?></p>
+                        <?php } ?>
+                        <?php if(isset($filing_content) && !empty($filing_content)){ echo $filing_content; } ?>
+                        </div>
+                    </div><?php 
+                }
+            } ?>        
+          
+        </div>
+        <div class="filing-button d-lg-none mt-4 text-center pt-2">
+            <?php if(isset($register_button_link) && !empty($register_button_link)){ ?>
+            <a href="<?php echo $register_button_link['url'];?>" class="primary-button"><?php echo $register_button_link['title'];?></a>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+<!--------------------------------- Filing Complaints on Scores End --------------------------------->
 
 
 

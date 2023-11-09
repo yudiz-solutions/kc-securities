@@ -47,8 +47,13 @@ class Kc_Security_Shortcodes{
         ob_start();
 
                 $service_page_content = get_field('service_content');
+                $button_link = get_field('button_link');
+                $new_button_link = ($button_link['target'] == '_blank') ? "target='_blank'" : "";
                // $service_image = get_field('service_image');
                if(isset($service_page_content) && !empty($service_page_content)){ echo $service_page_content; } ?>
+               <?php if(isset($button_link) && !empty($button_link)){ ?>
+               <a href="<?php echo $button_link['url'];?>" <?php echo $new_button_link;?> class="primary-button mt-3"><?php echo $button_link['title'];?></a>  
+               <?php } ?>
         <?php 
         $service_pages = ob_get_clean();
 

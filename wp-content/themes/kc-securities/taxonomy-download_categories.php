@@ -56,6 +56,7 @@
                             'jpg'  => 'jpg.svg', 
                             'exe'  => 'exe-icon.svg',
                             'zip' => 'zip.svg',
+                            'apk' => 'apk-icon.svg',
                         );
                         ?>
                         <div class="col-lg-4 col-md-6">
@@ -131,6 +132,7 @@
                                 'jpg'  => 'jpg.svg', 
                                 'exe'  => 'exe-icon.svg',
                                 'zip' => 'zip.svg',
+                                'apk' => 'apk-icon.svg',
                             );
                             ?>
                             <div class="col-lg-4 col-md-6">

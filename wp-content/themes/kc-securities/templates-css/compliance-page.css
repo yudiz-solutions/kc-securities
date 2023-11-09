@@ -6,61 +6,11 @@
 .compliance-wrapper-point .compliance-point-inner:hover{border-color: var(--base-color-s-main);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05);}
 .compliance-wrapper-point .compliance-point-inner p:hover{color: var(--base-color-s-main);}
 
-/*********************** Board of Directors ***********************/
-.directors-box{ position: relative; display: block; padding: 24px; background: var(--global-white); border: 1px solid var(--grey-shade-90); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05); border-radius: 8px; transition: 0.5s all; -webkit-transition: 0.5s all; height: 100%; }
-.directors-box .directors-name p{ font-size: 18px; font-weight: 600; line-height: 26px; color: var(--base-color-s-main); margin-bottom: 4px; }
-.directors-box p{ color: var(--grey-shade-50); margin-bottom: 16px; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
-.directors-postion p{ font-weight: 700; margin-bottom: 0; }
-.directors-box:hover{border-color: var(--base-color-s-main);box-shadow: 0px 0px 15px 0px rgba(0, 89, 153, 0.05)}
-
-
-/*********************** Directors modal ***********************/
-.directors-modal .modal-dialog{ max-width: 1224px; }
-.directors-modal .modal-content{ background: var(--global-white); border-radius: 24px; }
-.directors-modal .modal-content .modal-body{ padding: 44px; }
-.directors-modal .modal-content .modal-body .btn-close{ position: absolute;padding: 0; width: 32px; height: 32px; top: 24px; right: 24px; background: url(../assets/images/close-icon-modal.svg); background-size: cover; background-repeat: no-repeat; opacity: 1; }
-.directors-modal .modal-content .modal-body .btn-close:focus{box-shadow: none;}
-.directors-modal .modal-body .directors-title{margin-bottom: 16px;}
-.directors-modal .modal-body .directors-title .title-style-6{color: var(--base-color-s-main);margin-bottom: 8px;}
-.directors-modal .modal-body .directors-title p{font-weight: 500;color: var(--grey-shade-50);margin-bottom: 0;}
-.directors-modal .modal-body p{margin-bottom: 16px;}
-.directors-modal .modal-body p:last-child{margin-bottom: 0;}
-
 /*********************** Media-query ***********************/
-
-@media (min-width: 1200px) and (max-width: 1399px){
-    /*********************** Directors modal ***********************/
-    .directors-modal .modal-dialog { max-width: 1140px; }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    /*********************** Directors modal ***********************/
-    .directors-modal .modal-dialog { max-width: 960px; }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    /*********************** Directors modal ***********************/
-    .directors-modal .modal-dialog { max-width: 720px; }
-}
-
-@media (min-width: 576px) and (max-width: 767px){
-    /*********************** Directors modal ***********************/
-    .directors-modal .modal-dialog { max-width: 540px; }
-}
 
 @media (max-width: 991px){
     /*********************** Compliance Point ***********************/
     .compliance-wrapper-point .compliance-point-inner { width: calc(100% / 2 - 6px); }
-}
-
-@media (max-width: 767px){
-    .directors-box .directors-name p { font-size: 16px; line-height: 24px; }
-    .directors-box p{margin-bottom: 10px;}
-
-    /*********************** Directors modal ***********************/
-    .directors-modal .modal-body .directors-title { margin-bottom: 10px; }
-    .directors-modal .modal-content .modal-body { padding: 30px; }
-    .directors-modal .modal-body .directors-title .title-style-6 { margin-bottom: 4px; }
 }
 
 @media (max-width: 575px) {

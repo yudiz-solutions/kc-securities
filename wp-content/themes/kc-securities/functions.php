@@ -123,6 +123,16 @@ function enqueue_scripts()
 	else if(is_page_template('template/currency-features-template.php')){
 		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/product-page.css', array(), null, false );
 	}
+	else if(is_page_template('template/account-opening-process-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/account-opening-process.css', array(), null, false );
+	}
+	else if(is_page_template('template/offline-account-opening-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/account-opening-process.css', array(), null, false );
+	}
+	else if(is_page_template('template/online-account-opening-template.php')){
+		wp_enqueue_style( 'product_css', get_stylesheet_directory_uri() . '/templates-css/account-opening-process.css', array(), null, false );
+	}
+
 
 
 }
@@ -141,31 +151,31 @@ function Articles_posttype_init() {
 	
 	register_post_type( 'download', array(
 		'labels'                	=> array(
-			'name'                  => __( 'Download', 'shalom' ),
-			'singular_name'         => __( 'Download', 'shalom' ),
-			'all_items'             => __( 'All Download', 'shalom' ),
-			'archives'              => __( 'Download Archives', 'shalom' ),
-			'attributes'            => __( 'Download Attributes', 'shalom' ),
-			'insert_into_item'      => __( 'Insert into Download', 'shalom' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this Download', 'shalom' ),
-			'featured_image'        => _x( 'Featured Image', 'Download', 'shalom' ),
-			'set_featured_image'    => _x( 'Set featured image', 'Download', 'shalom' ),
-			'remove_featured_image' => _x( 'Remove featured image', 'Download', 'shalom' ),
-			'use_featured_image'    => _x( 'Use as featured image', 'Download', 'shalom' ),
-			'filter_items_list'     => __( 'Filter Download list', 'shalom' ),
-			'items_list_navigation' => __( 'Download list navigation', 'shalom' ),
-			'items_list'            => __( 'Download list', 'shalom' ),
-			'new_item'              => __( 'New Download', 'shalom' ),
-			'add_new'               => __( 'Add New', 'shalom' ),
-			'add_new_item'          => __( 'Add New Download', 'shalom' ),
-			'edit_item'             => __( 'Edit Download', 'shalom' ),
-			'view_item'             => __( 'View Download', 'shalom' ),
-			'view_items'            => __( 'View Download', 'shalom' ),
-			'search_items'          => __( 'Search Download', 'shalom' ),
-			'not_found'             => __( 'No Download found', 'shalom' ),
-			'not_found_in_trash'    => __( 'No Download found in trash', 'shalom' ),
-			'parent_item_colon'     => __( 'Parent Download:', 'shalom' ),
-			'menu_name'             => __( 'Download', 'shalom' ),
+			'name'                  => __( 'Download', 'kc-securities' ),
+			'singular_name'         => __( 'Download', 'kc-securities' ),
+			'all_items'             => __( 'All Download', 'kc-securities' ),
+			'archives'              => __( 'Download Archives', 'kc-securities' ),
+			'attributes'            => __( 'Download Attributes', 'kc-securities' ),
+			'insert_into_item'      => __( 'Insert into Download', 'kc-securities' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this Download', 'kc-securities' ),
+			'featured_image'        => _x( 'Featured Image', 'Download', 'kc-securities' ),
+			'set_featured_image'    => _x( 'Set featured image', 'Download', 'kc-securities' ),
+			'remove_featured_image' => _x( 'Remove featured image', 'Download', 'kc-securities' ),
+			'use_featured_image'    => _x( 'Use as featured image', 'Download', 'kc-securities' ),
+			'filter_items_list'     => __( 'Filter Download list', 'kc-securities' ),
+			'items_list_navigation' => __( 'Download list navigation', 'kc-securities' ),
+			'items_list'            => __( 'Download list', 'kc-securities' ),
+			'new_item'              => __( 'New Download', 'kc-securities' ),
+			'add_new'               => __( 'Add New', 'kc-securities' ),
+			'add_new_item'          => __( 'Add New Download', 'kc-securities' ),
+			'edit_item'             => __( 'Edit Download', 'kc-securities' ),
+			'view_item'             => __( 'View Download', 'kc-securities' ),
+			'view_items'            => __( 'View Download', 'kc-securities' ),
+			'search_items'          => __( 'Search Download', 'kc-securities' ),
+			'not_found'             => __( 'No Download found', 'kc-securities' ),
+			'not_found_in_trash'    => __( 'No Download found in trash', 'kc-securities' ),
+			'parent_item_colon'     => __( 'Parent Download:', 'kc-securities' ),
+			'menu_name'             => __( 'Download', 'kc-securities' ),
 		),
 		'supports'              => array( 'title', 'editor', 'thumbnail' ),
 		'public'                => true,
@@ -178,7 +188,7 @@ function Articles_posttype_init() {
 		'menu_position'         => 4,
 		'exclude_from_search'   => false,
 		'show_in_rest'          => false,
-		'publicly_queryable'    => true,
+		'publicly_queryable'    => false,
 		'menu_icon'             => 'dashicons-download',
 		'taxonomies' => array( 'download_categories')
 	) );
@@ -207,21 +217,93 @@ function Articles_posttype_init() {
 
 }
 
-function change_archive_page_title( $title ) {
-	if ( is_category() ) {
-		$title = single_cat_title( '', false );
-	}elseif ( is_tag() ) {
 
-		$title = single_tag_title( '', false );
 
-	} elseif ( is_author() ) {
+add_action( 'init', 'Articles_compliance_posttype_init' );
+function Articles_compliance_posttype_init() {
+	
+	register_post_type( 'compliance', array(
+		'labels'                	=> array(
+			'name'                  => __( 'compliance', 'kc-securities' ),
+			'singular_name'         => __( 'compliance', 'kc-securities' ),
+			'all_items'             => __( 'All compliance', 'kc-securities' ),
+			'archives'              => __( 'compliance Archives', 'kc-securities' ),
+			'attributes'            => __( 'compliance Attributes', 'kc-securities' ),
+			'insert_into_item'      => __( 'Insert into compliance', 'kc-securities' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this compliance', 'kc-securities' ),
+			'featured_image'        => _x( 'Featured Image', 'compliance', 'kc-securities' ),
+			'set_featured_image'    => _x( 'Set featured image', 'compliance', 'kc-securities' ),
+			'remove_featured_image' => _x( 'Remove featured image', 'compliance', 'kc-securities' ),
+			'use_featured_image'    => _x( 'Use as featured image', 'compliance', 'kc-securities' ),
+			'filter_items_list'     => __( 'Filter compliance list', 'kc-securities' ),
+			'items_list_navigation' => __( 'compliance list navigation', 'kc-securities' ),
+			'items_list'            => __( 'compliance list', 'kc-securities' ),
+			'new_item'              => __( 'New compliance', 'kc-securities' ),
+			'add_new'               => __( 'Add New', 'kc-securities' ),
+			'add_new_item'          => __( 'Add New compliance', 'kc-securities' ),
+			'edit_item'             => __( 'Edit compliance', 'kc-securities' ),
+			'view_item'             => __( 'View compliance', 'kc-securities' ),
+			'view_items'            => __( 'View compliance', 'kc-securities' ),
+			'search_items'          => __( 'Search compliance', 'kc-securities' ),
+			'not_found'             => __( 'No compliance found', 'kc-securities' ),
+			'not_found_in_trash'    => __( 'No compliance found in trash', 'kc-securities' ),
+			'parent_item_colon'     => __( 'Parent compliance:', 'kc-securities' ),
+			'menu_name'             => __( 'compliance', 'kc-securities' ),
+		),
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'public'                => true,
+		'hierarchical'          => false,
+		'show_ui'               => true,
+		'show_in_nav_menus'     => true,
+		'has_archive'           => true,
+		'rewrite'               => true,
+		'query_var'             => true,
+		'menu_position'         => 4,
+		'exclude_from_search'   => false,
+		'show_in_rest'          => false,
+		'publicly_queryable'    => false,
+		'menu_icon'             => 'dashicons-download',
+		'taxonomies' => array( 'compliance_categories')
+	) );
 
-		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	register_taxonomy(
+        'compliance_categories',
+        'compliance',
+        array(
+			'show_admin_column' => true,
+		   	'hierarchical' => true,
+		   	'label' => 'Compliance Category',
+		   	'show_ui' => true,
+		   	'show_in_menu' => true,
+		   	'show_in_nav_menus' => true,
+		   	'query_var' => true,
+		   	// 'rewrite' => array( 'slug' => 'articles-categories' ),
+			'rewrite' => array(
+				'with_front' => true,
+				'hierarchical' => true,
+				'slug' => 'compliance-categories',
+			),
+        )
+    );
 
-	}elseif (is_post_type_archive()) {
-		$title = post_type_archive_title( '', false );
-	}
-	return $title;
+	
+
 }
- 
-add_filter( 'get_the_archive_title', 'change_archive_page_title' );
+
+add_filter('upload_mimes', 'allow_custom_mimes');
+
+function allow_custom_mimes ( $existing_mimes=array() ) {
+// ' with mime type 'application/vnd.android.package-archive'
+$existing_mimes['apk'] = 'application/vnd.android.package-archive';
+return $existing_mimes;
+}
+
+function enable_extended_upload ( $mime_types =array() ) {
+
+	// The MIME types listed here will be allowed in the media library.
+	// You can add as many MIME types as you want.
+	$mime_types['exe']  = 'application/exe'; 
+	$mime_types['rar'] = 'application/vnd.rar';
+	return $mime_types;
+ } 
+ add_filter('upload_mimes', 'enable_extended_upload');

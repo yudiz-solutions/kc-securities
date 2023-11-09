@@ -12,7 +12,6 @@ get_header();
 <?php echo do_shortcode('[comman_subpage_banner]');?>
 <!--------------------------------- Inner page Banner End --------------------------------->
 
-
 <!--------------------------------- Corporate Office Start --------------------------------->
 <?php 
     $location_title = get_field('location_title');
@@ -23,7 +22,7 @@ get_header();
     $location_email_address = get_field('location_email_address');
     $phone_numbers = str_replace(' ','',$location_number);
     $location_link = get_field('location_link');
-    
+    $location_new_link = ($location_link['target'] == '_blank') ? "target='_blank'" : "";
     $map_link = get_field('map_link');
 ?>
 <section class="corporate-address-section custom-padding m-0">
@@ -80,7 +79,7 @@ get_header();
                     </div>
                     <?php if(isset($location_link) && !empty($location_link)){ ?>
                         <div class="last-content">
-                            <a href="<?php echo $location_link['url'];?>" class="know-btn"><?php echo $location_link['title'];?></a>
+                            <a href="<?php echo $location_link['url'];?>" <?php echo $location_new_link;?> class="know-btn"><?php echo $location_link['title'];?></a>
                         </div>
                     <?php } ?>
                 </div>
